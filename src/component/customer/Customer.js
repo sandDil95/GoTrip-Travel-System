@@ -1,21 +1,30 @@
 import React, { Component } from 'react';
-// import { BrowserRouter as Router , Route } from 'react-router-dom';
+import { BrowserRouter as Router , Route } from 'react-router-dom';
 import Header from './Header';
 import Home from './Home';
 import Footer from './Footer';
+import About from './About';
+import Individual from './Individual';
+import Package from './Package';
+import Tailor from './Tailor';
 // import Login from './component/pages/login';
 
 class Customer extends Component {
   render() {
     return (
-          <div className="cover-container d-flex h-100  mx-auto flex-column">
-            <Header/>
-            <Home/>
-            <Footer/>
-            {/* <Route path="/" exact component={Todo}/>
-            <Route path="/login" component={Login}/>
-            <Route path="/create" component={Create}/> */}
-          </div>
+        <Router>
+            <div className=" d-flex h-100 flex-column">
+              <Header/>
+              <section>
+              <Route path="/customer" exact exact component={Home}/>
+                <Route path="/customer/About-Us" exact component={About}/>
+                <Route path="/customer/Booking" exact component={Individual}/>
+                <Route path="/customer/Travel-Packages" exact component={Package}/>
+                <Route path="/customer/Tailor-Made-Tour" exact component={Tailor}/>
+              </section>
+              <Footer/>
+            </div>
+        </Router>
     );
   }
 }

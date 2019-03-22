@@ -3,9 +3,27 @@ import React, { Component } from 'react';
 class Package extends Component {
     render(){
         return(
-            <div>
-                Package
-            </div>
+            <main className="inner cover lead" role="main">
+                hjbjbbbnhbbhjkkb bjbkbj
+                <br/><br/><br/><br/><br/><br/>
+                <br/><br/><br/>
+                <br/><br/><br/>
+                <br/>
+                <br/><br/>
+                <br/><br/><br/>
+                <br/><br/><br/><br/>
+                <br/><br/><br/><br/>
+                <br/><br/><br/>
+                <br/><br/><br/>
+                <br/><br/><br/>
+                <br/><br/><br/>
+                <br/><br/><br/>
+                <br/><br/><br/>
+                <br/><br/><br/>
+                <br/><br/><br/>
+                <br/><br/>
+                <br/><br/><br/>
+            </main>
         )
     }
 }

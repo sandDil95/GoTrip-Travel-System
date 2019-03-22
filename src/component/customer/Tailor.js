@@ -3,9 +3,27 @@ import React, { Component } from 'react';
 class Tailor extends Component {
     render(){
         return(
-            <div>
-                tailor
-            </div>
+            <main className="inner cover lead" role="main">
+                hjbjbbbnhbbhjkkb bjbkbj
+                <br/><br/><br/><br/><br/><br/>
+                <br/><br/><br/>
+                <br/><br/><br/>
+                <br/>
+                <br/><br/>
+                <br/><br/><br/>
+                <br/><br/><br/><br/>
+                <br/><br/><br/><br/>
+                <br/><br/><br/>
+                <br/><br/><br/>
+                <br/><br/><br/>
+                <br/><br/><br/>
+                <br/><br/><br/>
+                <br/><br/><br/>
+                <br/><br/><br/>
+                <br/><br/><br/>
+                <br/><br/>
+                <br/><br/><br/>
+            </main>
         )
     }
 }

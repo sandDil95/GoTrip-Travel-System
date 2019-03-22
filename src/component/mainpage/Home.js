@@ -15,7 +15,7 @@ class Home extends Component{
                 <div id="mycarousel" className="carousel slide carousel-fade" data-ride="carousel" data-interval="8000">
                     
                     <ol className="carousel-indicators">
-                        <li data-target="#carousel-slider" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-slider" data-slide-to="0" className="active"></li>
                         <li data-target="#carousel-slider" data-slide-to="1"></li>
                         <li data-target="#carousel-slider" data-slide-to="2"></li>
                         <li data-target="#carousel-slider" data-slide-to="3"></li>

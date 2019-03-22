@@ -22,7 +22,7 @@ class Home extends Component{
                             <img className="slide animated pulse" src={img1} alt=""/>
                             <div className="container">
                                 <div className="carousel-caption">
-                                  <h1 className="item animated pulse">Welcome to Sri Lanka Tourism Zone</h1>
+                                  <h1 className="item animated pulse">Welcome Supplier to help</h1>
                                 </div>
                             </div>
                         </div>
@@ -30,20 +30,20 @@ class Home extends Component{
                             <img className="slide animated pulse" src={img2} alt=""/>
                             <div className="carousel-caption">
                                 <div className="container">
-                                  <h1 className="item animated pulse">Welcome to Sri Lanka Tourism Zone</h1>
+                                    <h1 className="item animated pulse">Welcome Supplier to help</h1>
                                 </div>
                             </div>
                         </div>
                         <div className="carousel-item">
                             <img className="slide animated pulse" src={img3} alt=""/>
                             <div className="carousel-caption">
-                              <h1 className="item animated pulse">Welcome to Sri Lanka Tourism Zone</h1>
+                                <h1 className="item animated pulse">Welcome Supplier to help</h1>
                             </div>
                         </div>
                         <div className="carousel-item active">
                             <img className="slide animated pulse" src={img4} alt=""/>
                             <div className="carousel-caption">
-                                <h1 className="item animated pulse">Welcome to Sri Lanka Tourism Zone</h1>
+                                <h1 className="item animated pulse">Welcome Supplier to help</h1>
                             </div>
                         </div>
                     </div>  

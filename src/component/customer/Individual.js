@@ -1,11 +1,30 @@
 import React, { Component } from 'react';
+import './css/Individual.css';
 
 class Individual extends Component {
     render(){
         return(
-            <div>
-                Individual
-            </div>
+            <main className="inner cover lead" role="main">
+                hjbjbbbnhbbhjkkb bjbkbj
+                <br/><br/><br/><br/><br/><br/>
+                <br/><br/><br/>
+                <br/><br/><br/>
+                <br/>
+                <br/><br/>
+                <br/><br/><br/>
+                <br/><br/><br/><br/>
+                <br/><br/><br/><br/>
+                <br/><br/><br/>
+                <br/><br/><br/>
+                <br/><br/><br/>
+                <br/><br/><br/>
+                <br/><br/><br/>
+                <br/><br/><br/>
+                <br/><br/><br/>
+                <br/><br/><br/>
+                <br/><br/>
+                <br/><br/><br/>
+            </main>
         )
     }
 }
