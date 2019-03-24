@@ -1,8 +1,36 @@
 import React , {Component} from 'react';
 import './css/Login.css';
+import {login} from './UserFunctions';
 
 
 class Login extends Component{
+    constructor(){
+        super()
+        this.state ={
+            email:'',
+            password:'',
+            
+        }
+        this.onChange = this.onChange.bind(this)
+        this.onSubmit = this.onSubmit.bind(this)
+    
+    }
+   onChange(e){
+       this.setState({[e.target.name]:e.target.value})
+   }
+   onSubmit(e){
+       e.preventDefault()
+
+       const user ={
+           email:this.state.email,
+           password:this.state.password
+       }
+       login(user).then(res => {
+           if(res){
+               this.props.history.push('/profile')
+           }
+       })
+   }
     render(){
         return(
             <div className ="bg-img">
@@ -18,8 +46,8 @@ class Login extends Component{
                                             className="form-control"
                                             name = "email"
                                             placeholder ="Enter Email"
-                                            // value ={this.state.email}
-                                            // onChange ={this.onChange}
+                                            value ={this.state.email}
+                                            onChange ={this.onChange}
                                     
                                     />
                                 </div>
@@ -29,8 +57,8 @@ class Login extends Component{
                                             className="form-control"
                                             name = "password"
                                             placeholder ="Enter Password "
-                                            // value ={this.state.password}
-                                            // onChange ={this.onChange}
+                                            value ={this.state.password}
+                                            onChange ={this.onChange}
                                     
                                     />
                                 </div>

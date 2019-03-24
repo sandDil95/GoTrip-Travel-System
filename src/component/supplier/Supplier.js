@@ -16,7 +16,7 @@ class Supplier extends Component {
               <section>
                 <Route path="/supplier" exact exact component={Home}/>
                 <Route path="/supplier/About-Us" exact component={About}/>
-                <Route path="/supplier/View-Profile" exact component={Profile}/>
+                <Route path="/profile" exact component={Profile}/>
               </section>
               <Footer/>
             </div>

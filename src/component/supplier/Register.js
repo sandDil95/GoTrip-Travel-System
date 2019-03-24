@@ -1,7 +1,40 @@
 import React , {Component} from 'react';
 import './css/Login.css';
+import {register} from './UserFunctions';
 
 class Register extends Component{
+    constructor(){
+        super()
+        this.state ={
+            first_name:'',
+            last_name:'',
+            email:'',
+            password:'',
+            
+        }
+        this.onChange = this.onChange.bind(this)
+        this.onSubmit = this.onSubmit.bind(this)
+    
+    }
+   onChange(e){
+       this.setState({[e.target.name]:e.target.value})
+   }
+   onSubmit(e){
+       e.preventDefault()
+
+       const user ={
+           first_name:this.state.first_name,
+           last_name:this.state.last_name,
+           email:this.state.email,
+           password:this.state.password
+       }
+       register(user).then(res => {
+           
+               this.props.history.push('/login')
+           
+       })
+   }
+
     render(){
         return(
             <div className ="bg-img">
@@ -17,8 +50,8 @@ class Register extends Component{
                                         className="form-control"
                                         name = "first_name"
                                         placeholder ="Enter First Name"
-                                        // value ={this.state.first_name}
-                                        // onChange ={this.onChange}
+                                        value ={this.state.first_name}
+                                        onChange ={this.onChange}
                                 
                                 />
                             </div>
@@ -28,8 +61,8 @@ class Register extends Component{
                                         className="form-control"
                                         name = "last_name"
                                         placeholder ="Enter Last Name"
-                                        // value ={this.state.last_name}
-                                        // onChange ={this.onChange}
+                                        value ={this.state.last_name}
+                                        onChange ={this.onChange}
                                 
                                 />
                             </div>
@@ -39,8 +72,8 @@ class Register extends Component{
                                         className="form-control"
                                         name = "email"
                                         placeholder ="Enter Email"
-                                        // value ={this.state.email}
-                                        // onChange ={this.onChange}
+                                        value ={this.state.email}
+                                        onChange ={this.onChange}
                                 
                                 />
                             </div>
@@ -50,8 +83,8 @@ class Register extends Component{
                                         className="form-control"
                                         name = "password"
                                         placeholder ="Enter Password "
-                                        // value ={this.state.password}
-                                        // onChange ={this.onChange}
+                                        value ={this.state.password}
+                                        onChange ={this.onChange}
                                 
                                 />
                             </div>
