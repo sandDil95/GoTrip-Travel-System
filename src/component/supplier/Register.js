@@ -1,5 +1,6 @@
 import React , {Component} from 'react';
 
+
 class Register extends  Component{
     render(){
         return(
@@ -64,6 +65,7 @@ class Register extends  Component{
             </main>
         )
     }
+
 }
 
-export default Register
+export default Register;

@@ -7,3 +7,50 @@ main{
     font-size: 1.25rem;
     font-weight: 300;
 }
+.text-block {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: black;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.jumbotron{
+    background-color: rgb(141, 212, 221);
+    
+}
+h2{
+    font-size: 40px;
+    font-family: 'Ropa Sans', sans-serif;
+    text-align: center;
+}
+b {
+    font-weight: bolder;
+}
+.container {
+    padding: 20px 16px;
+}
+.row{
+    display:flex;
+    justify-content: space-around;
+}
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 25rem;
+    height: 50rem;
+    border-radius: 5px;
+    padding-top: 60px;
+    padding-bottom: 120px;
+    text-align: center;
+}
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.span{
+    display: block;
+}
+#avatar{
+    width: 50%;
+}  
