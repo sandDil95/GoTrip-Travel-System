@@ -20,7 +20,7 @@ mongoose
     .then(() => console.log("MongoDB Connected"))
     .catch(err => console.log(err))
 
-var Users = require('../backend/routes/Users')
+var Users = require('../backend/routes/Users.js')
 
 app.use('/user' , Users)
 

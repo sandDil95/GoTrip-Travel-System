@@ -24,11 +24,11 @@ class Header extends Component{
                                 <Link to="/supplier/About-Us" className="nav-link">About Us</Link>
                             </li>
                             <li className="nav-item active">
-<<<<<<< HEAD
-                                <Link to="/supplier/Register" className="nav-link">Register</Link>
-=======
-                                <Link to="/supplier/View-Profile" className="nav-link">Profile</Link>
->>>>>>> c56e5071fa0f8e03521be43b96e5c1c36c05046b
+
+                                {/* <Link to="/supplier/Register" className="nav-link">Register</Link> */}
+
+                                <Link to="/profile" className="nav-link">Profile</Link>
+
                             </li>
                             
                         </ul>
