@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './css/Header.css';
-import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+import {BrowserRouter as  Router, Route,Link} from "react-router-dom";
 import imglogo from '../../assets/logo.png';
 
 class Header extends Component{
@@ -9,9 +9,9 @@ class Header extends Component{
             
             <header>
                 <nav className="navbar navbar-expand-lg fixed-top">
-                    <a className="navbar-brand" href="#">
-                        <img className="imglogo" src={imglogo}/>
-                    </a>
+                    <div className="navbar-brand" href="#">
+                        <img className="imglogo" src={imglogo} alt=""/>
+                    </div>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

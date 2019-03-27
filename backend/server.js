@@ -20,9 +20,39 @@ mongoose
     .then(() => console.log("MongoDB Connected"))
     .catch(err => console.log(err))
 
+
 var Users = require('../backend/routes/Users.js')
 
-app.use('/user' , Users)
+var Users = require('../backend/routes/Users')
+var IndividualBookingRoutes = require('./routes/IndividualBooking');
+
+
+// Initialize CORS middleware
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+})
+
+app.use('/user' , Users);
+app.use('/individual-booking',IndividualBookingRoutes);
+
+// app.use((req,res,next) =>{
+//     const error = new Error('Not Found');
+//     error.status(404);
+//     next(error);
+// })
+// app.use((error,req,res,next)=>{
+//     res.status(err.status||500);
+//     res.json({
+//         error:{
+//             message: error.message
+//         }
+//     })
+// })
+app.get('/',function(req,res){
+    res.send('Hello from Server');
+})
 
 app.listen(port , () =>{
     console.log("Server is running on port :" +port)

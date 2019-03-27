@@ -34,7 +34,11 @@ class Login extends Component{
     render(){
         return(
             <div className ="bg-img">
+
                 {/* <div className ="container"> */}
+
+                <div className ="sup-inner">
+
                     <div className ="row">
                         <div className ="col-md-6 mt-5 mx-auto">
                             <form className = "form-container" noValidate onSubmit ={this.onSubmit}> 
@@ -62,13 +66,13 @@ class Login extends Component{
                                     
                                     />
                                 </div>
-                                <button type ="submit" className ="btn btn-lg btn-primary btn--block">
+                                <button type ="submit" className ="btn btn-lg btn-primary btn--block" id="btn-login">
                                         Sign in
                                 </button>
                             </form>
                         </div>
                     </div>
-                {/* </div> */}
+                </div>
             </div>
             
         )
