@@ -16,9 +16,9 @@ class Header extends Component{
             // </header>
             <header>
                 <nav className="navbar navbar-expand-lg fixed-top">
-                    <a className="navbar-brand" href="#">
-                        <img className="imglogo" src={imglogo}/>
-                    </a>
+                    <div className="navbar-brand" >
+                        <img className="imglogo" src={imglogo} alt=""/>
+                    </div>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
