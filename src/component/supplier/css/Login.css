@@ -13,6 +13,15 @@
   position: relative;
 }
 
+.form-container{
+  border: 1px solid #fff;
+  padding: 30px 40px;
+  margin-top: 20vh;
+  -webkit-box-shadow: 1px 7px 21px 0px rgba(163,155,163,1);
+  -moz-box-shadow: 1px 7px 21px 0px rgba(163,155,163,1);
+  box-shadow: 1px 7px 21px 0px rgba(163,155,163,1);
+}
+
 /* Add styles to the form container */
 .container {
   position: absolute;
