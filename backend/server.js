@@ -22,6 +22,7 @@ mongoose
 
 var Users = require('../backend/routes/Users')
 var IndividualBookingRoutes = require('./routes/IndividualBooking');
+var TailorRoutes = require('./routes/Tailor');
 
 // Initialize CORS middleware
 app.use(function(req, res, next) {
@@ -32,6 +33,7 @@ app.use(function(req, res, next) {
 
 app.use('/user' , Users);
 app.use('/individual-booking',IndividualBookingRoutes);
+app.use('/tailor',TailorRoutes);
 
 // app.use((req,res,next) =>{
 //     const error = new Error('Not Found');
