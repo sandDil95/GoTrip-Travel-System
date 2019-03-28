@@ -34,7 +34,7 @@ class Login extends Component{
     render(){
         return(
             <div className ="bg-img">
-                <div className ="sup-inner">
+                <div className ="container">
                     <div className ="row">
                         <div className ="col-md-6 mt-5 mx-auto">
                             <form noValidate onSubmit ={this.onSubmit}> 
@@ -62,7 +62,7 @@ class Login extends Component{
                                     
                                     />
                                 </div>
-                                <button type ="submit" className ="btn btn-lg btn-primary btn--block" id="btn-login">
+                                <button type ="submit" className ="btn btn-lg btn-primary btn--block">
                                         Sign in
                                 </button>
                             </form>
