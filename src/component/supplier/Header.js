@@ -6,15 +6,7 @@ import imglogo from '../../assets/logo.png';
 class Header extends Component{
     render(){
         return(
-            // <header className="masthead mb-auto">
-            //     <div className="inner">
-            //         <h1>GoTrip</h1>
-            //         <nav className="nav nav-masthead justify-content-center">
-            //             <a className="nav-link" href="#">Home</a>
-            //             <a className="nav-link" href="#">About</a>
-            //         </nav>
-            //     </div>
-            // </header>
+            
             <header>
                 <nav className="navbar navbar-expand-lg fixed-top">
                     <a className="navbar-brand" href="#">
@@ -32,24 +24,16 @@ class Header extends Component{
                                 <Link to="/supplier/About-Us" className="nav-link">About Us</Link>
                             </li>
                             <li className="nav-item active">
-                                <Link to="/supplier/View-Profile" className="nav-link">Profile</Link>
+
+                                {/* <Link to="/supplier/Register" className="nav-link">Register</Link> */}
+
+                                <Link to="/profile" className="nav-link">Profile</Link>
+
                             </li>
                             
                         </ul>
                     </nav>
-                    {/* <div className="main-menubar d-flex align-items-center">
-                        <div className="main-menubar d-flex align-items-center">
-                            <nav className="hide">
-                                <a href="#home">Home</a>
-                                <a href="#about">About</a>
-                            </nav>
-                        </div>
-                        <div class="menu-bar">
-                            <span class="Inr Inr-menu">
-                                ::before
-                            </span>
-                        </div>
-                    </div> */}
+                    
                 </nav>
             </header>
         )

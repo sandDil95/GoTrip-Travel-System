@@ -1,6 +1,7 @@
 import React , {Component} from 'react';
 import './css/Login.css';
 import {register} from './UserFunctions';
+// import axios from 'axios';
 
 class Register extends Component{
     constructor(){
@@ -8,14 +9,17 @@ class Register extends Component{
         this.state ={
             first_name:'',
             last_name:'',
+            address:'',
             email:'',
-            password:'',
+            password:''
+            
             
         }
         this.onChange = this.onChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
     
     }
+
    onChange(e){
        this.setState({[e.target.name]:e.target.value})
    }
@@ -25,8 +29,10 @@ class Register extends Component{
        const user ={
            first_name:this.state.first_name,
            last_name:this.state.last_name,
+           address:this.state.address,
            email:this.state.email,
            password:this.state.password
+        //    selectedFile:this.state.selectedFile
        }
        register(user).then(res => {
            
@@ -34,14 +40,25 @@ class Register extends Component{
            
        })
    }
+//    state={
+//        selectedFile:null
+//    }
+//    fileSelectedHandler = event =>{
+//        this.setState({
+//            selectedFile:event.target.files[0]
+//        })
+//    }
+//    fileUploadedHandler = () =>{
+//         axios.post('http://');
+//    }
 
     render(){
         return(
             <div className ="bg-img">
-                <div className ="container">
+                {/* <div className ="container"> */}
                 <div className ="row">
                     <div className ="col-md-6 mt-5 mx-auto">
-                        <form noValidate onSubmit ={this.onSubmit}> 
+                        <form className = "form-container" noValidate onSubmit ={this.onSubmit}> 
                             
                             <h1 className ="h3 mb-3 font-weight-normal">Please sign in</h1>
                             <div className ="form-group">
@@ -55,6 +72,7 @@ class Register extends Component{
                                 
                                 />
                             </div>
+                            
                             <div className ="form-group">
                                 <label htmlFor = "last_name">Last Name </label>
                                 <input type ="text"
@@ -62,6 +80,17 @@ class Register extends Component{
                                         name = "last_name"
                                         placeholder ="Enter Last Name"
                                         value ={this.state.last_name}
+                                        onChange ={this.onChange}
+                                
+                                />
+                            </div>
+                            <div className ="form-group">
+                                <label htmlFor = "address">Address</label>
+                                <input type ="text"
+                                        className="form-control"
+                                        name = "address"
+                                        placeholder ="Enter Your Permanent address"
+                                        value ={this.state.address}
                                         onChange ={this.onChange}
                                 
                                 />
@@ -88,17 +117,32 @@ class Register extends Component{
                                 
                                 />
                             </div>
-                            <button type ="submit" className ="btn btn-lg btn-primary btn--block">
+                            {/* <div className ="form-group">
+                                <label htmlFor = "file">Profile Image</label>
+                                <input type ="file"
+                                        className="form-control"
+                                        name = "file"
+                                        placeholder ="Select your Photo"
+                                        value ={this.state.selectedFile}
+                                        onChange ={this.fileSelectedHandler}
+                                
+                                />
+                            </div> */}
+                            <button onClick = {this.fileUploadedHandler} type ="submit" className ="btn btn-lg btn-primary btn--block">
                                     Register
                             </button>
                         </form>
                     </div>
                 </div>
-           </div>
+           {/* </div> */}
             </div>
+
 
         )
     }
 }
 
+
+
 export default Register;
+

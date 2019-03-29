@@ -15,6 +15,7 @@ users.post('/register' , (req , res)=>{
     const userData = {
         first_name:req.body.first_name,
         last_name:req.body.last_name,
+        address:req.body.address,
         email:req.body.email,
         password:req.body.password,
         created:today
@@ -56,6 +57,7 @@ users.post('/login' ,(req , res)=>{
                     _id:user._id,
                     first_name:user.first_name,
                     last_name:user.last_name,
+                    address:user.address,
                     email:user.email
                 }
                 let token = jwt.sign(payload , process.env.SECRET_KEY ,{
@@ -85,6 +87,7 @@ users.post('/login' , (req , res)=>{
                     _id:user._id,
                     first_name:user.first_name,
                     last_name:user.last_name,
+                    address:user.address,
                     email:user.email
                 }
                 let token = jwt.sign(payload , process.env.SECRET_KEY ,{
@@ -104,7 +107,7 @@ users.post('/login' , (req , res)=>{
 
 })
 
-users.get('/profile' ,(req , res)=>{
+users.get('/supplier' ,(req , res)=>{
     var decoded = jwt.verify(req.headers['authorization'] ,process.env.SECRET_KEY)
 
     User.findOne({
