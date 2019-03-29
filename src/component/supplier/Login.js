@@ -38,7 +38,6 @@ class Login extends Component{
                 {/* <div className ="container"> */}
 
                 <div className ="sup-inner">
-
                     <div className ="row">
                         <div className ="col-md-6 mt-5 mx-auto">
                             <form className = "form-container" noValidate onSubmit ={this.onSubmit}> 
@@ -66,7 +65,7 @@ class Login extends Component{
                                     
                                     />
                                 </div>
-                                <button type ="submit" className ="btn btn-lg btn-primary btn--block" id="btn-login">
+                                <button type ="submit" className ="btn btn-lg btn-primary btn--block">
                                         Sign in
                                 </button>
                             </form>
