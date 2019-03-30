@@ -3,13 +3,13 @@ const tailorPackageRoutes = express.Router(); //initialize app
 
 const Tailor = require('../models/Tailor');
 
-tailorPackageRoutes.get('/',(req,res)=>{
+tailorPackageRoutes.get('/tailor-package',(req,res)=>{
     let package = Tailor.find({},function(err,package){
         if(err){
             console.log(err);
             res.json({msg:"failed"})
         }else{
-            res.json(bookings);
+            res.json(package);
         }
     })
 })

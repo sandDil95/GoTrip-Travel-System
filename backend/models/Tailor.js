@@ -8,7 +8,7 @@ let TailorPackage = new Schema({
         required: true,
     },
     email:{
-        type:email,
+        type:String,
         required: true,
     },
     pno:{
@@ -20,11 +20,11 @@ let TailorPackage = new Schema({
         require:true
     },
     pickupPlace:{
-        type:text,
+        type:String,
         required:true
     },
     additional:{
-        type:text,
+        type:String,
         require: true,
     }
 });
