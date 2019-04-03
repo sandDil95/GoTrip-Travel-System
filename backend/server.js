@@ -23,7 +23,8 @@ mongoose
 
 var Users = require('../backend/routes/Users.js')
 
-var Users = require('../backend/routes/Users')
+var Users = require('../backend/routes/Users');
+var IndividualBookingRoutes = require('./routes/IndividualBooking');
 
 // Initialize CORS middleware
 app.use(function(req, res, next) {

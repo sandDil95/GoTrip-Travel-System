@@ -5,7 +5,7 @@ class Tailor extends Component {
     render(){
         return(
             <main className="inner cover lead" role="main">
-               <img src={img5} />
+               <img src={img5} alt=""/>
                <br></br>
               <div class="container">
               <div class="span12">
