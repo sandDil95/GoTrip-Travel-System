@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react';a  
 import { Redirect } from 'react-router-dom';
 import './css/Individual.css';
 // import hotelimage from '../../assets/hotel.jpg';
@@ -57,13 +57,13 @@ class Individual extends Component {
             budget : this.state.budget,
         }
         console.log(placeAdd);
-        axios.post('http://localhost:4000/individual-booking/vehicle-booking/add',placeAdd)
-            .then(res => {
-                alert("Successfull Booking")
-                console.log(res);
-                this.setState({ redirect: this.state.redirect === false })
-            })
-            .catch(err => { console.log(err) });
+        // axios.post('http://localhost:4000/individual-booking/vehicle-booking/add',placeAdd)
+        //     .then(res => {
+        //         alert("Successfull Booking")
+        //         console.log(res);
+        //         this.setState({ redirect: this.state.redirect === false })
+        //     })
+        //     .catch(err => { console.log(err) });
     }
 
     render(){
