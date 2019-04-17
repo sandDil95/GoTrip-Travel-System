@@ -1,120 +1,81 @@
-main{
-    margin-top: 100px;
-    background-color: rgb(215, 250, 235);
-}
-
-.lead {
-    font-size: 1.25rem;
-    font-weight: 300;
-}
-h1{
-    font-family: 'Allerta Stencil', sans-serif;
-}
-.page{
-    font-family: 'Stardos Stencil', cursive;
-}
-p {
-    margin-top: 0;
-    margin-bottom: 1rem;
-}
-/* *, ::after, ::before {
-
-    box-sizing: border-box;
-
-} */
-.inner{
-    width:100%;
-}
-.carousel {
-    margin-bottom: 2rem;
+#content-bodyy{
     position: relative;
-}
-.carousel-inner {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-.bg-overlay {
-    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7));
+    text-align: center;
+    opacity: 0.7;
+    background:url('../../../assets/backhotel.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
-    color: #fff;
-    padding-top: 50px;
-}
-.carousel-item {
-    height: 40rem;
-    /* background-color: rgb(252, 246, 246); */
     position: relative;
-    display: none;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    width: 100%;
-    transition: -webkit-transform .6s ease;
-    transition: transform .6s ease;
-    transition: transform .6s ease,-webkit-transform .6s ease;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-perspective: 1000px;
-    perspective: 1000px;
+    background-size: 100% 750px;
 }
-carousel-item > img {
-    top: 20%;
-    bottom:0;
-    left: 0;
-    right:0;
-    width: 100%;
+#contentbody{
+  background-color: rgb(150, 172, 175);
 }
-img {
-    -webkit-background-size:cover;
-    background-size:cover;
-    background-position: center center;
-    bottom:28%;
-    width: 100%;
-    vertical-align: middle;
-    border-style: none;
-    position:relative;
+/* #photofol{
+  
+} */
+#accomadtn{
+  background-color: rgb(220, 228, 228);
+  opacity: 0.8;
 }
-.carousel-caption {
-    z-index: 10;
-    position: absolute;
-    right: 15%;
-    bottom: -65px;
-    left: 15%;
-    z-index: 10;
-    padding-top: 10px;
-    padding-bottom: 200px;
-    color: white;
-    text-align: center;
+#hotelcard{
+  width: 30rem;
+  border:2px solid;
+  border-color:white; 
 }
-.outline{
-    font-size: 12px
+.card-img-top{
+  height: 20vw;
+  object-fit: cover;
+}
+ /* Style the tab */
+ .tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
 }
 
-.btn-primary  {
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 24px;
-    color: white;
-    letter-spacing: 1px;
-    line-height: 20px;
-    border-radius: 40px;
-    /* border: 2px solid rgba(5, 5, 5, 0.75); */
-    transition: all 0.3s ease 0s;
-    position: relative;
-    display: inline-block;
-    min-width: 150px;
-    height: 46px;
-  }
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
 
-  .item{
-      animation-play-state:running;
-    /* animation-delay: 1s;
-    -webkit-animation-delay: 1s;
-    -moz-animation-delay: 1s;
-    -o-animation-delay: 1s;
-    -moz-transition: none !important; */
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+} 
+#choose_div{
+    display:block;
+    float:left;
+    width: auto;
+    height: 100%;
+    padding: 1px;
+    }
+  #frame_div{
+   float:right;
+   height: auto;
+    width: 80%;
+    height: 100%;
+    border: 2px 2px 2px 2px;
+    border-left:solid 2px #000000;
+    padding:10px;
+    overflow:hidden;
   }
-  /* .slide{
-    animation-play-state:running;
-  } */

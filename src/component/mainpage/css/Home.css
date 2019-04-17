@@ -1,6 +1,5 @@
-main{
-    margin-top: 100px;
-    background-color: antiquewhite;
+#content-body{
+    background-color: rgb(231, 231, 238);
 }
 
 .lead {
@@ -92,7 +91,7 @@ img {
     font-size: 12px
 }
 
-.btn-primary  {
+#logbtn  {
     font-family: Verdana, Geneva, sans-serif;
     font-size: 24px;
     color: white;
