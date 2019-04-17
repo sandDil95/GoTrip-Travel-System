@@ -14,15 +14,15 @@ class Header extends Component{
             //         </nav>
             //     </div>
             // </header>
-            <header>
-                <nav className="navbar navbar-expand-lg fixed-top">
+            <div>
+                <nav className="navbar navbar-expand-lg">  
                     <div className="navbar-brand" >
-                        <img className="imglogo" src={imglogo}/>
+                        <img className="imglogo" src={imglogo} alt=""/>
                     </div>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <nav id="navbarCollapse" className="nav nav-masthead justify-content-center">
+                    <nav id="navbarCollapse" className="nav nav-masthead">
                         <ul className="navbar-nav mr-auto">
                             {/* <li className="nav-item active">
                                 <a className="nav-link" href="#">
@@ -65,7 +65,7 @@ class Header extends Component{
                         </div>
                     </div> */}
                 </nav>
-            </header>
+            </div>
         )
     }
 }
