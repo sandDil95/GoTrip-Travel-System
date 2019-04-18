@@ -1,17 +1,22 @@
-var express = require("express")
-var cors =  require("cors")
-var bodyParser = require("body-parser")
-var app = express()
-var mongoose = require("mongoose")
-var port = process.env.PORT || 4000
+var express = require("express");
+var cors =  require("cors");
+var bodyParser = require("body-parser");
+var app = express();
+var mongoose = require("mongoose");
+// var methodOverride = require('method-override');
+// var Grid = require('gridfs-stream');
 
-app.use(bodyParser.json())
-app.use(cors())
+var port = process.env.PORT || 4000
+// app.use(methodOverride('_method'));
+// app.use(bodyParser.json());
+app.use(cors());
 app.use(
     bodyParser.urlencoded({
         extended:false
     })
-)
+);
+
+
 
 const mongoURI = 'mongodb://localhost:27017/goTrip'
 
@@ -20,7 +25,37 @@ mongoose
     .then(() => console.log("MongoDB Connected"))
     .catch(err => console.log(err))
 
+//Init gfs
 
+// let gfs;
+// conn.once('open' , ()=>{
+//     //Init stream
+//     gfs = Grid(conn.db , mongoose.mongo);
+//     gfs.collection('uploads');
+// })
+
+//Create storage engine
+
+// const storage = new GridFsStorage({
+//     url:mongoURI,
+//     file:(req , file)=>{
+//         return new Promise((resolve , reject)=>{
+//             crypto.randomBytes(16 ,(err ,buf)=>{
+//                 if(err){
+//                     return reject(err);
+//                 }
+//                 const filename = buf.toString('hex') + path.extname(file.originalname);
+//                 const fileInfo ={
+//                     filename:filename ,
+//                     bucketName:'uploads'
+//                 };
+//                 resolve(fileInfo);
+//             });
+//         })
+//     }
+// });
+
+// const upload =multer({storage});
 var Users = require('../backend/routes/Users.js')
 
 var Users = require('../backend/routes/Users')

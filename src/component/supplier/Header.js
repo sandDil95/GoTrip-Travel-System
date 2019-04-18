@@ -1,10 +1,20 @@
 import React, {Component} from 'react';
 import './css/Header.css';
-import {BrowserRouter as  Router, Route,Link} from "react-router-dom";
+import {BrowserRouter as  Router, Route,Link ,withRouter} from "react-router-dom";
 import imglogo from '../../assets/logo.png';
 
+
+
+
 class Header extends Component{
+    logOut(e){
+        e.preventDefault()
+        
+        this.props.history.push('/')
+    }
     render(){
+        
+        
         return(
             
             <header>
@@ -30,13 +40,26 @@ class Header extends Component{
                                 <Link to="/profile" className="nav-link">Profile</Link>
 
                             </li>
+                            <li className = "nav-item">
+                                <a href="" onClick = {this.logOut.bind(this)} className ="nav-link">
+                                    Logout
+                                </a>
+                            </li>
+                            
                             
                         </ul>
+                       
+
+                            
+                
+
                     </nav>
                     
                 </nav>
             </header>
+
+            
         )
     }
 }
-export default Header;
+export default withRouter(Header) ;

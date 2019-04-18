@@ -5,6 +5,7 @@ import img2 from '../../assets/tiger.jpg';
 import img3 from '../../assets/sigiri.jpeg';
 import img4 from '../../assets/poll.jpg';
 
+
 class Home extends Component{
     loginClick(){
         this.props.history.push('/login');

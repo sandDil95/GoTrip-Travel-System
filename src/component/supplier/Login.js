@@ -35,9 +35,7 @@ class Login extends Component{
         return(
             <div className ="bg-img">
 
-                {/* <div className ="container"> */}
-
-                <div className ="sup-inner">
+                
 
                     <div className ="row">
                         <div className ="col-md-6 mt-5 mx-auto">
@@ -73,7 +71,7 @@ class Login extends Component{
                         </div>
                     </div>
                 </div>
-            </div>
+            
             
         )
     }

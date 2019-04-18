@@ -18,6 +18,7 @@ class App extends Component {
   render() {
     return (
         <Router>
+            
             <div className="cover-container d-flex h-100  mx-auto flex-column">
             
             <Route path="/" exact component={Main}/>
@@ -26,6 +27,7 @@ class App extends Component {
             <Route path="/vehicle" exact component={Vehicle}/>
             <Route path ="/login" exact component = {Login}/>
             <Route path ="/register" exact component = {Register}/>
+            
             {/* <Route path="/customer/About-Us" exact component={About}/>
             <Route path="/customer/Booking" exact component={Individual}/>
             <Route path="/customer/Travel-Packages" exact component={Package}/>

@@ -9,9 +9,18 @@ export const register = newUser =>{
         last_name:newUser.last_name,
         address:newUser.address,
         email:newUser.email,
+        contactNo:newUser.contactNo,
         password:newUser.password,
+        file:newUser.file
 
     })
+    // .post('user/upload' , {
+    //     file:newUser.file
+    // })
+    
+        
+    
+    
     .then(res => {
         console.log('Registered!')
     })

@@ -7,7 +7,9 @@ class Profile extends Component{
         this.state ={
             first_name:'',
             last_name:'',
-            email:''
+            email:'',
+            address:''
+            // file:'',
             
         }
     }
@@ -18,17 +20,21 @@ class Profile extends Component{
             first_name:decoded.first_name,
             last_name:decoded.last_name,
             email:decoded.email,
+            address:decoded.address
+            // file:decoded.file,
 
         })
     }
     render(){
         return(
             <main className="inner cover lead" role="main">
-                <div className ="container">
+                {/* <div className ="container"> */}
                     <div className="jumbotron mt-5"> 
                         <div className ="col-sm-8 mx-auto">
                             <h1 className ="text-center">PROFILE</h1>
                         </div>
+                        
+
                         <table className=" table col-md-6 mx-auto">
                             <tbody>
                                 <tr>
@@ -46,11 +52,23 @@ class Profile extends Component{
                                     <th>{this.state.email}</th>
                                     
                                 </tr>
+                                <tr>
+                                    <th>Address</th>
+                                    <th>{this.state.address}</th>
+                                    
+                                </tr>
+                                {/* <tr>
+                                    <th>Profile</th>
+                                    <th>{this.state.file}</th>
+                                    
+                                </tr> */}
+
+                                
                                 
                             </tbody>
                         </table>
                     </div>
-                </div>
+                {/* </div> */}
             </main>
         )
     }
