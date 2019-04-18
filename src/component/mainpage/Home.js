@@ -8,7 +8,7 @@ import img4 from '../../assets/poll.jpg';
 
 class Home extends Component{
     loginClick(){
-        this.props.history.push('/login');
+        
     }
     render(){
         return(
@@ -29,7 +29,7 @@ class Home extends Component{
                                     <h1 className="item animated pulse">Welcome you all to the GoTrip travel platform</h1>
                                     <p className="page">To Join with us</p>
                                     <small className="outline">Click here</small><br/>
-                                    <button type="button" onClick={this.loginClick} className="btn btn-primary">Login</button>
+                                    <button type="button" className="btn btn-primary">Login</button>
                                 </div>
                             </div>
                         </div>
@@ -40,7 +40,7 @@ class Home extends Component{
                                 <h1 className="item animated pulse">Welcome you all to the GoTrip travel platform</h1>
                                 <p className="page">To Join with us</p>
                                 <small className="outline">Click here</small><br/>
-                                <button type="button" onClick={this.loginClick} className="btn btn-primary">Login</button>
+                                <button type="button" className="btn btn-primary">Login</button>
                                 </div>
                             </div>
                         </div>
@@ -50,7 +50,7 @@ class Home extends Component{
                                 <h1 className="item animated pulse">Welcome you all to the GoTrip travel platform</h1>
                                 <p className="page">To Join with us</p>
                                 <small className="outline">Click here</small><br/>
-                                <button type="button" onClick={this.loginClick} className="btn btn-primary">Login</button>
+                                <button type="button" className="btn btn-primary">Login</button>
                             </div>
                         </div>
                         <div className="carousel-item active">

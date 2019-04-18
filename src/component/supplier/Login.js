@@ -35,7 +35,9 @@ class Login extends Component{
         return(
             <div className ="bg-img">
 
-                
+                {/* <div className ="container"> */}
+
+                <div className ="sup-inner">
 
                     <div className ="row">
                         <div className ="col-md-6 mt-5 mx-auto">
@@ -64,12 +66,13 @@ class Login extends Component{
                                     
                                     />
                                 </div>
-                                <button type ="submit" className ="btn btn-lg btn-primary btn--block" id="btn-login">
+                                <button type ="submit" className ="btn btn-lg btn-primary btn--block">
                                         Sign in
                                 </button>
                             </form>
                         </div>
                     </div>
+                </div>
                 </div>
             
             

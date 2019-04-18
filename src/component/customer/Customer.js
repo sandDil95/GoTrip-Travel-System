@@ -7,6 +7,7 @@ import About from './About';
 import Individual from './Individual';
 import Package from './Package';
 import Tailor from './Tailor';
+// import Login from './component/pages/login';
 
 class Customer extends Component {
   render() {
@@ -15,7 +16,7 @@ class Customer extends Component {
             <div className=" d-flex h-100 flex-column">
               <Header/>
               <section>
-                <Route path="/customer" exact component={Home}/>
+              <Route path="/customer" exact exact component={Home}/>
                 <Route path="/customer/About-Us" exact component={About}/>
                 <Route path="/customer/Booking" exact component={Individual}/>
                 <Route path="/customer/Travel-Packages" exact component={Package}/>
