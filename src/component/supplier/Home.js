@@ -8,7 +8,7 @@ import img4 from '../../assets/poll.jpg';
 class Home extends Component{
     render(){
         return(
-            <main className="inner cover lead" role="main">
+            <div id="content-body">
                 <div id="mycarousel" className="carousel slide carousel-fade" data-ride="carousel" data-interval="8000">
                     
                     <ol className="carousel-indicators">
@@ -52,7 +52,7 @@ class Home extends Component{
                 <p>
                     Welcome to the beautiful emerald isle known as Sri Lanka !!! Let us greet you with a salutation of “Ayubowan” which means “May you live long and healthy” and offer you an exciting array of tours to enjoy and turn your vacation into a memorable.!
                 </p>
-            </main>
+            </div>
         )
     }
 }

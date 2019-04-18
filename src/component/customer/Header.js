@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './css/Header.css';
-import {BrowserRouter as Link} from "react-router-dom";
+import {BrowserRouter as Router,Routes,Link} from "react-router-dom";
 import imglogo from '../../assets/logo.png';
 
 class Header extends Component{
@@ -15,24 +15,24 @@ class Header extends Component{
             //         </nav>
             //     </div>
             // </header>
-            <header>
-                <nav className="navbar navbar-expand-lg fixed-top">
-                    <a className="navbar-brand" href="#">
-                        <img className="imglogo" src={imglogo}/>
-                    </a>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <div>
+                <nav className="navbar navbar-expand-lg">
+                        <Link to="/customer" className="nav-link">
+                            <div className="navbar-brand active">
+                                <img className="imglogo" src={imglogo} alt=""/>
+                            </div>
+                        </Link>
+                    {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <nav id="navbarCollapse" className="nav nav-masthead justify-content-center">
+                    </button> */}
+                    <nav id="navbarCollapse" className="nav nav-masthead ">
                         <ul className="navbar-nav mr-auto">
+                            
                             <li className="nav-item active">
-                                <Link to="/customer" className="nav-link">Home</Link>
+                                <Link to="/customer" className="nav-link">Accomadations</Link>
                             </li>
                             <li className="nav-item active">
-                                <Link to="/customer/About-Us" className="nav-link">About Us</Link>
-                            </li>
-                            <li className="nav-item active">
-                                <Link to="/customer/Booking" className="nav-link">Booking</Link>
+                                <Link to="/customer/vehicle" className="nav-link">Vehicles</Link>
                             </li>
                             <li className="nav-item active">
                                 <Link to="/customer/Travel-Packages" className="nav-link">Travel-Packages</Link>
@@ -57,7 +57,7 @@ class Header extends Component{
                         </div>
                     </div> */}
                 </nav>
-            </header>
+            </div>
         )
     }
 }

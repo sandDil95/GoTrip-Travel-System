@@ -12,7 +12,7 @@ class Home extends Component{
     }
     render(){
         return(
-            <main className="inner cover lead" role="main">
+            <div id="content-body" >
                 <div id="mycarousel" className="carousel slide carousel-fade" data-ride="carousel" data-interval="8000">
                     
                     <ol className="carousel-indicators">
@@ -59,7 +59,7 @@ class Home extends Component{
                                 <h1 className="item animated pulse">Welcome you all to the GoTrip travel platform</h1>
                                 <p className="page">To Join with us</p>
                                 <small className="outline">Click here</small><br/>
-                                <button type="button" onClick={this.loginClick} className="btn btn-primary" >
+                                <button type="button" onClick={this.loginClick} className="btn btn-primary" id="logbtn">
                                         Login
                                 </button>
                             </div>
@@ -83,7 +83,7 @@ class Home extends Component{
                     All requirements are equipped in the country and it is to be one of the best tourist destinations with absolute peace, political stability and the climatic changes can be seen through beautiful waterfalls, rivers, sceneries, tea estates and many other attractive places. Sri Lanka is owned for a rich heritage and it has a recorded history of more than 2500 years and archaeological sites over 250,000.There are 8 world heritage sites within the country that was approved by the UNESCO and they are the hill capital kandy, the sacred city of Anuradapura, The Dutch fort of Galle, The ancient city of Polonnaruwa, The rock fortress of Sigiriya, The golden rock temple of Dambulla, the beautiful Horton plains and the Singharaja rain forest (Sri Lanka Tourism Development Authority, 2011). So, without a doubt a land like Sri lanka cannot be found because it has something to offer for everyone.
                     The increase of tourism occurred in 2011 and is expected to climb further in the coming years. Colombo the capital city, the Cultural Triangle (Dambulla, Polonnaruwa and Anuradhapura), the cities like Kandy and Galle, and most of the southern beach towns which are equipped with good tourist facilities, the roads connecting many of those destinations are improving. The pro of Sri Lanka as a tourism destination is threefold. Firstly, it is a real tourism destination. Secondly, a tourist can travel the whole compact island within few days because it consists only 65,610 square km.Thirdly, it has unparalleled diversity of tourism product. For the ease of communicating the diversity of Sri Lanka in 2010, 8 different products namely; heritage, beaches, wildlife, mind and body wellness, scenic beauty festivals, Essence and sports and adventure are started to position around the country by the tourism authorities. (Sri Lanka Tourism Development Authority, 2011). Art and culture, spices, tea, gems, handy crafts and its people are the unique features of Srilanka which are also known as the essence of the country. From the ancient time the travellers and the traders have attracted to Sri Lanka and it is a languorous tropical island of deep spirituality and serenity. Sri Lanka grabbed the Western imagination as the Tahiti of the East.
                 </p>
-            </main>
+            </div>
         )
     }
 }

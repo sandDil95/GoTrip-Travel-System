@@ -1,3 +1,4 @@
+
 var express = require("express");
 var cors =  require("cors");
 var bodyParser = require("body-parser");
@@ -16,6 +17,22 @@ app.use(
     })
 );
 
+
+
+var express = require("express")
+var cors =  require("cors")
+var bodyParser = require("body-parser")
+var app = express()
+var mongoose = require("mongoose")
+const morgan = require('morgan');
+var port = process.env.PORT || 4000
+
+app.use(morgan('dev'));
+app.use(bodyParser.json())
+app.use(cors())
+app.use(bodyParser.urlencoded({ extended:false }))
+
+app.use('/uploads',express.static('uploads'));
 
 
 const mongoURI = 'mongodb://localhost:27017/goTrip'
@@ -58,7 +75,10 @@ mongoose
 // const upload =multer({storage});
 var Users = require('../backend/routes/Users.js')
 
-var Users = require('../backend/routes/Users')
+var Users = require('../backend/routes/Users');
+var IndividualBookingRoutes = require('./routes/IndividualBooking');
+var hotelSearch = require('../backend/routes/HotelSearch');
+var vehicleSearch = require('../backend/routes/VehicleSearch');
 
 // Initialize CORS middleware
 app.use(function(req, res, next) {
@@ -69,6 +89,8 @@ app.use(function(req, res, next) {
 
 app.use('/user' , Users);
 app.use('/individual-booking',IndividualBookingRoutes);
+app.use('/hotel',hotelSearch);
+app.use('/vehicle',vehicleSearch);
 
 // app.use((req,res,next) =>{
 //     const error = new Error('Not Found');

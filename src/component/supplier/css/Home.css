@@ -1,8 +1,6 @@
-main{
-    margin-top: 100px;
-    background-color: antiquewhite;
+#content-body{
+    background-color: rgb(231, 231, 238);
 }
-
 .lead {
     font-size: 1.25rem;
     font-weight: 300;
@@ -91,21 +89,6 @@ img {
 .outline{
     font-size: 12px
 }
-
-.btn-primary  {
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 24px;
-    color: white;
-    letter-spacing: 1px;
-    line-height: 20px;
-    border-radius: 40px;
-    /* border: 2px solid rgba(5, 5, 5, 0.75); */
-    transition: all 0.3s ease 0s;
-    position: relative;
-    display: inline-block;
-    min-width: 150px;
-    height: 46px;
-  }
 
   .item{
       animation-play-state:running;
