@@ -13,7 +13,7 @@ class Login extends Component{
         }
         this.onChange = this.onChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
-    
+        this.registertosupplier = this.registertosupplier.bind(this);
     }
    onChange(e){
        this.setState({[e.target.name]:e.target.value})
@@ -30,6 +30,9 @@ class Login extends Component{
                this.props.history.push('/supplier')
            }
        })
+   }
+   registertosupplier(e){
+       this.props.history.push('/supplier-register')
    }
     render(){
         return(
@@ -56,7 +59,7 @@ class Login extends Component{
                                 </div>
                                 <div className ="form-group">
                                     <label htmlFor = "password">Password</label>
-                                    <input type ="email"
+                                    <input type ="password"
                                             className="form-control"
                                             name = "password"
                                             placeholder ="Enter Password "
@@ -65,9 +68,15 @@ class Login extends Component{
                                     
                                     />
                                 </div>
-                                <button type ="submit" className ="btn btn-lg btn-primary btn--block">
+                                
+                                <button type ="submit" className ="btn btn-primary btn--block">
                                         Sign in
                                 </button>
+                                <p>Not yet signup?
+                                    <button onClick = {this.registertosupplier} type ="submit" className ="btn btn-primary btn--block">
+                                            SignUp
+                                    </button>
+                                </p>
                             </form>
                         </div>
                     </div>
