@@ -137,7 +137,7 @@ class HotelRegister extends Component{
              address:${this.state.address},
              email:${this.state.email},
              contactNo:${this.state.contactNo},
-             hotel_photo:${this.state.vehicale_photo},
+             hotel_photo:${this.state.hotel_photo},
              single_room_num:${this.state.single_room_num},
              double_room_num:${this.state.double_room_num},
              password:${this.state.password}
@@ -152,7 +152,7 @@ class HotelRegister extends Component{
            address:this.state.address,
            email:this.state.email,
            contactNo:this.state.contactNo,
-           hotel_photo:this.state.vehicale_photo,
+           hotel_photo:this.state.hotel_photo,
            begingdate:this.state.begingdate,
            endingdate:this.state.endingdate,
            single_room_num:this.state.single_room_num,
@@ -281,20 +281,20 @@ class HotelRegister extends Component{
 
                             <div className="row">
                                         <div className="col-lg-6">
-                                            <label htmlFor = "last_name">Begining Date of Availability</label>
+                                            <label htmlFor = "begingdate">Begining Date of Availability</label>
                                             <input placeholder="Begining Date of Availability" 
                                                    className="form-control" 
-                                                   name="start" 
+                                                   name="begingdate" 
                                                    onChange={this.onChange} 
                                                    type="date" 
                                                    value={this.state.begingdate}
                                             />  
                                         </div> 
                                         <div className="col-lg-6">
-                                            <label htmlFor = "last_name">Ending Date of Availability</label>
+                                            <label htmlFor = "endingdate">Ending Date of Availability</label>
                                             <input placeholder="Ending Date of Availability" 
                                                    className="form-control" 
-                                                   name="end" 
+                                                   name="endingdate" 
                                                    onChange={this.onChange} 
                                                    type="date" 
                                                    value={this.state.endingdate}

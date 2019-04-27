@@ -14,6 +14,8 @@ export const vehicleregister = newVehicle =>{
         withoutDriver:newVehicle.withoutDriver,
         vehicle_photo:newVehicle.vehicle_photo,
         vehicle_model:newVehicle.vehicle_model,
+        supplier_name:newVehicle.supplier_name,
+        vehicle_no:newVehicle.vehicle_no,
         begingdate:newVehicle.begingdate,
         endingdate:newVehicle.endingdate,
         location:newVehicle.location,
@@ -34,30 +36,41 @@ export const vehicleregister = newVehicle =>{
     })
 }
 
-// export const sendEmail = newEmail =>{
-//     return axios
-//     .post('vehicleReg/vehicleregister' ,{
-//         first_name:newEmail.first_name,
-//         email:newEmail.email,
-//         contactNo:newEmail.contactNo
+export const sendEmail = newEmail =>{
+    return axios
+    .post('sendNotify/sendemail' ,{
+            first_name:newEmail.first_name,
+            last_name:newEmail.last_name,
+            supplier_name:'',
+            vehicle_no:newEmail.vehicle_no,
+            begingdate:newEmail.begingdate,
+            endingdate:newEmail.endingdate,
+            travled_place:newEmail.travled_place,
+            total_distanse:newEmail.total_distanse,
+            //distanse_ammount:'',
+            guide_fee:newEmail.guide_fee,
+            parcking_fee:newEmail.parcking_fee,
+            entry_ticket:newEmail.entry_ticket,
+            highway_ticket:newEmail.highway_ticket,
+            other_fee:newEmail.other_fee,
         
 
-//     })
+    })
     
     
         
     
     
-//     .then(res => {
-//         console.log('Succes Send Email!')
-//     })
-// }
+    .then(res => {
+        console.log('Succes Send Email!')
+    })
+}
 export const imageupload = newImage =>{
     return axios
     .post('imageUp/imageupload' ,{
         
         vehicle_photo:newImage.vehicle_photo,
-        vehicle_model:newImage.vehicle_model
+        profile_image:newImage.profile_image
         
         
 

@@ -32,6 +32,8 @@ class VehicleRegister extends Component{
             withoutDriver:'False',
             vehicle_photo:'',
             vehicle_model:'',
+            supplier_name:'',
+            vehicle_no:'',
             begingdate:'',
             endingdate:'',
             location:'',
@@ -49,6 +51,8 @@ class VehicleRegister extends Component{
                 //withoutDriver:'False',
                 //vehicle_photo:"",
                 vehicle_model:"",
+                supplier_name:"",
+                vehicle_no:"",
                 location:"",
                 sheet_num:"",
                 pay_per_onekm:"",
@@ -118,6 +122,18 @@ class VehicleRegister extends Component{
                         ? "minimum 3 characaters required"
                         :"";
                 break;
+                case'supplier_name':
+                formErrors.supplier_name = 
+                    value.length < 3 
+                        ? "minimum 3 characaters required"
+                        :"";
+                break;
+                case'vehicle_no':
+                formErrors.vehicle_no = 
+                    value.length < 3 
+                        ? "minimum 3 characaters required"
+                        :"";
+                break;
                 case'location':
                 formErrors.location = 
                     value.length < 6 
@@ -163,10 +179,12 @@ class VehicleRegister extends Component{
                 withoutDriver:${this.state.withoutDriver},
                 vehicale_photo:${this.state.vehicale_photo},
                 vehicle_model:${this.state.vehicle_model},
+                supplier_name:${this.state.supplier_name},
+                vehicle_no:${this.state.vehicle_no},
                 location:${this.state.location},
                 sheet_num:${this.state.sheet_num},
                 pay_per_onekm:${this.state.pay_per_onekm},
-                profile_image:${this.state.file},
+                profile_image:${this.state.profile_image},
                 password:${this.state.password}
            `)
        }
@@ -184,12 +202,14 @@ class VehicleRegister extends Component{
            withoutDriver:this.state.withoutDriver,
            vehicale_photo:this.state.vehicale_photo,
            vehicle_model:this.state.vehicle_model,
+           supplier_name:this.state.supplier_name,
+           vehicle_no:this.state.vehicle_no,
            begingdate:this.state.begingdate,
            endingdate:this.state.endingdate,
            location:this.state.location,
            sheet_num:this.state.sheet_num,
            pay_per_onekm:this.state.pay_per_onekm,
-           profile_image:this.state.file,
+           profile_image:this.state.profile_image,
            password:this.state.password
            
        
@@ -208,7 +228,9 @@ class VehicleRegister extends Component{
     render(){
         const {formErrors} = this.state;
         const {number} = this.state;
+        console.log("Succesfuly"); 
         return(
+            
             <div className ="bg-img">
              
                 <div className ="row">
@@ -290,7 +312,7 @@ class VehicleRegister extends Component{
                                 </div>
                                 <div className ="col-lg-6">
                                     {/* <label htmlFor = "contactNo">Contact Number </label> */}
-                                    <input type ="text"
+                                    <input type ="tel"
                                             className="form-control"
                                             //className={formErrors.contactNo.length >0 ? "error" :null}
                                             name = "contactNo"
@@ -360,23 +382,24 @@ class VehicleRegister extends Component{
                             </div><br/>
                             <div className="row">
                                         <div className="col-lg-6">
-                                            <label htmlFor = "last_name">Begining Date of Availability</label>
-                                            <input placeholder="Begining Date of Availability" 
+                                            <label htmlFor = "begingdate">Begining Date of Availability</label>
+                                            <input type="date"
+                                                   //placeholder="Begining Date of Availability" 
                                                    className="form-control" 
-                                                   name="start" 
-                                                   onChange={this.onChange} 
-                                                   type="date" 
+                                                   name="begingdate" 
                                                    value={this.state.begingdate}
+                                                   onChange={this.onChange}
                                             />  
                                         </div> 
                                         <div className="col-lg-6">
-                                            <label htmlFor = "last_name">Ending Date of Availability</label>
-                                            <input placeholder="Ending Date of Availability" 
+                                            <label htmlFor = "endingdate">Ending Date of Availability</label>
+                                            <input type="date"
+                                                   //placeholder="Ending Date of Availability" 
                                                    className="form-control" 
-                                                   name="end" 
-                                                   onChange={this.onChange} 
-                                                   type="date" 
+                                                   name="endingdate" 
+                                                   
                                                    value={this.state.endingdate}
+                                                   onChange={this.onChange}
                                             />
                                         </div>
                             </div><br/>
@@ -411,6 +434,42 @@ class VehicleRegister extends Component{
                                     />
                                     {formErrors.vehicle_model.length>0 && (
                                         <span className="errorMessage">{formErrors.vehicle_model}</span>
+                                    )}
+                                </div>
+                                
+                            </div><br/>
+                            <div className ="row">
+                                
+                                <div className="col-lg-6">
+                                    {/* <label htmlFor = "sheet_num">Number of Sheet </label> */}
+                                    <input type ="text"
+                                            className="form-control"
+                                            //className={formErrors.sheet_num.length >0 ? "error" :null}
+                                            name = "supplier_name"
+                                            placeholder ="Enter Supplier Name"
+                                            value ={this.state.supplier_name}
+                                            onChange ={this.onChange}
+                                            noValidate
+                                    
+                                    />
+                                    {formErrors.supplier_name.length>0 && (
+                                        <span className="errorMessage">{formErrors.supplier_name}</span>
+                                    )}
+                                </div>
+                                <div className="col-lg-6">
+                                    {/* <label htmlFor = "pay_per_onekm">Pay per one km</label> */}
+                                    <input type ="text"
+                                            className="form-control"
+                                            //className={formErrors.pay_per_onekm.length >0 ? "error" :null}
+                                            name = "vehicle_no"
+                                            placeholder ="Enter Vehicle Number"
+                                            value ={this.state.vehicle_no}
+                                            onChange ={this.onChange}
+                                            noValidate
+                                    
+                                    />
+                                    {formErrors.vehicle_no.length>0 && (
+                                        <span className="errorMessage">{formErrors.vehicle_no}</span>
                                     )}
                                 </div>
                                 
@@ -486,16 +545,18 @@ class VehicleRegister extends Component{
                                         />
                                         
                                     </div>
-                            
+                                            
                             </div><br/>
                             <div className ="row">
                                 <div className="col-lg-12">
                                         <button  type ="submit" className ="btn btn-lg btn-primary btn--block">
                                             Register
                                         </button>
+                                        
                                         <small>Are you already account exit?</small>
                                 </div>
                             </div>
+                            
                             
                            
 
@@ -511,7 +572,7 @@ class VehicleRegister extends Component{
         )
     }
 }
-
+console.log("Succesfuly"); 
 
 
 export default VehicleRegister;

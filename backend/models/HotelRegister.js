@@ -24,6 +24,14 @@ let Hotel = new Schema({
         type:String,
         required:true
     },
+    begingdate:{
+        type:Date,
+        required:true
+    },
+    endingdate:{
+        type:Date,
+        required:true
+    },
     single_room_num:{
         type:Number,
         required:true

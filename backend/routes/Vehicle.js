@@ -80,6 +80,8 @@ vehicle.post('/vehicleregister' , (req , res)=>{
         withoutDriver:req.body.withoutDriver,
         vehicle_photo:req.body.vehicle_photo,
         vehicle_model:req.body.vehicle_model,
+        supplier_name:req.body.supplier_name,
+        vehicle_no:req.body.vehicle_no,
         begingdate:req.body.begingdate,
         endingdate:req.body.endingdate,
         location:req.body.location,
@@ -120,7 +122,7 @@ vehicle.post('/imageupload' , (req , res)=>{
     const userData = {
         
         vehicle_photo:req.body.vehicle_photo,
-        vehicle_model:req.body.vehicle_model,
+        profile_image:req.body.profile_image,
         
         created:today
     }
@@ -166,6 +168,8 @@ vehicle.post('/login' ,(req , res)=>{
                     withoutDriver:user.withoutDriver,
                     vehicle_photo:user.vehicle_photo,
                     vehicle_model:user.vehicle_model,
+                    supplier_name:user.supplier_name,
+                    vehicle_no:user.vehicle_no,
                     begingdate:user.begingdate,
                     endingdate:user.endingdate,
                     location:user.location,

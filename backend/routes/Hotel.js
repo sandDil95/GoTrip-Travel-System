@@ -106,6 +106,39 @@ hotel.post('/hotelregister' , (req , res)=>{
     })
 })
 
+hotel.post('/imageupload' , (req , res)=>{
+    const today = new Date()
+    const userData = {
+        
+        hotel_photo:req.body.hotel_photo,
+        
+        
+        created:today
+    }
+    .then(user =>{
+        if(!user){
+            
+                HotelRegister.create(userData)
+                .then(user => {
+                    res.json({status:user.hotel_photo + 'Submited!'})
+                })
+                .catch(err => {
+                    res.send('error :' + err)
+                })
+            
+        }
+        else{
+            res.json({error:'ImageUpload already exists'})
+        }
+    })
+    .catch(err => {
+        res.send('error:' +err)
+    })
+
+    
+    
+})
+
 hotel.post('/login' ,(req , res)=>{
     HotelRegister.findOne({
         email:req.body.email

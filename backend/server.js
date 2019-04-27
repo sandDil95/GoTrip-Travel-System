@@ -75,7 +75,7 @@ app.use('/hotelLog' ,Hotel);
 app.use('/individual-booking',IndividualBookingRoutes);
 app.use('/hotel',hotelSearch);
 app.use('/vehicle',vehicleSearch);
-
+app.use('/sendNotify' ,NotifyEndTrip);
 
 app.get('/',function(req,res){
     res.send('Hello from Server');

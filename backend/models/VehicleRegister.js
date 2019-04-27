@@ -36,6 +36,14 @@ let UserSchema = new Schema({
         type:String,
         required:true
     },
+    supplier_name:{
+        type:String,
+        required:true
+    },
+    vehicle_no:{
+        type:String,
+        required:true
+    },
     begingdate:{
         type:Date,
         required:true

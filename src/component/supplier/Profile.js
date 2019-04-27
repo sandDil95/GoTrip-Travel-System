@@ -11,7 +11,7 @@ class Profile extends Component{
             email:'',
             address:'',
             vehicle_photo:'',
-            vehicle_model:'',
+            profile_image:'',
             // file:'',
             
         }
@@ -27,7 +27,7 @@ class Profile extends Component{
         const ImageUpload ={
            
             vehicale_photo:this.state.vehicale_photo,
-            vehicle_model:this.state.vehicle_model
+            profile_image:this.state.profile_image
             
             
         
