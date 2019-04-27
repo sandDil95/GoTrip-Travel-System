@@ -73,6 +73,8 @@ hotel.post('/hotelregister' , (req , res)=>{
         email:req.body.email,
         contactNo:req.body.contactNo,
         hotel_photo:req.body.hotel_photo,
+        begingdate:req.body.begingdate,
+        endingdate:req.body.endingdate,
         single_room_num:req.body.single_room_num,
         double_room_num:req.body.double_room_num,
         password:req.body.password,
@@ -119,6 +121,8 @@ hotel.post('/login' ,(req , res)=>{
                     email:user.email,
                     contactNo:user.contactNo,
                     hotel_photo:user.hotel_photo,
+                    begingdate:user.begingdate,
+                    endingdate:user.endingdate,
                     single_room_num:user.single_room_num,
                     double_room_num:user.double_room_num
                 }

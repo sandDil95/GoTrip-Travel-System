@@ -36,6 +36,14 @@ let UserSchema = new Schema({
         type:String,
         required:true
     },
+    begingdate:{
+        type:Date,
+        required:true
+    },
+    endingdate:{
+        type:Date,
+        required:true
+    },
     location:{
         type:String,
         required:true

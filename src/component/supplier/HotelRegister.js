@@ -29,7 +29,8 @@ class HotelRegister extends Component{
             email:'',
             contactNo:'',
             hotel_photo:'',
-            //profile_image:'',
+            begingdate:'',
+            endingdate:'',
             single_room_num:'',
             double_room_num:'',
             password:'',
@@ -152,6 +153,8 @@ class HotelRegister extends Component{
            email:this.state.email,
            contactNo:this.state.contactNo,
            hotel_photo:this.state.vehicale_photo,
+           begingdate:this.state.begingdate,
+           endingdate:this.state.endingdate,
            single_room_num:this.state.single_room_num,
            double_room_num:this.state.double_room_num,
            password:this.state.password
@@ -211,7 +214,7 @@ class HotelRegister extends Component{
                                         <span className="errorMessage">{formErrors.last_name}</span>
                                     )}
                                 </div>
-                            </div>
+                            </div><br/>
                             <div className ="row">
                                 <div className ="col-lg-12">
                                     {/* <label htmlFor = "address">Address</label> */}
@@ -227,7 +230,7 @@ class HotelRegister extends Component{
                                         <span className="errorMessage">{formErrors.address}</span>
                                     )}
                                 </div>
-                            </div>
+                            </div><br/>
                             <div className="row">
                                 <div className ="col-lg-6">
                                     {/* <label htmlFor = "email">Email Address</label> */}
@@ -257,7 +260,7 @@ class HotelRegister extends Component{
                                         <span className="errorMessage">{number.contactNo}</span>
                                     )}
                                 </div>
-                            </div>
+                            </div><br/>
                             
                             
                             
@@ -274,7 +277,30 @@ class HotelRegister extends Component{
                                     />
                                 </div>
                                 
-                            </div>
+                            </div><br/>
+
+                            <div className="row">
+                                        <div className="col-lg-6">
+                                            <label htmlFor = "last_name">Begining Date of Availability</label>
+                                            <input placeholder="Begining Date of Availability" 
+                                                   className="form-control" 
+                                                   name="start" 
+                                                   onChange={this.onChange} 
+                                                   type="date" 
+                                                   value={this.state.begingdate}
+                                            />  
+                                        </div> 
+                                        <div className="col-lg-6">
+                                            <label htmlFor = "last_name">Ending Date of Availability</label>
+                                            <input placeholder="Ending Date of Availability" 
+                                                   className="form-control" 
+                                                   name="end" 
+                                                   onChange={this.onChange} 
+                                                   type="date" 
+                                                   value={this.state.endingdate}
+                                            />
+                                        </div>
+                            </div><br/>
                             
                             <div className ="row">
                                 
@@ -307,7 +333,7 @@ class HotelRegister extends Component{
                                     )}
                                 </div>
                                 
-                            </div>
+                            </div><br/>
                             
                             <div className="row">
                                     <div className="col-lg-12">
@@ -325,7 +351,7 @@ class HotelRegister extends Component{
                                         )}
                                     </div>
                                    
-                            </div>
+                            </div><br/>
                             <div className="row">
                                 
                                     <div className="col-lg-12">
@@ -340,7 +366,7 @@ class HotelRegister extends Component{
                                         
                                     </div>
                             
-                            </div>
+                            </div><br/>
                             <div className ="row">
                                 <div className="col-lg-12">
                                         <button  type ="submit" className ="btn btn-lg btn-primary btn--block">

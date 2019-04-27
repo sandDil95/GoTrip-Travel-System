@@ -14,6 +14,8 @@ export const vehicleregister = newVehicle =>{
         withoutDriver:newVehicle.withoutDriver,
         vehicle_photo:newVehicle.vehicle_photo,
         vehicle_model:newVehicle.vehicle_model,
+        begingdate:newVehicle.begingdate,
+        endingdate:newVehicle.endingdate,
         location:newVehicle.location,
         sheet_num:newVehicle.sheet_num,
         pay_per_onekm:newVehicle.pay_per_onekm,
@@ -79,6 +81,8 @@ export const hotelregister = newHotel =>{
         email:newHotel.email,
         contactNo:newHotel.contactNo,
         hotel_photo:newHotel.hotel_photo,
+        begingdate:newHotel.begingdate,
+        endingdate:newHotel.endingdate,
         single_room_num:newHotel.single_room_num,
         double_room_num:newHotel.double_room_num,
         password:newHotel.password

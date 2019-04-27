@@ -32,6 +32,8 @@ class VehicleRegister extends Component{
             withoutDriver:'False',
             vehicle_photo:'',
             vehicle_model:'',
+            begingdate:'',
+            endingdate:'',
             location:'',
             sheet_num:'',
             pay_per_onekm:'',
@@ -182,6 +184,8 @@ class VehicleRegister extends Component{
            withoutDriver:this.state.withoutDriver,
            vehicale_photo:this.state.vehicale_photo,
            vehicle_model:this.state.vehicle_model,
+           begingdate:this.state.begingdate,
+           endingdate:this.state.endingdate,
            location:this.state.location,
            sheet_num:this.state.sheet_num,
            pay_per_onekm:this.state.pay_per_onekm,
@@ -248,7 +252,7 @@ class VehicleRegister extends Component{
                                         <span className="errorMessage">{formErrors.last_name}</span>
                                     )}
                                 </div>
-                            </div>
+                            </div><br/>
                             <div className ="row">
                                 <div className ="col-lg-12">
                                     {/* <label htmlFor = "address">Address</label> */}
@@ -266,7 +270,7 @@ class VehicleRegister extends Component{
                                         <span className="errorMessage">{formErrors.address}</span>
                                     )}
                                 </div>
-                            </div>
+                            </div><br/>
                             <div className="row">
                                 <div className ="col-lg-6">
                                     {/* <label htmlFor = "email">Email Address</label> */}
@@ -300,7 +304,7 @@ class VehicleRegister extends Component{
                                         <span className="errorMessage">{number.contactNo}</span>
                                     )}
                                 </div>
-                            </div>
+                            </div><br/>
                             <div className ="row">
                                 <div className="col-lg-6">
                                     <label className="radio-inline">
@@ -324,7 +328,7 @@ class VehicleRegister extends Component{
                                         WithOut Driver
                                     </label>
                                 </div>
-                            </div>
+                            </div><br/>
                             
                             
                             <div className ="row">
@@ -353,7 +357,29 @@ class VehicleRegister extends Component{
                                     />
                                 </div>
                                 
-                            </div>
+                            </div><br/>
+                            <div className="row">
+                                        <div className="col-lg-6">
+                                            <label htmlFor = "last_name">Begining Date of Availability</label>
+                                            <input placeholder="Begining Date of Availability" 
+                                                   className="form-control" 
+                                                   name="start" 
+                                                   onChange={this.onChange} 
+                                                   type="date" 
+                                                   value={this.state.begingdate}
+                                            />  
+                                        </div> 
+                                        <div className="col-lg-6">
+                                            <label htmlFor = "last_name">Ending Date of Availability</label>
+                                            <input placeholder="Ending Date of Availability" 
+                                                   className="form-control" 
+                                                   name="end" 
+                                                   onChange={this.onChange} 
+                                                   type="date" 
+                                                   value={this.state.endingdate}
+                                            />
+                                        </div>
+                            </div><br/>
                             <div className ="row">
                                 <div className="col-lg-6">
                                     {/* <label htmlFor = "location">City of Vehicle </label> */}
@@ -388,7 +414,7 @@ class VehicleRegister extends Component{
                                     )}
                                 </div>
                                 
-                            </div>
+                            </div><br/>
                             
                             <div className ="row">
                                 
@@ -425,7 +451,7 @@ class VehicleRegister extends Component{
                                     )}
                                 </div>
                                 
-                            </div>
+                            </div><br/>
                             
                             <div className="row">
                                     <div className="col-lg-12">
@@ -445,7 +471,7 @@ class VehicleRegister extends Component{
                                         )}
                                     </div>
                                    
-                            </div>
+                            </div><br/>
                             <div className="row">
                                 
                                     <div className="col-lg-12">
@@ -461,7 +487,7 @@ class VehicleRegister extends Component{
                                         
                                     </div>
                             
-                            </div>
+                            </div><br/>
                             <div className ="row">
                                 <div className="col-lg-12">
                                         <button  type ="submit" className ="btn btn-lg btn-primary btn--block">
