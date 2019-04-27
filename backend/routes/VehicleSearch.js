@@ -1,7 +1,14 @@
 const express = require('express');
 const vehicleSearchRoutes = express.Router();
+var ObjectId = require('mongodb').ObjectID;
 
 const Vehicle = require('../models/Vehicle');
+const Customer = require('../models/Customer');
+var picklocation;
+var droplocation;
+var start;
+var end;
+var size;
 
 var name;
 const multer = require('multer');
@@ -54,8 +61,9 @@ vehicleSearchRoutes.post('/add',upload.single('vehicleImage'),(req,res)=>{
     })
 })
 
-vehicleSearchRoutes.get('/search/:vehicleStatus',(req,res)=>{
+vehicleSearchRoutes.get('/search/:vehicleStatus/:pickupLocation',(req,res)=>{
     var vStatus = req.params.vehicleStatus;
+    var pLocation = req.params.pickupLocation;
     console.log(vStatus);
      //vehicle only variable declaration
     if(vStatus==='driver'){
@@ -65,7 +73,7 @@ vehicleSearchRoutes.get('/search/:vehicleStatus',(req,res)=>{
         var oVehicle=true;
         console.log(oVehicle);
     }
-    Vehicle.find({onlyVehicle:oVehicle,booking:false},function(err,result){
+    Vehicle.find({onlyVehicle:oVehicle,booking:false,locations:pLocation},function(err,result){
         if(err){
             console.log(err);
             res.status(500).json({status: 'failure'});
@@ -74,8 +82,30 @@ vehicleSearchRoutes.get('/search/:vehicleStatus',(req,res)=>{
             console.log(result); 
             res.status(200).json(result)
         }else{
+            console.log("gfh")
             res.status(404).json({status: 'not found'});
         }
+    })
+})
+vehicleSearchRoutes.get('/vehiclebooking/:id/:email',(req,res)=>{
+    var id = req.params.id;
+    var email = req.params.email;
+    console.log("ID: "+id);
+    console.log("Email: "+email);
+    Vehicle.find({"_id":new ObjectId(id)},function(err,vehi){ //get selected vehicle details for booking
+        Customer.find({email:email},function(err,custmr){
+            var result = vehi.concat(custmr);
+            if(err){
+                console.log(err);
+                res.status(500).json({status:'failure'});
+            }
+            if(result.length>=1){
+                console.log(result);
+                res.status(202).json(result);
+            }else{
+                res.status(404).json({status:'Not Found'})
+            }
+        })
     })
 })
 

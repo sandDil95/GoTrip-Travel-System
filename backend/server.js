@@ -24,6 +24,7 @@ mongoose
 var Users = require('../backend/routes/Users.js')
 
 var Users = require('../backend/routes/Users');
+var Customer = require('../backend/routes/Customer');
 var IndividualBookingRoutes = require('./routes/IndividualBooking');
 var hotelSearch = require('../backend/routes/HotelSearch');
 var vehicleSearch = require('../backend/routes/VehicleSearch');
@@ -36,6 +37,7 @@ app.use(function(req, res, next) {
 })
 
 app.use('/user' , Users);
+app.use('/customer',Customer);
 app.use('/individual-booking',IndividualBookingRoutes);
 app.use('/hotel',hotelSearch);
 app.use('/vehicle',vehicleSearch);

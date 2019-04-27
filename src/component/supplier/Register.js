@@ -17,7 +17,7 @@ class Register extends Component{
         }
         this.onChange = this.onChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
-    
+        this.logintosupplier = this.logintosupplier.bind(this);
     }
 
    onChange(e){
@@ -39,6 +39,9 @@ class Register extends Component{
                this.props.history.push('/login')
            
        })
+   }
+   logintosupplier(e){
+     this.props.history.push('/supplier-login')
    }
 //    state={
 //        selectedFile:null
@@ -108,7 +111,7 @@ class Register extends Component{
                             </div>
                             <div className ="form-group">
                                 <label htmlFor = "password">Password</label>
-                                <input type ="email"
+                                <input type ="password"
                                         className="form-control"
                                         name = "password"
                                         placeholder ="Enter Password "
@@ -128,10 +131,16 @@ class Register extends Component{
                                 
                                 />
                             </div> */}
-                            <button onClick = {this.fileUploadedHandler} type ="submit" className ="btn btn-lg btn-primary btn--block">
+                            <button onClick = {this.fileUploadedHandler} type ="submit" className ="btn btn-primary btn--block">
                                     Register
                             </button>
+                            <p>Are you already Signup?
+                                <button onClick = {this.logintosupplier} type ="submit" className ="btn btn-primary btn--block">
+                                        Login
+                                </button>
+                            </p>
                         </form>
+                        
                     </div>
                 </div>
            {/* </div> */}

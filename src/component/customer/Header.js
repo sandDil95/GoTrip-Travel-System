@@ -17,7 +17,7 @@ class Header extends Component{
             // </header>
             <div>
                 <nav className="navbar navbar-expand-lg">
-                        <Link to="/customer" className="nav-link">
+                        <Link to="/" className="nav-link">
                             <div className="navbar-brand active">
                                 <img className="imglogo" src={imglogo} alt=""/>
                             </div>
@@ -29,20 +29,30 @@ class Header extends Component{
                         <ul className="navbar-nav mr-auto">
                             
                             <li className="nav-item active">
-                                <Link to="/customer" className="nav-link">Accomadations</Link>
+                                <Link to="/" className="nav-link">Accomadations</Link>
                             </li>
                             <li className="nav-item active">
-                                <Link to="/customer/vehicle" className="nav-link">Vehicles</Link>
+                                <Link to="/vehicle" className="nav-link">Vehicles</Link>
                             </li>
                             <li className="nav-item active">
-                                <Link to="/customer/Travel-Packages" className="nav-link">Travel-Packages</Link>
+                                <Link to="/Travel-Packages" className="nav-link">Travel-Packages</Link>
                             </li>
                             <li className="nav-item active">
-                                <Link to="/customer/Tailor-Made-Tour" className="nav-link">Tailor-Made Tour</Link>
+                                <Link to="/Tailor-Made-Tour" className="nav-link">Tailor-Made Tour</Link>
                             </li>
                             
                         </ul>
                     </nav>
+
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Supplier
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <Link to="/supplier-login" className="nav-link">SignIn</Link>
+                            <Link to="/supplier-register" className="nav-link">SignUp</Link>
+                        </div>
+                    </div>
                     {/* <div className="main-menubar d-flex align-items-center">
                         <div className="main-menubar d-flex align-items-center">
                             <nav className="hide">
