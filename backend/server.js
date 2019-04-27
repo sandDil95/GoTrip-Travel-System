@@ -1,24 +1,3 @@
-
-var express = require("express");
-var cors =  require("cors");
-var bodyParser = require("body-parser");
-var app = express();
-var mongoose = require("mongoose");
-// var methodOverride = require('method-override');
-// var Grid = require('gridfs-stream');
-
-var port = process.env.PORT || 4000
-// app.use(methodOverride('_method'));
-// app.use(bodyParser.json());
-app.use(cors());
-app.use(
-    bodyParser.urlencoded({
-        extended:false
-    })
-);
-
-
-
 var express = require("express")
 var cors =  require("cors")
 var bodyParser = require("body-parser")
@@ -32,7 +11,7 @@ app.use(bodyParser.json())
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended:false }))
 
-app.use('/uploads',express.static('uploads'));
+//app.use('/uploads',express.static('uploads'));
 
 
 const mongoURI = 'mongodb://localhost:27017/goTrip'
@@ -73,9 +52,10 @@ mongoose
 // });
 
 // const upload =multer({storage});
-var Users = require('../backend/routes/Users.js')
+//var Vehicle = require('./routes/Vehicle.js');
 
-var Users = require('../backend/routes/Users');
+var Vehicle = require('./routes/Vehicle');
+var Hotel = require('./routes/Hotel');
 var IndividualBookingRoutes = require('./routes/IndividualBooking');
 var hotelSearch = require('../backend/routes/HotelSearch');
 var vehicleSearch = require('../backend/routes/VehicleSearch');
@@ -87,28 +67,20 @@ app.use(function(req, res, next) {
     next();
 })
 
-app.use('/user' , Users);
+app.use('/vehicleReg' , Vehicle);
+app.use('/hotelReg' ,Hotel);
+app.use('/imageUp' ,Vehicle);
+app.use('/vehicleLog' ,Vehicle);
+app.use('/hotelLog' ,Hotel);
 app.use('/individual-booking',IndividualBookingRoutes);
 app.use('/hotel',hotelSearch);
 app.use('/vehicle',vehicleSearch);
 
-// app.use((req,res,next) =>{
-//     const error = new Error('Not Found');
-//     error.status(404);
-//     next(error);
-// })
-// app.use((error,req,res,next)=>{
-//     res.status(err.status||500);
-//     res.json({
-//         error:{
-//             message: error.message
-//         }
-//     })
-// })
+
 app.get('/',function(req,res){
     res.send('Hello from Server');
 })
-app.use('/user' , Users)
+
 
 app.listen(port , () =>{
     console.log("Server is running on port :" +port)

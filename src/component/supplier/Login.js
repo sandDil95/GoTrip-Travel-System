@@ -1,6 +1,7 @@
 import React , {Component} from 'react';
 import './css/Login.css';
-import {login} from './UserFunctions';
+import {loginVehicle} from './UserFunctions';
+import {loginHotel} from './UserFunctions';
 
 
 class Login extends Component{
@@ -25,11 +26,21 @@ class Login extends Component{
            email:this.state.email,
            password:this.state.password
        }
-       login(user).then(res => {
-           if(res){
-               this.props.history.push('/supplier')
-           }
-       })
+    //    if(){
+            loginVehicle(user).then(res => {
+                if(res){
+                    this.props.history.push('/profile')
+                }
+            })
+    //    }else{
+    //     loginHotel(user).then(res => {
+    //         if(res){
+    //             this.props.history.push('/supplier')
+    //         }
+    //     }) 
+    //    }
+       
+       
    }
     render(){
         return(
@@ -57,7 +68,7 @@ class Login extends Component{
                                 </div>
                                 <div className ="form-group">
                                     <label htmlFor = "password">Password</label>
-                                    <input type ="email"
+                                    <input type ="password"
                                             className="form-control"
                                             name = "password"
                                             placeholder ="Enter Password "

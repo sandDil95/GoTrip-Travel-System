@@ -1,5 +1,6 @@
 import React , {Component} from 'react';
 import jwt_decode from 'jwt-decode';
+import {imageupload} from './UserFunctions';
 
 class Profile extends Component{
     constructor(){
@@ -8,10 +9,36 @@ class Profile extends Component{
             first_name:'',
             last_name:'',
             email:'',
-            address:''
+            address:'',
+            vehicle_photo:'',
+            vehicle_model:'',
             // file:'',
             
         }
+        this.onChange = this.onChange.bind(this)
+        this.onSubmit = this.onSubmit.bind(this)
+    }
+    onChange(e){
+        this.setState({[e.target.name]:e.target.value})
+    }
+    onSubmit(e){
+        e.preventDefault()
+        console.log("Succesfuly"); 
+        const ImageUpload ={
+           
+            vehicale_photo:this.state.vehicale_photo,
+            vehicle_model:this.state.vehicle_model
+            
+            
+        
+        }
+        imageupload(ImageUpload).then(res => {
+                 if(ImageUpload){
+                     this.props.history.push('/profile')
+                 }
+                
+            
+        })
     }
     componentDidMount(){
         const token = localStorage.usertoken
@@ -62,6 +89,7 @@ class Profile extends Component{
                                     <th>{this.state.file}</th>
                                     
                                 </tr> */}
+                                
 
                                 
                                 
@@ -69,9 +97,40 @@ class Profile extends Component{
                         </table>
                     </div>
                 {/* </div> */}
+                
+           
+
+                <div className ="row">
+                    <div className="col-lg-12">
+                        <label htmlFor = "vehicle_photo" >Vehicale Photo</label>
+                        <input type ="file"
+                                className="form-control"
+                                name = "vehicale_photo"
+                                placeholder ="Select your Vehicle Photo"
+                                value ={this.state.vehicale_photo}
+                                onChange ={this.onChange}
+                        
+                        />
+                    </div>
+                    <div className="col-lg-12">
+                        <label htmlFor = "profile_image" >Your Photo</label>
+                        <input type ="file"
+                                className="form-control"
+                                name = "profile_image"
+                                placeholder ="Select your Photo"
+                                value ={this.state.profile_image}
+                                onChange ={this.onChange}
+                        
+                        />
+                    </div>
+
+                </div>
             </main>
+            
         )
     }
 }
+
+
 
 export default Profile;

@@ -4,9 +4,10 @@ import Header from './Header';
 import Home from './Home';
 import Footer from './Footer';
 import About from './About';
-
-import Register from './Register';
-
+import HotelRegister from './HotelRegister';
+import VehicleRegister from './VehicleRegister';
+import Login from './Login';
+import Notify from './NotifyEndTrip';
 import Profile from './Profile'
 
 
@@ -19,9 +20,10 @@ class Supplier extends Component {
               <section>
                 <Route path="/supplier" exact component={Home}/>
                 <Route path="/supplier/About-Us" exact component={About}/>
-
-                <Route path="/supplier/Register" exact component={Register}/>
-
+                <Route path = "/supplier/hotel-registration" exact component={HotelRegister}/>
+                <Route path = "/supplier/vehicle-registration" exact component={VehicleRegister}/>
+                <Route path ="/supplier/login" exact component ={Login}/>
+                <Route path = "/supplier/send-email" exact component = {Notify} />
                 <Route path="/profile" exact component={Profile}/>
 
               </section>
