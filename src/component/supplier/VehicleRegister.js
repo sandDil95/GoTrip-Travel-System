@@ -28,9 +28,10 @@ class VehicleRegister extends Component{
             address:'',
             email:'',
             contactNo:'',
-            withDriver:'True',
-            withoutDriver:'False',
-            vehicle_photo:'',
+            // withDriver:'',
+            // withoutDriver:'',
+            //vehicle_photo:'',
+            oVehicle:'',
             vehicle_model:'',
             supplier_name:'',
             vehicle_no:'',
@@ -39,7 +40,7 @@ class VehicleRegister extends Component{
             location:'',
             sheet_num:'',
             pay_per_onekm:'',
-            profile_image:'',
+            //profile_image:'',
             password:'',
             formErrors:{
                 first_name:"",
@@ -66,6 +67,7 @@ class VehicleRegister extends Component{
             
             
         }
+        
         this.onChange = this.onChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
     
@@ -164,6 +166,7 @@ class VehicleRegister extends Component{
        this.setState({formErrors ,[name]:value},()=>console.log(this.state));
        this.setState({number ,[name]:value} ,()=>console.log(this.state));
    }
+   
    onSubmit(e){
        e.preventDefault()
        console.log("Succesfuly"); 
@@ -175,16 +178,15 @@ class VehicleRegister extends Component{
                 address:${this.state.address},
                 email:${this.state.email},
                 contactNo:${this.state.contactNo},
-                withDriver:${this.state.withDriver},
-                withoutDriver:${this.state.withoutDriver},
-                vehicale_photo:${this.state.vehicale_photo},
+                oVehicle:${this.state.oVehicle},
+                
                 vehicle_model:${this.state.vehicle_model},
                 supplier_name:${this.state.supplier_name},
                 vehicle_no:${this.state.vehicle_no},
                 location:${this.state.location},
                 sheet_num:${this.state.sheet_num},
                 pay_per_onekm:${this.state.pay_per_onekm},
-                profile_image:${this.state.profile_image},
+                
                 password:${this.state.password}
            `)
        }
@@ -192,15 +194,24 @@ class VehicleRegister extends Component{
        else{
            console.error('Form Invalid - Display Error Masage');
        }
+    //    var oVehicle = this.state.size;
+    //    if(oVehicle === "driver"){
+    //        oVehicle = false;
+    //        console.log(oVehicle);
+    //    }else{
+    //        oVehicle = true;
+    //        console.log(oVehicle);
+    //    }
        const VehicleRegister ={
            first_name:this.state.first_name,
            last_name:this.state.last_name,
            address:this.state.address,
            email:this.state.email,
            contactNo:this.state.contactNo,
-           withDriver:this.state.withDriver,
-           withoutDriver:this.state.withoutDriver,
-           vehicale_photo:this.state.vehicale_photo,
+           oVehicle:this.state.oVehicle,
+           //withDriver:this.state.withDriver,
+           //withoutDriver:this.state.withoutDriver,
+           //vehicale_photo:this.state.vehicale_photo,
            vehicle_model:this.state.vehicle_model,
            supplier_name:this.state.supplier_name,
            vehicle_no:this.state.vehicle_no,
@@ -209,12 +220,12 @@ class VehicleRegister extends Component{
            location:this.state.location,
            sheet_num:this.state.sheet_num,
            pay_per_onekm:this.state.pay_per_onekm,
-           profile_image:this.state.profile_image,
+           //profile_image:this.state.profile_image,
            password:this.state.password
            
        
        }
-       console.log("Succesfuly"); 
+       console.log("Succesful"); 
        vehicleregister(VehicleRegister).then(res => {
                 if(VehicleRegister){
                     this.props.history.push('/supplier/login')
@@ -331,8 +342,9 @@ class VehicleRegister extends Component{
                                 <div className="col-lg-6">
                                     <label className="radio-inline">
                                         <input type="radio" 
-                                            value={this.state.withDriver} 
-                                            name="size"  
+                                            value="driver"
+                                            name="oVehicle" 
+                                            checked={this.state.oVehicle === "driver"} 
                                             onChange={this.onChange}
                                             noValidate
                                         />
@@ -342,8 +354,9 @@ class VehicleRegister extends Component{
                                 <div className="col-lg-6">
                                     <label className="radio-inline">
                                         <input type="radio" 
-                                            value={this.state.withoutDriver} 
-                                            name="size" 
+                                            value="nodriver" 
+                                            checked ={this.state.oVehicle === "nodriver"}
+                                            name="oVehicle" 
                                             onChange={this.onChange}
                                             noValidate
                                         />
@@ -353,7 +366,7 @@ class VehicleRegister extends Component{
                             </div><br/>
                             
                             
-                            <div className ="row">
+                            {/* <div className ="row">
                                 <div className="col-lg-12">
                                     <label htmlFor = "vehicle_photo" >Vehicale Photo</label>
                                     <input type ="file"
@@ -379,7 +392,7 @@ class VehicleRegister extends Component{
                                     />
                                 </div>
                                 
-                            </div><br/>
+                            </div><br/> */}
                             <div className="row">
                                         <div className="col-lg-6">
                                             <label htmlFor = "begingdate">Begining Date of Availability</label>
@@ -531,7 +544,7 @@ class VehicleRegister extends Component{
                                     </div>
                                    
                             </div><br/>
-                            <div className="row">
+                            {/* <div className="row">
                                 
                                     <div className="col-lg-12">
                                         <input type ="password"
@@ -546,7 +559,7 @@ class VehicleRegister extends Component{
                                         
                                     </div>
                                             
-                            </div><br/>
+                            </div><br/> */}
                             <div className ="row">
                                 <div className="col-lg-12">
                                         <button  type ="submit" className ="btn btn-lg btn-primary btn--block">

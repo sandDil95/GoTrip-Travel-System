@@ -20,18 +20,22 @@ let UserSchema = new Schema({
         type:String,
         required:true
     },
-    withDriver:{
-        type:Boolean,
-        required:true
-    },
-    withoutDriver:{
-        type:Boolean,
-        required:false
-    },
-    vehicle_photo:{
+    oVehicle:{
         type:String,
         required:true
     },
+    // withDriver:{
+    //     type:Boolean,
+    //     required:true
+    // },
+    // withoutDriver:{
+    //     type:Boolean,
+    //     required:false
+    // },
+    // vehicle_photo:{
+    //     type:String,
+    //     required:true
+    // },
     vehicle_model:{
         type:String,
         required:true
@@ -64,10 +68,10 @@ let UserSchema = new Schema({
         type:Number,
         required:false
     },
-    profile_image:{
-        type:String,
-        required:true
-    },
+    // profile_image:{
+    //     type:String,
+    //     required:true
+    // },
     password:{
         type:String,
         required:true

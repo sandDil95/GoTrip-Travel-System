@@ -59,6 +59,7 @@ var Hotel = require('./routes/Hotel');
 var IndividualBookingRoutes = require('./routes/IndividualBooking');
 var hotelSearch = require('../backend/routes/HotelSearch');
 var vehicleSearch = require('../backend/routes/VehicleSearch');
+var NotifyEndTrip = require('../backend/routes/NotifyEndTrip');
 
 // Initialize CORS middleware
 app.use(function(req, res, next) {
@@ -69,13 +70,13 @@ app.use(function(req, res, next) {
 
 app.use('/vehicleReg' , Vehicle);
 app.use('/hotelReg' ,Hotel);
-app.use('/imageUp' ,Vehicle);
+//app.use('/imageUp' ,Vehicle);
 app.use('/vehicleLog' ,Vehicle);
-app.use('/hotelLog' ,Hotel);
+//app.use('/hotelLog' ,Hotel);
 app.use('/individual-booking',IndividualBookingRoutes);
 app.use('/hotel',hotelSearch);
 app.use('/vehicle',vehicleSearch);
-app.use('/sendNotify' ,NotifyEndTrip);
+//app.use('/sendNotify' ,NotifyEndTrip);
 
 app.get('/',function(req,res){
     res.send('Hello from Server');

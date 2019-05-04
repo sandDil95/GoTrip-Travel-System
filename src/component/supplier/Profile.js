@@ -10,36 +10,36 @@ class Profile extends Component{
             last_name:'',
             email:'',
             address:'',
-            vehicle_photo:'',
-            profile_image:'',
+            // vehicle_photo:'',
+            // profile_image:'',
             // file:'',
             
         }
         this.onChange = this.onChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
     }
-    onChange(e){
-        this.setState({[e.target.name]:e.target.value})
-    }
-    onSubmit(e){
-        e.preventDefault()
-        console.log("Succesfuly"); 
-        const ImageUpload ={
+    // onChange(e){
+    //     this.setState({[e.target.name]:e.target.value})
+    // }
+    // onSubmit(e){
+    //     e.preventDefault()
+    //     console.log("Succesfuly"); 
+    //     const ImageUpload ={
            
-            vehicale_photo:this.state.vehicale_photo,
-            profile_image:this.state.profile_image
+    //         vehicale_photo:this.state.vehicale_photo,
+    //         profile_image:this.state.profile_image
             
             
         
-        }
-        imageupload(ImageUpload).then(res => {
-                 if(ImageUpload){
-                     this.props.history.push('/profile')
-                 }
+    //     }
+    //     imageupload(ImageUpload).then(res => {
+    //              if(ImageUpload){
+    //                  this.props.history.push('/profile')
+    //              }
                 
             
-        })
-    }
+    //     })
+    // }
     componentDidMount(){
         const token = localStorage.usertoken
         const decoded = jwt_decode(token)
@@ -100,7 +100,7 @@ class Profile extends Component{
                 
            
 
-                <div className ="row">
+                {/* <div className ="row">
                     <div className="col-lg-12">
                         <label htmlFor = "vehicle_photo" >Vehicale Photo</label>
                         <input type ="file"
@@ -124,7 +124,7 @@ class Profile extends Component{
                         />
                     </div>
 
-                </div>
+                </div> */}
             </main>
             
         )

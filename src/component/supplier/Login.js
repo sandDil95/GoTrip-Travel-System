@@ -29,7 +29,7 @@ class Login extends Component{
     //    if(){
             loginVehicle(user).then(res => {
                 if(res){
-                    this.props.history.push('/profile')
+                    this.props.history.push('/supplier/profile')
                 }
             })
     //    }else{

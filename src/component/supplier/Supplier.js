@@ -24,7 +24,7 @@ class Supplier extends Component {
                 <Route path = "/supplier/vehicle-registration" exact component={VehicleRegister}/>
                 <Route path ="/supplier/login" exact component ={Login}/>
                 <Route path = "/supplier/send-email" exact component = {Notify} />
-                <Route path="/profile" exact component={Profile}/>
+                <Route path="/supplier/profile" exact component={Profile}/>
 
               </section>
               <Footer/>

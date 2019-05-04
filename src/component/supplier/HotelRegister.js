@@ -28,7 +28,7 @@ class HotelRegister extends Component{
             address:'',
             email:'',
             contactNo:'',
-            hotel_photo:'',
+            //hotel_photo:'',
             begingdate:'',
             endingdate:'',
             single_room_num:'',
@@ -137,7 +137,7 @@ class HotelRegister extends Component{
              address:${this.state.address},
              email:${this.state.email},
              contactNo:${this.state.contactNo},
-             hotel_photo:${this.state.hotel_photo},
+            
              single_room_num:${this.state.single_room_num},
              double_room_num:${this.state.double_room_num},
              password:${this.state.password}
@@ -152,7 +152,7 @@ class HotelRegister extends Component{
            address:this.state.address,
            email:this.state.email,
            contactNo:this.state.contactNo,
-           hotel_photo:this.state.hotel_photo,
+           //hotel_photo:this.state.hotel_photo,
            begingdate:this.state.begingdate,
            endingdate:this.state.endingdate,
            single_room_num:this.state.single_room_num,
@@ -264,7 +264,7 @@ class HotelRegister extends Component{
                             
                             
                             
-                            <div className ="row">
+                            {/* <div className ="row">
                                 <div className="col-lg-12">
                                     <label htmlFor = "hotel_photo" >Hotel Photo</label>
                                     <input type ="file"
@@ -277,7 +277,7 @@ class HotelRegister extends Component{
                                     />
                                 </div>
                                 
-                            </div><br/>
+                            </div><br/> */}
 
                             <div className="row">
                                         <div className="col-lg-6">
@@ -352,7 +352,7 @@ class HotelRegister extends Component{
                                     </div>
                                    
                             </div><br/>
-                            <div className="row">
+                            {/* <div className="row">
                                 
                                     <div className="col-lg-12">
                                         <input type ="password"
@@ -366,7 +366,7 @@ class HotelRegister extends Component{
                                         
                                     </div>
                             
-                            </div><br/>
+                            </div><br/> */}
                             <div className ="row">
                                 <div className="col-lg-12">
                                         <button  type ="submit" className ="btn btn-lg btn-primary btn--block">

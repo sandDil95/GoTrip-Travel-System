@@ -3,6 +3,15 @@ import axios from 'axios';
 
 
 export const vehicleregister = newVehicle =>{
+    
+    // var oVehicle = newVehicle.size;
+    // if(oVehicle==='driver'){
+    //     var oVehicle=false;
+    //     console.log(oVehicle);
+    // }else{
+    //     var oVehicle=true;
+    //     console.log(oVehicle);
+    // }
     return axios
     .post('vehicleReg/vehicleregister' ,{
         first_name:newVehicle.first_name,
@@ -10,9 +19,11 @@ export const vehicleregister = newVehicle =>{
         address:newVehicle.address,
         email:newVehicle.email,
         contactNo:newVehicle.contactNo,
-        withDriver:newVehicle.withDriver,
-        withoutDriver:newVehicle.withoutDriver,
-        vehicle_photo:newVehicle.vehicle_photo,
+        oVehicle:newVehicle.oVehicle,
+        // size:newVehicle.size,
+        // withDriver:newVehicle.withDriver,
+        // withoutDriver:newVehicle.withoutDriver,
+        //vehicle_photo:newVehicle.vehicle_photo,
         vehicle_model:newVehicle.vehicle_model,
         supplier_name:newVehicle.supplier_name,
         vehicle_no:newVehicle.vehicle_no,
@@ -21,7 +32,7 @@ export const vehicleregister = newVehicle =>{
         location:newVehicle.location,
         sheet_num:newVehicle.sheet_num,
         pay_per_onekm:newVehicle.pay_per_onekm,
-        profile_image:newVehicle.profile_image,
+        //profile_image:newVehicle.profile_image,
         password:newVehicle.password
         
 
@@ -65,25 +76,25 @@ export const sendEmail = newEmail =>{
         console.log('Succes Send Email!')
     })
 }
-export const imageupload = newImage =>{
-    return axios
-    .post('imageUp/imageupload' ,{
+// export const imageupload = newImage =>{
+//     return axios
+//     .post('imageUp/imageupload' ,{
         
-        vehicle_photo:newImage.vehicle_photo,
-        profile_image:newImage.profile_image
+//         vehicle_photo:newImage.vehicle_photo,
+//         profile_image:newImage.profile_image
         
         
 
-    })
+//     })
     
     
         
     
     
-    .then(res => {
-        console.log('Registered!')
-    })
-}
+//     .then(res => {
+//         console.log('Registered!')
+//     })
+// }
 
 export const hotelregister = newHotel =>{
     return axios
@@ -93,7 +104,7 @@ export const hotelregister = newHotel =>{
         address:newHotel.address,
         email:newHotel.email,
         contactNo:newHotel.contactNo,
-        hotel_photo:newHotel.hotel_photo,
+        //hotel_photo:newHotel.hotel_photo,
         begingdate:newHotel.begingdate,
         endingdate:newHotel.endingdate,
         single_room_num:newHotel.single_room_num,

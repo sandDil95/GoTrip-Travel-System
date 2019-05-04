@@ -1,29 +1,21 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
-let Hotel = new Schema({
+let EndTripDetail = new Schema({
     first_name:{
         type:String
     },
     last_name:{
         type:String
     },
-    address:{
+    supplier_name:{
         type:String,
         required:true
     },
-    email:{
+    vehicle_no:{
         type:String,
         required:true
     },
-    contactNo:{
-        type:String,
-        required:true
-    },
-    // hotel_photo:{
-    //     type:String,
-    //     required:true
-    // },
     begingdate:{
         type:Date,
         required:true
@@ -32,16 +24,32 @@ let Hotel = new Schema({
         type:Date,
         required:true
     },
-    single_room_num:{
-        type:Number,
-        required:true
-    },
-    double_room_num:{
-        type:Number,
-        required:true
-    },
-    password:{
+    travled_place:{
         type:String,
+        required:true
+    },
+    total_distanse:{
+        type:Number,
+        required:true
+    },
+    guide_fee:{
+        type:Number,
+        required:true
+    },
+    parcking_fee:{
+        type:Number,
+        required:true
+    },
+    entry_ticket:{
+        type:Number,
+        required:true
+    },
+    highway_ticket:{
+        type:Number,
+        required:true
+    },
+    other_fee:{
+        type:Number,
         required:true
     },
     date:{
@@ -50,4 +58,4 @@ let Hotel = new Schema({
     }
 })
 
-module.exports = HotelRegister = mongoose.model('hotel' , Hotel)
+module.exports = EndTripDetails = mongoose.model('endtripdetail' , EndTripDetail)
