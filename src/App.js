@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router , Route } from 'react-router-dom';
 import Customer from './component/customer/Customer';
-import Supplier from './component/supplier/Supplier';
 // import Vehicle from './component/customer/Vehicle';
 
 // import Login from './component/supplier/Login';

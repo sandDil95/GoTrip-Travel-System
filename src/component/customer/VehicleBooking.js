@@ -7,8 +7,8 @@ class VehicleBooking extends Component {
     constructor(props){
         super(props);
         this.state={
-            vehicleId:'',
-            email:''
+            vehicleId:props.location.state.vehicleId,
+            email:props.location.state.email
         }
         this.onSubmit = this.onSubmit.bind(this);
     }
@@ -20,8 +20,8 @@ class VehicleBooking extends Component {
         // this.setState({
         //     vehicleId : this.props.location.state.vehicleId
         // })
-        this.state.vehicleId = this.props.location.state.vehicleId;
-        this.state.email = this.props.location.state.email;
+        // this.state.vehicleId = this.props.location.state.vehicleId;
+        // this.state.email = this.props.location.state.email;
         console.log(this.state.email+" :email");
         console.log(this.state.vehicleId+" : vehicleid");
         axios.get('http://localhost:4000/vehicle/vehiclebooking/'+this.state.vehicleId+"/"+this.state.email)
@@ -30,7 +30,7 @@ class VehicleBooking extends Component {
             let vehicleBooking = response.data.map((booking)=>{
                 if(booking.onlyVehicle === true){
                     return(
-                        <div>
+                        <div key={this.state.vehicleId}>
                             <img  src={'http://localhost:4000/uploads/'+booking.vehicleImage} alt="Vehicle Avatar: "/><br/>
                             <span>Vehicle Owner: <span>{booking.vehicleOwner}</span></span><br/>
                             <span>Vehicle Model: <span>{booking.vehicleModel}</span></span><br/>
@@ -41,7 +41,7 @@ class VehicleBooking extends Component {
                     )
                 }else if(booking.onlyVehicle === false){
                     return(
-                        <div>
+                        <div key={this.state.vehicleId}>
                             <img  src={'http://localhost:4000/uploads/'+booking.vehicleImage} alt="Vehicle Avatar: "/><br/>
                             <span>Vehicle Owner: <span>{booking.vehicleOwner}</span></span><br/>
                             <span>Vehicle Model: <span>{booking.vehicleModel}</span></span><br/>
@@ -52,7 +52,7 @@ class VehicleBooking extends Component {
                     )
                 }else{
                     return(
-                        <div>
+                        <div key={booking.fullname}>
                             <h3>About You:</h3>
                             <span>Full Name:<span>{booking.fullname}</span></span>
                         </div>

@@ -46,39 +46,44 @@ class Home extends Component{
         //     .catch(err => { console.log(err) })
     }
     componentDidMount(){
-        console.log(this.state.city); //remove
-        axios.get('http://localhost:4000/hotel/search/'+this.state.city)
-        .then(response => {
-            console.log("didmount")
-            let hotels = response.data.map((hotel) => {
-                console.log("response")
-                return (
-                    <div>
-                        <span className="card d-block" id="hotelcard" key={hotel.hotelName}>
-                            <img className="card-img-top" src={'http://localhost:4000/uploads/'+hotel.hotelImage} alt="Hotel Avatar: "/><br/>
-                            <div className="card-body">
-                                <span> Hotel Name: <span>{hotel.hotelName}</span></span><br/>
-                                <span> Location: <span>{hotel.place}</span></span><br/>
-                                <button type ="submit" className="btn btn-primary">Book Now</button>
-                                <button type ="submit" className="btn btn-dark">Details</button>
-                                {/* <p class="card-text"></p> */}
+        if(this.state.city===''){
+            //if there are no details added
+        }else{
+            console.log(this.state.city); //remove
+            axios.get('http://localhost:4000/hotel/search/'+this.state.city)
+            .then(response => {
+                console.log("didmount")
+                let hotels = response.data.map((hotel) => {
+                    console.log("response")
+                    return (
+                            <div key={hotel.hotelName}>
+                                <div className="card d-block" id="hotelcard">
+                                    <img className="card-img-top" src={'http://localhost:4000/uploads/'+hotel.hotelImage} alt="Hotel Avatar: "/><br/>
+                                    <div className="card-body">
+                                        <span> Hotel Name: <span>{hotel.hotelName}</span></span><br/>
+                                        <span> Location: <span>{hotel.place}</span></span><br/>
+                                        <button type ="submit" className="btn btn-primary">Book Now</button>
+                                        <button type ="submit" className="btn btn-dark">Details</button>
+                                        {/* <p class="card-text"></p> */}
+                                    </div>
+                                </div><br/> 
                             </div>
-                        </span><br/>
-                    </div>    
-                    // <ul >
-                    //     <li>Hotel Name: <span>{hotel.hotelName}</span></li>
-                    //     {/* <li>Email: <span>{hotel.email}</span></li>
-                    //     <li>City: <span>{hotel.place}</span></li> */}
-                    // </ul>
-                )
+                        // <ul >
+                        //     <li>Hotel Name: <span>{hotel.hotelName}</span></li>
+                        //     {/* <li>Email: <span>{hotel.email}</span></li>
+                        //     <li>City: <span>{hotel.place}</span></li> */}
+                        // </ul>
+                    )
+                })
+                this.setState({ hotels : hotels });
+                console.log("state",hotels)
+                // this.setState({ booking:response.data })
             })
-            this.setState({ hotels : hotels });
-            console.log("state",hotels)
-            // this.setState({ booking:response.data })
-        })
-        .catch(function(error){
-            console.log(error); //remove
-        })
+            .catch(function(error){
+                console.log(error); //remove
+            })
+        }
+        
     }
 
     // handleSelect = (index) => {

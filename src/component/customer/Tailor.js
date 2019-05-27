@@ -17,28 +17,28 @@ class Tailor extends Component {
                             <p> Whether you want to modify a tour package on our website or have an itinerary built from scratch, the local travel consultants at Ceylon Island Travel can create your ideal trip. In addition to the benefits of all our tours - booking handpicked hotels, transportation, excursions and more - customized tours offer a personalized experience. You decide where to visit, how long to spend and what type of accommodation suits you best. Let us know what we can do for you by completing the form below. Please provide as many details as possible, even estimates are helpful.</p>
                             <form>
                                 <div className="form-group">
-                                    <label for="inputName">Full Name</label>
+                                    <label htmlFor="inputName">Full Name</label>
                                     <input type="text" className="form-control" id="inputName" placeholder=""/>
                                 </div>
                                 <div className="form-group">
-                                    <label for="InputEmail">Email Address</label>
+                                    <label htmlFor="InputEmail">Email Address</label>
                                     <input type="email" className="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Please Enter Valid email"></input>
                                     <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                                 </div>
                                 <div className="form-group">
-                                    <label for="inputNum">Phone Number</label>
+                                    <label htmlFor="inputNum">Phone Number</label>
                                     <input type="text" className="form-control" id="inputNum" placeholder=""></input>
                                 </div>
-                                <div class="form-group">
-                                    <label for="inputarival">Arrival Date</label>
+                                <div className="form-group">
+                                    <label htmlFor="inputarival">Arrival Date</label>
                                     <input type="text" className="form-control" id="inputarival" placeholder="dd/mm/yyyy"></input>
                                 </div>
-                                <div class="form-group">
-                                    <label for="inputPickup">Pickup Place</label>
+                                <div className="form-group">
+                                    <label htmlFor="inputPickup">Pickup Place</label>
                                     <input type="text" className="form-control" id="inputPickup" placeholder=""></input>
                                 </div>
                                 <div className="form-group">
-                                    <label for="place">Interesting Place To Visit</label>
+                                    <label htmlFor="place">Interesting Place To Visit</label>
                                     <select className="form-control" id="place">
                                         <option>Anuradhapura</option>
                                         <option>Galle</option>
@@ -48,7 +48,7 @@ class Tailor extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group">
-                                    <label for="duration">Tour Duration (Days)</label>
+                                    <label htmlFor="duration">Tour Duration (Days)</label>
                                     <select className="form-control" id="duration">
                                         <option>1</option>
                                         <option>2</option>
@@ -68,7 +68,7 @@ class Tailor extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group">
-                                    <label for="people">No of People</label>
+                                    <label htmlFor="people">No of People</label>
                                     <select className="form-control" id="people">
                                         <option>1</option>
                                         <option>2</option>
@@ -88,14 +88,14 @@ class Tailor extends Component {
                                     </select>
                                 </div>
                                 <div className="form-group">
-                                    <label for="room">Preferred  Accommodation</label>
+                                    <label htmlFor="room">Preferred  Accommodation</label>
                                         <select className="form-control" id="room">
                                             <option>AC</option>
                                             <option>Non AC</option>
                                         </select>
                                 </div>
                                 <div className="form-group">
-                                    <label for="additional">Any Additional Information</label>
+                                    <label htmlFor="additional">Any Additional Information</label>
                                     <textarea className="form-control" id="additional" rows="3"></textarea>
                                 </div>
                                 <button type="submit" className="btn btn-primary">Send</button>
