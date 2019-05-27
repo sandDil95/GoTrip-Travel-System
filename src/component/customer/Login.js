@@ -7,7 +7,7 @@ class Login extends Component {
         this.state={
             email:'',
             passwrd:'',
-            vehicleId:''
+            vehicleId:props.location.state.vehicleId
         }
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -19,7 +19,7 @@ class Login extends Component {
 
     onSubmit(e){
         e.preventDefault();
-        this.state.vehicleId = this.props.location.state.vehicleId;
+        // this.state.vehicleId = this.props.location.state.vehicleId;
         console.log(this.state.vehicleId);
         const customer = {
             email:this.state.email,
@@ -51,7 +51,7 @@ class Login extends Component {
     }
     onHandle(e){
         e.preventDefault();
-        this.state.vehicleId = this.props.location.state.vehicleId;
+        // this.state.vehicleId = this.props.location.state.vehicleId;
         console.log(this.state.vehicleId);
         this.props.history.push({
             pathname: '/register',

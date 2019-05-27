@@ -8,7 +8,7 @@ class Register extends Component {
             fname:'',
             email: '',
             passwrd:'',
-            vehicleId:''
+            vehicleId:props.location.state.vehicleId
         }
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -19,7 +19,7 @@ class Register extends Component {
     }
     onHandle(e){
         e.preventDefault();
-        this.state.vehicleId = this.props.location.state.vehicleId;
+        // this.state.vehicleId = this.props.location.state.vehicleId;
         console.log(this.state.vehicleId);
         this.props.history.push({
             pathname: '/login',
@@ -28,7 +28,7 @@ class Register extends Component {
     }
     onSubmit(e){
         e.preventDefault();
-        this.state.vehicleId = this.props.location.state.vehicleId;
+        // this.state.vehicleId = this.props.location.state.vehicleId;
         console.log(this.state.vehicleId);
 
         const customer = {

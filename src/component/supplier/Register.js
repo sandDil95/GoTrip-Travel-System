@@ -11,9 +11,7 @@ class Register extends Component{
             last_name:'',
             address:'',
             email:'',
-            password:''
-            
-            
+            password:''            
         }
         this.onChange = this.onChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
@@ -36,7 +34,7 @@ class Register extends Component{
        }
        register(user).then(res => {
            
-               this.props.history.push('/login')
+               this.props.history.push('/supplier-login')
            
        })
    }
