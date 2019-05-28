@@ -1,7 +1,7 @@
 import React , {Component} from 'react';
 import './css/Login.css';
 import {login} from './UserFunctions';
-
+const axios = require('axios');
 
 class Login extends Component{
     constructor(){
@@ -18,17 +18,29 @@ class Login extends Component{
        this.setState({[e.target.name]:e.target.value})
    }
    onSubmit(e){
-       e.preventDefault()
+       e.preventDefault();
+       const obj = {
+        email:this.state.email,
+        password:this.state.password
+      };
+      axios.post('http://localhost:4000/user/login/',obj)
+          .then(res => {
+                   if(res){
+                       this.props.history.push('/supplier')
+                   }
+               })
+      
+      
 
-       const user ={
-           email:this.state.email,
-           password:this.state.password
-       }
-       login(user).then(res => {
-           if(res){
-               this.props.history.push('/supplier')
-           }
-       })
+    //    const user ={
+    //        email:this.state.email,
+    //        password:this.state.password
+    //    }
+    //    login(user).then(res => {
+    //        if(res){
+    //            this.props.history.push('/supplier')
+    //        }
+    //    })
    }
    registertosupplier(e){
        this.props.history.push('/supplier-register')

@@ -37,28 +37,66 @@ const upload = multer({
 
 vehicleSearchRoutes.post('/add',upload.single('vehicleImage'),(req,res)=>{
     console.log(req.file);
-    const vehicleDetails = new Vehicle({
-        vehicleOwner : req.body.vehicleOwner,
-        onlyVehicle : req.body.onlyVehicle,
-        vehicleModel : req.body.vehicleModel,
-        locations : req.body.locations,
-        vehicleImage : name,
-        booking : false
-    })
+    if(req.body.onlyVehicle === "driver"){
+        const vehicleDetails = new Vehicle({
+            vehicleOwner :'',
+            vehicleNo : req.body.vehicleNo,
+            contactNo : req.body.contactNo,
+            beginingDate : req.body.beginingDate,
+            endingDate : req.body.endingDate,
+            seatsNo : req.body.seatsNo,
+            onlyVehicle : false,
+            ppkm : req.body.ppkm,
+            vehicleModel : req.body.vehicleModel,
+            locations : req.body.locations,
+            vehicleImage : name,
+            booking : false
+        })
+        vehicleDetails.save()
+        .then(result=>{
+            console.log(result);
+            res.status(201).json({
+                message : 'vehicle added'
+            })
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({
+                error: err
+            })
+        })
+    }else{
+        const vehicleDetails = new Vehicle({
+            vehicleOwner :'',
+            vehicleNo : req.body.vehicleNo,
+            contactNo : req.body.contactNo,
+            beginingDate : req.body.beginingDate,
+            endingDate : req.body.endingDate,
+            seatsNo : req.body.seatsNo,
+            onlyVehicle : true,
+            ppkm : req.body.ppkm,
+            vehicleModel : req.body.vehicleModel,
+            locations : req.body.locations,
+            vehicleImage : name,
+            booking : false
+        })
+        vehicleDetails.save()
+        .then(result=>{
+            console.log(result);
+            res.status(201).json({
+                message : 'vehicle added'
+            })
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({
+                error: err
+            })
+        })
+    }
+    
 
-    vehicleDetails.save()
-    .then(result=>{
-        console.log(result);
-        res.status(201).json({
-            message : 'vehicle added'
-        })
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json({
-            error: err
-        })
-    })
+    
 })
 
 vehicleSearchRoutes.get('/search/:vehicleStatus/:pickupLocation',(req,res)=>{

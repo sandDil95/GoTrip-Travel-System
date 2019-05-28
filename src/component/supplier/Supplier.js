@@ -4,6 +4,7 @@ import Header from './Header';
 import Home from './Home';
 import Footer from './Footer';
 import About from './About';
+import VehicleReg from './VehicleReg';
 
 import Register from './Register';
 
@@ -18,6 +19,7 @@ class Supplier extends Component {
               <Header/>
               <section>
                 <Route path="/supplier" exact component={Home}/>
+                <Route path="/supplier/vehiclereg" exact component={VehicleReg}/>
                 <Route path="/supplier/About-Us" exact component={About}/>
 
                 <Route path="/supplier/Register" exact component={Register}/>

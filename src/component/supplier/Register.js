@@ -9,7 +9,7 @@ class Register extends Component{
         this.state ={
             first_name:'',
             last_name:'',
-            address:'',
+            // address:'',
             email:'',
             password:''            
         }
@@ -27,7 +27,7 @@ class Register extends Component{
        const user ={
            first_name:this.state.first_name,
            last_name:this.state.last_name,
-           address:this.state.address,
+        //    address:this.state.address,
            email:this.state.email,
            password:this.state.password
         //    selectedFile:this.state.selectedFile
@@ -85,7 +85,7 @@ class Register extends Component{
                                 
                                 />
                             </div>
-                            <div className ="form-group">
+                            {/* <div className ="form-group">
                                 <label htmlFor = "address">Address</label>
                                 <input type ="text"
                                         className="form-control"
@@ -95,7 +95,7 @@ class Register extends Component{
                                         onChange ={this.onChange}
                                 
                                 />
-                            </div>
+                            </div> */}
                             <div className ="form-group">
                                 <label htmlFor = "email">Email Address</label>
                                 <input type ="email"
