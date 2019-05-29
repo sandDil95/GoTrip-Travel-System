@@ -1,7 +1,12 @@
 import React, {Component} from 'react';
 import './css/Header.css';
 
+
 import {BrowserRouter as  Router, Route,Link ,withRouter} from "react-router-dom";
+
+// eslint-disable-next-line
+import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+
 import imglogo from '../../assets/logo.png';
 
 
@@ -68,6 +73,9 @@ class Header extends Component{
                         <ul className="navbar-nav mr-auto">
                             <li className="nav-item active">
                                 <Link to="/supplier" className="nav-link">Home</Link>
+                            </li>
+                            <li className="nav-item active">
+                                <Link to="/supplier/vehiclereg" className="nav-link">Vehicle-Registration</Link>
                             </li>
                             <li className="nav-item active">
                                 <Link to="/supplier/About-Us" className="nav-link">About Us</Link>

@@ -56,6 +56,8 @@ mongoose
 
 var Vehicle = require('./routes/Vehicle');
 var Hotel = require('./routes/Hotel');
+var Users = require('../backend/routes/Users');
+var Customer = require('../backend/routes/Customer');
 var IndividualBookingRoutes = require('./routes/IndividualBooking');
 var hotelSearch = require('../backend/routes/HotelSearch');
 var vehicleSearch = require('../backend/routes/VehicleSearch');
@@ -73,6 +75,8 @@ app.use('/hotelReg' ,Hotel);
 //app.use('/imageUp' ,Vehicle);
 app.use('/vehicleLog' ,Vehicle);
 //app.use('/hotelLog' ,Hotel);
+app.use('/user' , Users);
+app.use('/customer',Customer);
 app.use('/individual-booking',IndividualBookingRoutes);
 app.use('/hotel',hotelSearch);
 app.use('/vehicle',vehicleSearch);

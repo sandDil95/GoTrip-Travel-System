@@ -1,7 +1,12 @@
 import React , {Component} from 'react';
 import './css/Login.css';
+
 import {loginVehicle} from './UserFunctions';
 import {loginHotel} from './UserFunctions';
+
+
+import {login} from './UserFunctions';
+const axios = require('axios');
 
 
 class Login extends Component{
@@ -10,17 +15,29 @@ class Login extends Component{
         this.state ={
             email:'',
             password:'',
-            
         }
         this.onChange = this.onChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
-    
+        this.registertosupplier = this.registertosupplier.bind(this);
     }
    onChange(e){
        this.setState({[e.target.name]:e.target.value})
    }
    onSubmit(e){
-       e.preventDefault()
+       e.preventDefault();
+       const obj = {
+        email:this.state.email,
+        password:this.state.password
+      };
+      axios.post('http://localhost:4000/user/login/',obj)
+          .then(res => {
+                   if(res){
+                       this.props.history.push('/supplier')
+                   }
+               })
+      
+      
+
 
        const user ={
            email:this.state.email,
@@ -41,6 +58,20 @@ class Login extends Component{
     //    }
        
        
+
+    //    const user ={
+    //        email:this.state.email,
+    //        password:this.state.password
+    //    }
+    //    login(user).then(res => {
+    //        if(res){
+    //            this.props.history.push('/supplier')
+    //        }
+    //    })
+   }
+   registertosupplier(e){
+       this.props.history.push('/supplier-register')
+
    }
     render(){
         return(
@@ -77,9 +108,15 @@ class Login extends Component{
                                     
                                     />
                                 </div>
-                                <button type ="submit" className ="btn btn-lg btn-primary btn--block">
+                                
+                                <button type ="submit" className ="btn btn-primary btn--block">
                                         Sign in
                                 </button>
+                                <p>Not yet signup?
+                                    <button onClick = {this.registertosupplier} type ="submit" className ="btn btn-primary btn--block">
+                                            SignUp
+                                    </button>
+                                </p>
                             </form>
                         </div>
                     </div>

@@ -1,4 +1,5 @@
 import React , {Component} from 'react';
+import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 import {imageupload} from './UserFunctions';
 
@@ -41,6 +42,7 @@ class Profile extends Component{
     //     })
     // }
     componentDidMount(){
+        axios.get('http://localhost:4000/supplier')
         const token = localStorage.usertoken
         const decoded = jwt_decode(token)
         this.setState({
@@ -50,7 +52,17 @@ class Profile extends Component{
             address:decoded.address
             // file:decoded.file,
 
+        // axios.get('http://localhost:4000/supplier')
+        // .then(response => {
+        //   this.setState({ first_name: response.data });
+        //   this.setState({ last_name: response.data });
+        //   this.setState({ email: response.data });
+        // })
+        // .catch(function (error) {
+        //   console.log(error);
+        // })
         })
+        
     }
     render(){
         return(

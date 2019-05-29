@@ -13,6 +13,7 @@ export const vehicleregister = newVehicle =>{
     //     console.log(oVehicle);
     // }
     return axios
+
     .post('vehicleReg/vehicleregister' ,{
         first_name:newVehicle.first_name,
         last_name:newVehicle.last_name,
@@ -35,6 +36,14 @@ export const vehicleregister = newVehicle =>{
         //profile_image:newVehicle.profile_image,
         password:newVehicle.password
         
+
+    .post('user/register' ,{
+        first_name:newUser.first_name,
+        last_name:newUser.last_name,
+        // address:newUser.address,
+        email:newUser.email,
+        password:newUser.password,
+
 
     })
     
