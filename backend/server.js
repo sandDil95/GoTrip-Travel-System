@@ -28,6 +28,7 @@ var Customer = require('../backend/routes/Customer');
 var IndividualBookingRoutes = require('./routes/IndividualBooking');
 var hotelSearch = require('../backend/routes/HotelSearch');
 var vehicleSearch = require('../backend/routes/VehicleSearch');
+var NotifyEndTrip = require('../backend/routes/NotifyEndTrip');
 
 // Initialize CORS middleware
 app.use(function(req, res, next) {
@@ -41,7 +42,7 @@ app.use('/customer',Customer);
 app.use('/individual-booking',IndividualBookingRoutes);
 app.use('/hotel',hotelSearch);
 app.use('/vehicle',vehicleSearch);
-
+app.use('/notify',NotifyEndTrip);
 // app.use((req,res,next) =>{
 //     const error = new Error('Not Found');
 //     error.status(404);

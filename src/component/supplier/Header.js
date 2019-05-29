@@ -32,6 +32,9 @@ class Header extends Component{
                                 <Link to="/supplier/hotelreg" className="nav-link">Hotel-Registration</Link>
                             </li>
                             <li className="nav-item active">
+                                <Link to="/supplier/NotifyEndTrip" className="nav-link">Notify-Trip</Link>
+                            </li>
+                            <li className="nav-item active">
 
                                 {/* <Link to="/supplier/Register" className="nav-link">Register</Link> */}
 

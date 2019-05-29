@@ -6,7 +6,7 @@ import Footer from './Footer';
 import About from './About';
 import VehicleReg from './VehicleReg';
 import HotelReg from './HotelReg';
-
+import NotifyEndTrip from './NotifyEndTrip';
 import Register from './Register';
 
 import Profile from './Profile'
@@ -23,6 +23,7 @@ class Supplier extends Component {
                 <Route path="/supplier/vehiclereg" exact component={VehicleReg}/>
                 <Route path="/supplier/hotelreg" exact component={HotelReg}/>
                 <Route path="/supplier/About-Us" exact component={About}/>
+                <Route path="/supplier/NotifyEndTrip" exact component={NotifyEndTrip}/>
 
                 <Route path="/supplier/Register" exact component={Register}/>
 
