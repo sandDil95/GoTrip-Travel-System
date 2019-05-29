@@ -103,7 +103,7 @@ class Home extends Component{
                                 <div className="col-sm-1"></div>
                                 <div className="col-lg-6">
                                     <form id="accomadtn" className = "form-container" onSubmit={this.onSubmit}> 
-                                        <h2>Find the perfect place to stay</h2><br/>
+                                        <h2><strong>Find the perfect place to stay</strong></h2><br/>
                                         <div className ="form-group">
                                             <input placeholder="City" className="form-control" name="city" onChange={this.onChange} type="text" value={this.state.city}/><br/>
                                         </div>
@@ -132,6 +132,7 @@ class Home extends Component{
                                                 <button type ="submit" className="btn btn-primary">Search</button>
                                             </div>
                                         </div><br/>
+                                        
                                     </form>
                                 </div>
                                 <div className="col-lg-4">
@@ -151,6 +152,32 @@ class Home extends Component{
                         {/* </div> */}
                     </div>
                 </div>
+                <br></br>
+                <h1 class="text-center">Overheard from Customers</h1>
+                <br></br>
+                <div className="row">
+                                            <div className="col-lg-4">
+                                                <h4 className="text-center"><strong>Hotel Lavina</strong></h4>
+                                            
+                                            <h5 class="text-center">"The hotel was simple amazing and I couldn't thank GoTrip more for helping out. I've been a customer for awhile and I have to say it's probably my favourite app!"</h5>
+                                            <p className="text-center">Mr.Aravinda Yasas</p>
+                                            </div>
+                                            <div className="col-lg-4">
+                                            <h4 className="text-center"><strong>Tango Ressort</strong></h4>
+                                            
+                                                <h5 class="text-center">"We got a great last minute rate with GoTrip and this room was spacious with a comfortable and warm bed."</h5>
+                                               <br></br> 
+                                               <br></br><p className="text-center">Mrs.Nayomi Silva</p>
+                                            </div>
+                                            <div className="col-lg-4">
+                                            <h4 className="text-center"><strong>Hotel Sweet Place</strong></h4>
+                                            
+                                            <h5 class="text-center">"We booked Hotel Eucalyptus through GoTrip after reading a handful of reviews, and it was easily the best decision we made for our trip to Santorini."</h5>
+                                            <br></br><p className="text-center">Mr.Kelum Narayana</p>
+
+                                            </div>
+                                        </div><br/>
+               
                 <Footer/>
             </div>
         )
