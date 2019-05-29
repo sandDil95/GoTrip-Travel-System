@@ -7,21 +7,33 @@ let Hotel = new Schema({
         type:String,
         required: true,
     },
-    email:{
+    contactNo:{
         type:String,
-        required: true,
+        required:true
     },
     place:{
         type: String,
         required:true
     },
-    hotelImage:{
+    hotelType:{
         type:String,
         required:true
     },
+    single_room_num:{
+        type:Number,
+        required:true
+    },
+    double_room_num:{
+        type:Number,
+        required:true
+    },
+    hotelImage:{
+        type:String,
+        //required:true
+    },
     booking:{
         type:Boolean,
-        required: true,
+        //required: true,
     }
 });
 

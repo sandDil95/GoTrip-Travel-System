@@ -1,6 +1,6 @@
 import React , {Component} from 'react';
 import './css/Login.css';
-import {login} from './UserFunctions';
+//import {login} from './UserFunctions';
 const axios = require('axios');
 
 class Login extends Component{
