@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 
-class Package extends Component {
+class Aboutus extends Component {
     render(){
         return(
             <div>
@@ -34,4 +34,4 @@ class Package extends Component {
         )
     }
 }
-export default Package;
+export default Aboutus;

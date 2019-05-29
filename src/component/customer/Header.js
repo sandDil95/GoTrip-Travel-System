@@ -28,9 +28,12 @@ class Header extends Component{
                     </button> */}
                     <nav id="navbarCollapse" className="nav nav-masthead ">
                         <ul className="navbar-nav mr-auto">
+                        <li className="nav-item active">
+                                <Link to="/" className="nav-link">Home</Link>
+                            </li>
                             
                             <li className="nav-item active">
-                                <Link to="/" className="nav-link">Accomadations</Link>
+                                <Link to="/accomadations" className="nav-link">Accomadations</Link>
                             </li>
                             <li className="nav-item active">
                                 <Link to="/vehicle" className="nav-link">Vehicles</Link>
