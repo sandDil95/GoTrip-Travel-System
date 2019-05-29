@@ -2,13 +2,10 @@ const express = require('express');
 const vehicleSearchRoutes = express.Router();
 var ObjectId = require('mongodb').ObjectID;
 
+const mailer = require('../routes/mailer');
 const Vehicle = require('../models/Vehicle');
 const Customer = require('../models/Customer');
-var picklocation;
-var droplocation;
-var start;
-var end;
-var size;
+const BookedVehicles = require('../models/bookedVehicles');
 
 var name;
 const multer = require('multer');
@@ -49,7 +46,7 @@ vehicleSearchRoutes.post('/add',upload.single('vehicleImage'),(req,res)=>{
             ppkm : req.body.ppkm,
             vehicleModel : req.body.vehicleModel,
             locations : req.body.locations,
-            vehicleImage : name,
+            vehicleImage : '',
             booking : false
         })
         vehicleDetails.save()
@@ -147,5 +144,52 @@ vehicleSearchRoutes.get('/vehiclebooking/:id/:email',(req,res)=>{
     })
 })
 
+vehicleSearchRoutes.post('/reserved',(req,res)=>{
+    console.log("reserved");
+    const html = `Hi there,
+        <br/>
+        You have booked successfully!
+        <br/><br/>
+        Booking Details
+        <ul>
+            <li>picklocation: ${req.body.picklocation}</li>
+            <li>droplocation: ${req.body.droplocation}</li>
+            <li>start: ${req.body.start}</li>
+            <li>end: ${req.body.end}</li>
+            <li>email: <b>${req.body.email}</b></li>
+        </ul>` ;
+
+        Customer.find({email:req.body.email},function(err,custmr){
+            console.log(custmr[0]._id);
+            if(custmr.length>=1){
+                const booking = new BookedVehicles({
+                    vehicleId: req.body.vehicleId,
+                    customerId: custmr[0]._id,
+                    picklocation :req.body.picklocation,
+                    droplocation : req.body.droplocation,
+                    start : req.body.start,
+                    end : req.body.end,
+                    email : req.body.email,
+                });
+                console.log(booking);
+                booking.save((err, doc) => {
+                    if (!err){        //sucessfilly booked                    
+                        res.status(200).json({
+                            message: "Successfully Inserted",
+                            Signup : booking
+                        })
+                        mailer.sendEmail('gotrip.lk@gmail.com', req.body.email, 'Vehicle Reservation', html)
+    
+                    }else{
+                        return res.status(500).json({
+                            error: err
+                        });
+                    }
+                });
+            }else{
+                res.status(404).json({status:'Not Found'})
+            }
+        })
+})
 
 module.exports = vehicleSearchRoutes;

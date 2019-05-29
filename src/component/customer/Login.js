@@ -7,7 +7,12 @@ class Login extends Component {
         this.state={
             email:'',
             passwrd:'',
-            vehicleId:props.location.state.vehicleId
+            vehicleId:props.location.state.vehicleId,
+            picklocation: props.location.state.picklocation,
+            droplocation: props.location.state.droplocation,
+            size: props.location.state.size,
+            start: props.location.state.start,
+            end: props.location.state.end,
         }
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -32,7 +37,11 @@ class Login extends Component {
                 pathname: '/Vehicle/vehiclebooking',
                 state: {
                     vehicleId:this.state.vehicleId,
-                    email:this.state.email
+                    picklocation:this.state.picklocation,
+                    droplocation:this.state.droplocation,
+                    email:this.state.email,
+                    start:this.state.start,
+                    end: this.state.end,
                 }
             })
         },error=>{
