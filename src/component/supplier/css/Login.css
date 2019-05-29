@@ -52,7 +52,7 @@
     opacity: 0.8;
   }
   
-
+  .sup-inner{
   /* The image used */
   background-image: url("../../../assets/waterfall.jpg");
 
@@ -63,7 +63,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-}
+  }
 #regsup{
     display: inline-block;
 }
