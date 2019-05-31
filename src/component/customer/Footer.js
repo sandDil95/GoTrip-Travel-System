@@ -9,7 +9,7 @@ class Footer extends Component{
                         Contact Us: <br/>
                             Fixed : +94112222222  <br/>
                             Mobile : +94702323233<br/>
-                        Email Address : gotrip@gmail.co<br/>
+                        Email Address : gotrip@gmail.com<br/>
                         
                 </div>
             </footer>

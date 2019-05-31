@@ -1,0 +1,40 @@
+main{
+    background-color:white;
+    justify-content: center;
+    
+    
+}
+
+.jumbotron {
+  background-image: url("../../../assets/wild.jpg");
+  height:400px;
+}
+
+#pkg-detail{
+    margin-right:200px;
+    margin-left: 200px;
+    background:transparent;
+    margin-top:70px;
+    border-color: white;
+    height:100px;
+   
+}
+.card-body{
+    font-size:48px;
+    color:white;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+   
+}
+
+
+
+h1{
+    font-size:40px;
+}
+
+.card-left{
+    background-color: aquamarine;
+    width:400px;
+    justify-content: center;
+}
