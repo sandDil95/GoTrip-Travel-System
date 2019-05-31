@@ -3,8 +3,8 @@
     width: 20%;
 }
 .navbar{
-    background-color: rgb(13, 14, 15);
-    color:black;
+    background-color: rgb(14, 69, 199);
+    color:white;
     border: 0;
     border-radius: 0;
     width: 100%;
@@ -67,8 +67,11 @@
 .dropdown{
     margin-left:auto;
 }
+.dropdown-menu{
+    background-color:blue;
+}
 .btn-secondary{
-    background-color: black;
+    background-color:black;
     color:rgb(10, 9, 9);
     letter-spacing: 1px;
     line-height: 20px;

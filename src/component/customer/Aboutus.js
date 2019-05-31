@@ -1,34 +1,20 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import './css/Aboutus.css';
+
 
 class Aboutus extends Component {
     render(){
         return(
             <div>
                 <Header/>
-                <main className="inner cover lead" role="main">
-                    hjbjbbbnhbbhjkkb bjbkbj
-                    <br/><br/><br/><br/><br/><br/>
-                    
-                    <br/><br/><br/>
-                    <br/><br/><br/>
-                    <br/>
-                    <br/><br/>
-                    <br/><br/><br/>
-                    <br/><br/><br/><br/>
-                    <br/><br/><br/><br/>
-                    <br/><br/><br/>
-                    <br/><br/><br/>
-                    <br/><br/><br/>
-                    <br/><br/><br/>
-                    <br/><br/><br/>
-                    <br/><br/><br/>
-                    <br/><br/><br/>
-                    <br/><br/><br/>
-                    <br/><br/>
-                    <br/><br/><br/>
-                </main>
+                <div id="content-body">
+
+                </div>
+                <h1>gbfjkjhgf</h1>
+
+                
                 <Footer/>
             </div>
         )
