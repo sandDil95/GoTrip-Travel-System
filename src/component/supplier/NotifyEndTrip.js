@@ -1,5 +1,22 @@
 import React , {Component} from 'react';
 import axios from 'axios';
+import validator from 'validator';
+
+// const validatePhoneNumber = number => {
+//     const isValidPhoneNumber = validator.isMobilePhone(number)
+//     return (isValidPhoneNumber)
+// }
+// const emailRegex = RegExp(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
+// //const telNum = RegExp(/^[0-9]*$/);
+const formValid = formErrors =>{
+    let valid = true;
+
+    Object.values(formErrors).forEach(val => {
+        val.length > 0 && (valid = false);
+    });
+    return valid;
+    
+}
 
 class NotifyEndTrip extends Component{
     constructor(props){
@@ -19,6 +36,22 @@ class NotifyEndTrip extends Component{
             entry_ticket:'',
             highway_ticket:'',
             other_fee:'',
+            formErrors:{
+                first_name:"",
+                last_name:"",
+                supplier_name:"",
+                vehicle_no:"",
+                //begingdate:"",
+                //endingdate:"",
+                travled_place:"",
+                total_distanse:"",
+                guide_fee:"",
+                parcking_fee:"",
+                entry_ticket:"",
+                highway_ticket:"",
+                other_fee:""
+
+            }
 
         }
         this.onChange = this.onChange.bind(this)
@@ -28,34 +61,109 @@ class NotifyEndTrip extends Component{
     }
 
    onChange(e){
-       this.setState({[e.target.name]:e.target.value})
-   }
-//    onSubmit(e){
-//        e.preventDefault()
+       //this.setState({[e.target.name]:e.target.value});
+       const {name , value} = e.target;
+       let formErrors = this.state.formErrors;
+       //let number = this.state.number;
 
-//        const user ={
-//            vehicleNo:this.state.vehicleNo,
-//            contactNo:this.state.contactNo,
-//            beginingDate:this.state.beginingDate,
-//            endingDate:this.state.endingDate,
-//            seatsNo:this.state.seatsNo,
-//            onlyVehicle : this.state.onlyVehicle,
-//            ppkm : this.state.ppkm,
-//            vehicleModel : this.state.vehicleModel,
-//            locations : this.state.locations,
-//            vehicleImage : this.state.vehicleImage,
-//         //    selectedFile:this.state.selectedFile
-//        }
-//        register(user).then(res => {
-           
-//                this.props.history.push('/supplier-login')
-           
-//        })
-//    }
+       switch(name){
+            case'first_name':
+            formErrors.first_name =
+                value.length < 3
+                    ?"minimum 3 characaters required" 
+                    :""; 
+            break;
+            case'last_name':
+            formErrors.last_name =
+                value.length < 3
+                    ?"minimum 3 characaters required" 
+                    :""; 
+            break;
+            case'supplier_name':
+            formErrors.supplier_name =
+                value.length < 3
+                    ?"minimum 3 characaters required" 
+                    :""; 
+            break;
+            case'vehicle_no':
+            formErrors.vehicle_no =
+                value.length < 3
+                    ?"minimum 3 characaters required" 
+                    :""; 
+            break;
+            case'travled_place':
+            formErrors.travled_place =
+                value.length < 3
+                    ?"minimum 3 characaters required" 
+                    :""; 
+            break;
+            case'total_distanse':
+            formErrors.total_distanse =
+                value.length < 3
+                    ?"minimum 3 characaters required" 
+                    :""; 
+            break;
+            case'guide_fee':
+            formErrors.guide_fee =
+                value.length < 3
+                    ?"minimum 3 characaters required" 
+                    :""; 
+            break;
+            case'parcking_fee':
+            formErrors.parcking_fee =
+                value.length < 3
+                    ?"minimum 3 characaters required" 
+                    :""; 
+            break;
+            case'entry_ticket':
+            formErrors.entry_ticket =
+                value.length < 3
+                    ?"minimum 3 characaters required" 
+                    :""; 
+            break;
+            case'highway_ticket':
+            formErrors.highway_ticket =
+                value.length < 3
+                    ?"minimum 3 characaters required" 
+                    :""; 
+            break;
+            case'other_fee':
+            formErrors.other_fee =
+                value.length < 3
+                    ?"minimum 3 characaters required" 
+                    :""; 
+            break;
+       }
+       this.setState({formErrors ,[name]:value},()=>console.log(this.state));
+   }
+
    notifyTrip(e){
     e.preventDefault();
+    if(formValid(this.state.formErrors)){
+        console.log(`
+             --SUBMITING--
+             first_name:${this.state.first_name},
+             last_name:${this.state.last_name},
+             supplier_name:${this.state.supplier_name},
+             vehicle_no:${this.state.vehicle_no},
+             begingdate:${this.state.begingdate},
+             endingdate:${this.state.endingdate},
+             
+             travled_place:${this.state.travled_place},
+             total_distanse:${this.state.total_distanse},
+             guide_fee:${this.state.guide_fee},
+             parcking_fee:${this.state.parcking_fee},
+             entry_ticket:${this.state.entry_ticket},
+             highway_ticket:${this.state.highway_ticket},
+             other_fee:${this.state.other_fee}
+        `)
+    }
+    
+    else{
+        console.error('Form Invalid - Display Error Masage');
+    }
     const obj = {
-        first_name:this.state.first_name,
+           first_name:this.state.first_name,
            last_name:this.state.last_name,
            supplier_name:this.state.supplier_name,
            vehicle_no:this.state.vehicle_no,
@@ -82,28 +190,16 @@ class NotifyEndTrip extends Component{
                 }
             })
    }
-//    logintosupplier(e){
-//      this.props.history.push('/supplier-login')
-//    }
-//    state={
-//        selectedFile:null
-//    }
-//    fileSelectedHandler = event =>{
-//        this.setState({
-//            selectedFile:event.target.files[0]
-//        })
-//    }
-//    fileUploadedHandler = () =>{
-//         axios.post('http://');
-//    }
+
 
     render(){
+        const {formErrors} = this.state;
         return(
             <div className ="bg-img">
                 {/* <div className ="container"> */}
                 <div className ="row">
                     <div className ="col-md-6 mt-5 mx-auto">
-                        <form className = "form-container" onSubmit ={this.onSubmit}> 
+                        <form className = "form-container" noValidate onSubmit ={this.onSubmit}> 
                             
                             <h1 className ="h3 mb-3 font-weight-normal">Please sign Up</h1>
                             <div className="row">
@@ -116,12 +212,12 @@ class NotifyEndTrip extends Component{
                                             placeholder ="Enter First Name"
                                             value ={this.state.first_name}
                                             onChange ={this.onChange}
-                                            //noValidate
+                                            noValidate
                                     
                                     />
-                                    {/* {formErrors.first_name.length>0 && (
+                                    {formErrors.first_name.length>0 && (
                                         <span className="errorMessage">{formErrors.first_name}</span>
-                                    )} */}
+                                    )}
                                 </div>
                                 <div className ="col-lg-6">
                                     {/* <label htmlFor = "last_name">Last Name </label> */}
@@ -132,15 +228,15 @@ class NotifyEndTrip extends Component{
                                             placeholder ="Enter Last Name"
                                             value ={this.state.last_name}
                                             onChange ={this.onChange}
-                                            //noValidate
+                                            noValidate
                                     
                                     />
-                                    {/* {formErrors.last_name.length>0 && (
+                                    {formErrors.last_name.length>0 && (
                                         <span className="errorMessage">{formErrors.last_name}</span>
-                                    )} */}
-                                </div><br/>
+                                    )}
+                                </div>
                         
-                            </div>
+                            </div><br/>
                             
                             <div className="row">
                                 <div className ="col-lg-6">
@@ -152,12 +248,12 @@ class NotifyEndTrip extends Component{
                                             placeholder ="Enter Supplier Name"
                                             value ={this.state.supplier_name}
                                             onChange ={this.onChange}
-                                            //noValidate
+                                            noValidate
                                     
                                     />
-                                    {/* {formErrors.email.length>0 && (
-                                        <span className="errorMessage">{formErrors.email}</span>
-                                    )} */}
+                                    {formErrors.supplier_name.length>0 && (
+                                        <span className="errorMessage">{formErrors.supplier_name}</span>
+                                    )}
                                 </div>
                                 <div className ="col-lg-6">
                                     {/* <label htmlFor = "contactNo">Contact Number </label> */}
@@ -168,12 +264,12 @@ class NotifyEndTrip extends Component{
                                             placeholder ="Enter Vehicle Number"
                                             value ={this.state.vehicle_no}
                                             onChange ={this.onChange}
-                                            //noValidate
+                                            noValidate
                                     
                                     />
-                                    {/* {number.contactNo.length>0 && (
-                                        <span className="errorMessage">{number.contactNo}</span>
-                                    )} */}
+                                    {formErrors.vehicle_no.length>0 && (
+                                        <span className="errorMessage">{formErrors.vehicle_no}</span>
+                                    )}
                                 </div>
                             </div><br/>
                             <div className="row">
@@ -209,12 +305,12 @@ class NotifyEndTrip extends Component{
                                             placeholder ="Enter Travled Place"
                                             value ={this.state.travled_place}
                                             onChange ={this.onChange}
-                                            //noValidate
+                                            noValidate
                                     
                                     />
-                                    {/* {formErrors.address.length>0 && (
-                                        <span className="errorMessage">{formErrors.address}</span>
-                                    )} */}
+                                    {formErrors.travled_place.length>0 && (
+                                        <span className="errorMessage">{formErrors.travled_place}</span>
+                                    )}
                                 </div>
                             </div><br/>
                            
@@ -228,12 +324,12 @@ class NotifyEndTrip extends Component{
                                             placeholder ="Enter Total Guide Fee"
                                             value ={this.state.guide_fee}
                                             onChange ={this.onChange}
-                                            //noValidate
+                                            noValidate
                                     
                                     />
-                                    {/* {formErrors.email.length>0 && (
-                                        <span className="errorMessage">{formErrors.email}</span>
-                                    )} */}
+                                    {formErrors.guide_fee.length>0 && (
+                                        <span className="errorMessage">{formErrors.guide_fee}</span>
+                                    )}
                                 </div>
                                 <div className ="col-lg-6">
                                     {/* <label htmlFor = "contactNo">Contact Number </label> */}
@@ -244,12 +340,12 @@ class NotifyEndTrip extends Component{
                                             placeholder ="Enter Total Parcking Fee"
                                             value ={this.state.parcking_fee}
                                             onChange ={this.onChange}
-                                            //noValidate
+                                            noValidate
                                     
                                     />
-                                    {/* {number.contactNo.length>0 && (
-                                        <span className="errorMessage">{number.contactNo}</span>
-                                    )} */}
+                                    {formErrors.parcking_fee.length>0 && (
+                                        <span className="errorMessage">{formErrors.parcking_fee}</span>
+                                    )}
                                 </div>
                             </div><br/>
                             <div className="row">
@@ -262,12 +358,12 @@ class NotifyEndTrip extends Component{
                                             placeholder ="Enter Entire Ticket Number"
                                             value ={this.state.entry_ticket}
                                             onChange ={this.onChange}
-                                            //noValidate
+                                            noValidate
                                     
                                     />
-                                    {/* {formErrors.email.length>0 && (
-                                        <span className="errorMessage">{formErrors.email}</span>
-                                    )} */}
+                                    {formErrors.entry_ticket.length>0 && (
+                                        <span className="errorMessage">{formErrors.entry_ticket}</span>
+                                    )}
                                 </div>
                                 <div className ="col-lg-6">
                                     {/* <label htmlFor = "contactNo">Contact Number </label> */}
@@ -278,12 +374,12 @@ class NotifyEndTrip extends Component{
                                             placeholder ="Enter Highway Ticket Number"
                                             value ={this.state.highway_ticket}
                                             onChange ={this.onChange}
-                                            //noValidate
+                                            noValidate
                                     
                                     />
-                                    {/* {number.contactNo.length>0 && (
-                                        <span className="errorMessage">{number.contactNo}</span>
-                                    )} */}
+                                    {formErrors.highway_ticket.length>0 && (
+                                        <span className="errorMessage">{formErrors.highway_ticket}</span>
+                                    )}
                                 </div>
                             </div><br/>
                             
@@ -297,12 +393,12 @@ class NotifyEndTrip extends Component{
                                             placeholder ="Enter Total Distanse"
                                             value ={this.state.total_distanse}
                                             onChange ={this.onChange}
-                                            //noValidate
+                                            noValidate
                                     
                                     />
-                                    {/* {formErrors.email.length>0 && (
-                                        <span className="errorMessage">{formErrors.email}</span>
-                                    )} */}
+                                    {formErrors.total_distanse.length>0 && (
+                                        <span className="errorMessage">{formErrors.total_distanse}</span>
+                                    )}
                                 </div>
                                 <div className ="col-lg-6">
                                     {/* <label htmlFor = "contactNo">Contact Number </label> */}
@@ -313,12 +409,12 @@ class NotifyEndTrip extends Component{
                                             placeholder ="Enter Other Fee"
                                             value ={this.state.other_fee}
                                             onChange ={this.onChange}
-                                            //noValidate
+                                            noValidate
                                     
                                     />
-                                    {/* {number.contactNo.length>0 && (
-                                        <span className="errorMessage">{number.contactNo}</span>
-                                    )} */}
+                                    {formErrors.other_fee.length>0 && (
+                                        <span className="errorMessage">{formErrors.other_fee}</span>
+                                    )}
                                 </div>
                             </div><br/>
                             
