@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router , Route } from 'react-router-dom';
 import Customer from './component/customer/Customer';
-<<<<<<< HEAD
-import Supplier from './component/supplier/Supplier';
+// import Supplier from './component/supplier/Supplier';
 import WildLife from './component/customer/WildLife';
 import Register_c from './component/customer/Register_c';
-=======
->>>>>>> 8efb609d743774a15badfc2a6dab33a1cf35b1fc
 // import Vehicle from './component/customer/Vehicle';
 
 // import Login from './component/supplier/Login';
