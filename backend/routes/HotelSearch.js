@@ -32,9 +32,12 @@ hotelSearchRoutes.post('/add',upload.single('hotelImage'),(req,res)=>{
     console.log(req.file);
     const hotelDetails = new Hotel({
         hotelName: req.body.hotelName,
-        email: req.body.email,
+        contactNo: req.body.contactNo,
         place: req.body.place,
-        hotelImage : name,
+        hotelType:req.body.hotelType,
+        single_room_num:req.body.single_room_num,
+        double_room_num:req.body.double_room_num,
+        hotelImage : '',
         booking : false
     })
     hotelDetails.save()

@@ -3,6 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 import './css/Vehicle.css';
 import axios from 'axios';
+
 // import vehi from '../../assets/vehi.jpg';
 
 class Vehicle extends Component {
@@ -11,62 +12,114 @@ class Vehicle extends Component {
         this.state = {
             picklocation : '',
             droplocation : '',
-            start : '',
-            end : '',
             size : '',
             avatar : '',
-            // vehicleId : ''
+            checked : false,
+            start: new Date(),
+            end: new Date(),
+            vehicleId : '',
+            day: '',
+            month: '',
+            year: '',
+            current: '',
+            currentplus: '',
+            currentdate: new Date().toLocaleString()
         }
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.bookVehicle = this.bookVehicle.bind(this);
+        this.myFunction = this.myFunction.bind(this);
+        this.vehicleBook = this.vehicleBook.bind(this);
     }
+    getDate() {
+        const now = new Date();
+        
+        if(this.state.month<10){
+            // eslint-disable-next-line
+            this.state.current = now.getFullYear()+'-0'+(now.getMonth()+1)+"-"+now.getDate();
+            // eslint-disable-next-line
+            this.state.currentplus = now.getFullYear()+'-0'+(now.getMonth()+1)+"-"+(now.getDate()+1);
+        }else{
+            // eslint-disable-next-line
+            this.state.current = now.getFullYear()+'-'+(now.getMonth()+1)+"-"+now.getDate();
+            // eslint-disable-next-line
+            this.state.currentplus = now.getFullYear()+'-'+(now.getMonth()+1)+"-"+(now.getDate()+1);
+        }
+        console.log(this.state.current);
+    }
+
     onChange(e){
         this.setState({[e.target.name]:e.target.value})
     }
-    
-    onSubmit(e){
+    componentDidMount() {
+        this.getDate();
+    }
+    onSubmit(e){ //search button click
         e.preventDefault();
-        console.log("hjnkjkn")
-        const searchDetails = {
-            picklocation : this.state.picklocation,
-            droplocation : this.state.droplocation,
-            start : this.state.start,
-            end: this.state.end,
-            size: this.state.size,
-            // hotels:[],
+        console.log("hjnkjkn");
+        if(this.state.picklocation === this.state.droplocation){
+            const searchDetails = {
+                picklocation : this.state.picklocation,
+                droplocation : this.state.picklocation,
+                from : this.state.from,
+                to : this.state.to,
+                size: this.state.size,
+            }
+            console.log(this.state.droplocation);
+            console.log(searchDetails);
+            this.vehicleBook();
+        }else{
+            const searchDetails = {
+                picklocation : this.state.picklocation,
+                droplocation : this.state.droplocation,
+                from : this.state.from,
+                to : this.state.to,
+                size: this.state.size,
+            }
+            console.log(this.state.droplocation);
+            console.log(searchDetails);
+            this.vehicleBook();
         }
-        console.log(this.state.vehicleId+"              id");
-        console.log(searchDetails);
-        this.componentDidMount();
     }
 
-    bookVehicle(e,vehicleId){
+    bookVehicle(e){ //click booking vehicle
         e.preventDefault()
         console.log(this.state.vehicleId+" bookvehicle inside");
         // this.props.history.push({
         //     pathname: '/Vehicle/vehiclebooking',
         //     state: {vehicleId:this.state.vehicleId}
         // })
-        this.props.history.push({
-            pathname: '/login',
-            state: {vehicleId:this.state.vehicleId}
-        })
-           
+        if(this.state.picklocation !== this.state.droplocation){
+            console.log("if")
+            this.props.history.push({
+                pathname: '/login',
+                state: { vehicleId:this.state.vehicleId, picklocation:this.state.picklocation, droplocation:this.state.picklocation, size:this.state.size, start:this.state.start, end:this.state.end }
+            })
+        }else{
+            console.log("else")
+            this.props.history.push({
+                pathname: '/login',
+                state: { vehicleId:this.state.vehicleId, picklocation:this.state.picklocation, droplocation:this.state.droplocation, start:this.state.start, end:this.state.end }
+            })
+        }           
     }
-
-    componentDidMount(){
+    myFunction() {
+        this.setState({
+            checked: !this.state.checked
+        })
+    } 
+    vehicleBook(){
         console.log(this.state.size);
+        // axios.get('http://localhost:4000/vehicle/search/'+this.state.size+'/'+this.state.picklocation+'/'+this.state.start+'/'+this.state.end) //check vehicle only or vehicle with driver
         axios.get('http://localhost:4000/vehicle/search/'+this.state.size+'/'+this.state.picklocation) //check vehicle only or vehicle with driver
         .then(response => {
             console.log("didmount")
             let vehicles = response.data.map((vehicle) => {
-                this.state.vehicleId = vehicle._id; //get selected vehicle id to send vehicle booking page
-                
+                this.setState({vehicleId : vehicle._id}) //get selected vehicle id to send vehicle booking page
                 console.log(this.state.vehicleId+"response");
                 return (
-                    <div>
-                        <span className="card d-block" id="vehiclecard" key={vehicle.vehicleOwner}>
+                    <div key={vehicle._id}>
+                        <div className="card d-block" id="vehiclecard">
                             <img className="card-img-top" src={'http://localhost:4000/uploads/'+vehicle.vehicleImage} alt="Vehicle Avatar: "/><br/>
                             <div className="card-body">
                                 <span> Vehicle Owner: <span>{vehicle.vehicleOwner}</span></span><br/>
@@ -77,16 +130,11 @@ class Vehicle extends Component {
                                 
                                 {/* <p class="card-text"></p> */}
                             </div>
-                        </span><br/>
+                        </div><br/>
                     </div>
-
-                    
-                    // <ul key={vehicle.vehicleOwner}>
-                    //     <li>Vehicle Owner: <span>{vehicle.vehicleOwner}</span></li>
-                    //     {/* <li>Email: <span>{hotel.email}</span></li>
-                    //     <li>Pickup Location: <span>{hotel.place}</span></li> */}
-                    // </ul>
                 )
+            },error=>{
+                alert("Not found")
             })
             this.setState({ vehicles : vehicles });
             console.log("state",vehicles)
@@ -98,6 +146,11 @@ class Vehicle extends Component {
     }
 
     render(){
+
+        const content = this.state.checked ? <div className ="form-group">
+                                                    <input placeholder="Drop-off Location" className="form-control" name="droplocation" onChange={this.onChange} type="text" value={this.state.droplocation}/><br/>
+                                             </div> : null;
+
         return(
             <div>
                 <Header/>
@@ -110,25 +163,25 @@ class Vehicle extends Component {
                                     <form id="van" className = "form-container" onSubmit={this.onSubmit}> 
                                         <h2>Find your ideal Vehicle to travel</h2><br/>
                                         <div className ="form-group">
-                                            <input placeholder="Pick-up Location" className="form-control" name="picklocation" onChange={this.onChange} type="text" value={this.state.picklocation}/><br/>
+                                            <input placeholder="Pick-up Location" className="form-control" name="picklocation" onChange={this.onChange} type="text" value={this.state.picklocation}/>
                                         </div>
                                         <div className ="form-group">
-                                            <input placeholder="Drop-off Location" className="form-control" name="droplocation" onChange={this.onChange} type="text" value={this.state.droplocation}/><br/>
+                                            <div className="col-lg-6">
+                                                <input type="checkbox" id="myCheck"  checked={this.state.checked} onChange={this.myFunction}/>Drop-off from different location
+                                            </div>
+                                            {content}
                                         </div>
                                         <div className="row">
                                             <div className="col-lg-6">
-                                            {/* <DatePicker selected={this.state.startDate}  selectsStart 
-                                                startDate={this.state.startDate}
-                                                endDate={this.state.endDate}
-                                                onChange={this.handleChangeStart} className="form-control"
-                                            /> */}
-
-                                                <input placeholder="Pick-up Date" className="form-control" name="start" onChange={this.onChange} type="date" value={this.state.pickdate}/>  
+                                                <label htmlFor="start"><small>Pick-up Date</small></label>
+                                                <input type="date" className="form-control" name="start" onChange={this.onChange} value={this.state.start} min={this.state.current}/>
                                             </div> 
                                             <div className="col-lg-6">
-                                                <input placeholder="Drop-off Date" className="form-control" name="end" onChange={this.onChange} type="date" value={this.state.dropdate}/>
+                                                <label htmlFor="start"><small>Drop-off Date</small></label>
+                                                <input type="date" className="form-control" name="end" onChange={this.onChange} value={this.state.end} min={this.state.currentplus}/>
                                             </div>
-                                        </div><br/>
+                                        </div><br/>  
+                                        
                                         <div className="row">
                                             <div className="col-lg-6">
                                                 <label className="radio-inline">
@@ -138,12 +191,14 @@ class Vehicle extends Component {
                                                     <input type="radio" value="nodriver" name="size" checked={this.state.size==="nodriver"} onChange={this.onChange}/>Only Vehicle
                                                 </label>
                                             </div>
+                                            
                                             {/* <div className="col-lg-4">
                                                 
                                             </div> */}
                                             <div className="col-lg-6">
                                                 <button type ="submit" className="btn btn-primary">Search</button>
                                             </div>
+                                            {/* <DayPicker /> */}
                                         </div><br/>
                                     </form>
                                 </div>
@@ -159,9 +214,9 @@ class Vehicle extends Component {
                                 <Tab label="Computer Science Electives" onClick={() => this.handleSelect(2)}/>
                                 <Tab label="Support Courses" onClick={() => this.handleSelect(3)} />
                             </Tabs> */}
-                            <div><br/><br/><br/><br/><br/><br/><br/><br/></div>
+                            <div><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></div>
 
-                        </div><br/><br/>
+                        </div><br/><br/><br/><br/>
                     </div>     
                 </div>
                 <Footer/>

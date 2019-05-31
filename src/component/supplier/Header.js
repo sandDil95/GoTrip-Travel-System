@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './css/Header.css';
+// eslint-disable-next-line
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 import imglogo from '../../assets/logo.png';
 
@@ -20,8 +21,15 @@ class Header extends Component{
                             <li className="nav-item active">
                                 <Link to="/supplier" className="nav-link">Home</Link>
                             </li>
+                            
                             <li className="nav-item active">
                                 <Link to="/supplier/About-Us" className="nav-link">About Us</Link>
+                            </li>
+                            <li className="nav-item active">
+                                <Link to="/supplier/vehiclereg" className="nav-link">Vehicle-Registration</Link>
+                            </li>
+                            <li className="nav-item active">
+                                <Link to="/supplier/hotelreg" className="nav-link">Hotel-Registration</Link>
                             </li>
                             <li className="nav-item active">
 

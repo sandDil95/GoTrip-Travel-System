@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router , Route } from 'react-router-dom';
+import Aboutus from './Aboutus';
 import Home from './Home';
 import Vehicle from './Vehicle';
 import Package from './Package';
@@ -18,7 +19,8 @@ class Customer extends Component {
                 <div className=" d-flex h-100 flex-column">
                     {/* <Header/> */}
                     <section>
-                        <Route path="/" exact component={Home}/>
+                        <Route path="/" exact component={Aboutus}/>
+                        <Route path="/accomadations" exact component={Home}/>
                         <Route path="/Vehicle" exact component={Vehicle}/>
                         <Route path="/Travel-Packages" exact component={Package}/>
                         <Route path="/Tailor-Made-Tour" exact component={Tailor}/>

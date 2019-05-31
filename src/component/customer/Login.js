@@ -7,7 +7,12 @@ class Login extends Component {
         this.state={
             email:'',
             passwrd:'',
-            vehicleId:''
+            vehicleId:props.location.state.vehicleId,
+            picklocation: props.location.state.picklocation,
+            droplocation: props.location.state.droplocation,
+            size: props.location.state.size,
+            start: props.location.state.start,
+            end: props.location.state.end,
         }
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -19,7 +24,7 @@ class Login extends Component {
 
     onSubmit(e){
         e.preventDefault();
-        this.state.vehicleId = this.props.location.state.vehicleId;
+        // this.state.vehicleId = this.props.location.state.vehicleId;
         console.log(this.state.vehicleId);
         const customer = {
             email:this.state.email,
@@ -32,7 +37,11 @@ class Login extends Component {
                 pathname: '/Vehicle/vehiclebooking',
                 state: {
                     vehicleId:this.state.vehicleId,
-                    email:this.state.email
+                    picklocation:this.state.picklocation,
+                    droplocation:this.state.droplocation,
+                    email:this.state.email,
+                    start:this.state.start,
+                    end: this.state.end,
                 }
             })
         },error=>{
@@ -51,7 +60,7 @@ class Login extends Component {
     }
     onHandle(e){
         e.preventDefault();
-        this.state.vehicleId = this.props.location.state.vehicleId;
+        // this.state.vehicleId = this.props.location.state.vehicleId;
         console.log(this.state.vehicleId);
         this.props.history.push({
             pathname: '/register',

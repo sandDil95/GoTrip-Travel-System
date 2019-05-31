@@ -3,7 +3,7 @@
     width: 20%;
 }
 .navbar{
-    background-color: white;
+    background-color: rgb(13, 14, 15);
     color:black;
     border: 0;
     border-radius: 0;
@@ -16,7 +16,7 @@
     float: right;
 }
 .nav-link{
-    color: black;
+    color:white;
 }
 .justify-content-center {
     -webkit-box-pack: center !important;
@@ -68,8 +68,8 @@
     margin-left:auto;
 }
 .btn-secondary{
-    background-color: transparent;
-    color:white;
+    background-color: black;
+    color:rgb(10, 9, 9);
     letter-spacing: 1px;
     line-height: 20px;
     border-radius: 40px;

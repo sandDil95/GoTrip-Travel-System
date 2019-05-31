@@ -14,6 +14,7 @@ class Package extends Component {
             <div>
                 <Header/>
                 <main className="inner cover lead" role="main">
+<<<<<<< HEAD
               
                  <div class="card-deck">
                     <div class="card-pkg ">
@@ -69,6 +70,28 @@ class Package extends Component {
          <br/><br/><br/>
                     
                   
+=======
+                    hjbjbbbnhbbhjkkb bjbkbj
+                    <br/><br/><br/><br/><br/><br/>
+                    
+                    <br/><br/><br/>
+                    <br/><br/><br/>
+                    <br/>
+                    <br/><br/>
+                    <br/><br/><br/>
+                    <br/><br/><br/><br/>
+                    <br/><br/><br/><br/>
+                    <br/><br/><br/>
+                    <br/><br/><br/>
+                    <br/><br/><br/>
+                    <br/><br/><br/>
+                    <br/><br/><br/>
+                    <br/><br/><br/>
+                    <br/><br/><br/>
+                    <br/><br/><br/>
+                    <br/><br/>
+                    <br/><br/><br/>
+>>>>>>> 8efb609d743774a15badfc2a6dab33a1cf35b1fc
                 </main>
                 <Footer/>
             </div>

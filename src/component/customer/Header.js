@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './css/Header.css';
+// eslint-disable-next-line
 import {BrowserRouter as Router,Routes,Link} from "react-router-dom";
 import imglogo from '../../assets/logo.png';
 
@@ -27,9 +28,12 @@ class Header extends Component{
                     </button> */}
                     <nav id="navbarCollapse" className="nav nav-masthead ">
                         <ul className="navbar-nav mr-auto">
+                        <li className="nav-item active">
+                                <Link to="/" className="nav-link">Home</Link>
+                            </li>
                             
                             <li className="nav-item active">
-                                <Link to="/" className="nav-link">Accomadations</Link>
+                                <Link to="/accomadations" className="nav-link">Accomadations</Link>
                             </li>
                             <li className="nav-item active">
                                 <Link to="/vehicle" className="nav-link">Vehicles</Link>
@@ -44,11 +48,11 @@ class Header extends Component{
                         </ul>
                     </nav>
 
-                    <div class="dropdown">
-                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div className="dropdown">
+                        <button className="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Supplier
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <Link to="/supplier-login" className="nav-link">SignIn</Link>
                             <Link to="/supplier-register" className="nav-link">SignUp</Link>
                         </div>

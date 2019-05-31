@@ -1,15 +1,15 @@
 #content-bodyy{
     position: relative;
     text-align: center;
-    opacity: 0.7;
-    background:url('../../../assets/backhotel.jpg');
+    opacity: 0.9;
+    background:url('../../../assets/hotelS.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     background-size: 100% 750px;
 }
 #contentbody{
-  background-color: rgb(150, 172, 175);
+  background-color: rgb(24, 130, 206);
 }
 /* #photofol{
   
