@@ -73,8 +73,8 @@ header{
     margin-left:auto;
 }
 .btn-secondary{
-    background-color: transparent;
-    color:rgb(12, 11, 11);
+    background-color: black;
+    color:rgb(245, 241, 241);
     letter-spacing: 1px;
     line-height: 20px;
     border-radius: 40px;

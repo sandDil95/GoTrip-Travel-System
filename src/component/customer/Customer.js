@@ -21,8 +21,8 @@ class Customer extends Component {
                 <div className=" d-flex h-100 flex-column">
                     {/* <Header/> */}
                     <section>
-                        <Route path="/" exact component={Aboutus}/>
-                        <Route path="/accomadations" exact component={Home}/>
+                        <Route path="/Aboutus" exact component={Aboutus}/>
+                        <Route path="/" exact component={Home}/>
                         <Route path="/Vehicle" exact component={Vehicle}/>
                         <Route path="/Travel-Packages" exact component={Package}/>
                         <Route path="/Tailor-Made-Tour" exact component={Tailor}/>
