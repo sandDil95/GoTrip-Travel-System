@@ -1,0 +1,33 @@
+main{
+    margin-top: 0px;
+    background-color:lightsteelblue;
+}
+
+p{
+    font-size:14px; 
+    color: black;
+}
+
+h4{
+    font-size:18px;
+    color: black;
+}
+.card-pkg{
+    
+    width:400px;
+    background-color: aliceblue;
+    margin-left: 10px;  
+    margin-top: 20px;
+  
+
+}
+
+.card-deck{
+margin-left: 20px;
+margin-right: 20px;
+justify-content: center;
+}
+
+
+
+

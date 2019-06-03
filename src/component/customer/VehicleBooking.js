@@ -89,6 +89,8 @@ class VehicleBooking extends Component {
                             <span>Description: <span>{booking.description}</span></span><br/><br/><br/> */}
                         </div>
                     )
+                }else{
+                    return ''
                 }
                 // else{
                 //     return(
