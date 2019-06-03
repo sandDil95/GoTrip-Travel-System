@@ -5,14 +5,6 @@ class Footer extends Component{
     render(){
         return(
             <footer>
-<<<<<<< HEAD
-                <div className="inner">
-                        Contact Us: <br/>
-                            Fixed : +94112222222  <br/>
-                            Mobile : +94702323233<br/>
-                        Email Address : gotrip@gmail.com<br/>
-                        
-=======
                 
                 <div className="row">
                 <div class="col-sm-3">
@@ -25,7 +17,6 @@ class Footer extends Component{
                 Book Hotel
                 <br></br>
                Create Your Tour
->>>>>>> 8efb609d743774a15badfc2a6dab33a1cf35b1fc
                 </div>
                 
                 <div class="col-sm-3">

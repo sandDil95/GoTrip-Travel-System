@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import './css/Pkg-wild.css';
+import './css/pkg-beach.css';
 import pinnawala from '../../assets/pinnawala.jpg';
 import sigiriya from '../../assets/sigiriya.jpg';
 import dambulla from '../../assets/dambulla.jpg';
 import nuwaraeli from '../../assets/nuwaraeli.jpg';
 import udawalawa from '../../assets/udawalawa.jpg';
-
 
 
 class WildLife extends Component {
@@ -17,16 +16,16 @@ class WildLife extends Component {
                 <Header/>
                 <main className="inner cover lead" role="main">
                
-                <div id ="jumb_a"class="jumbotron jumbotron-fluid"  >
+                <div id="jumb_b"class="jumbotron jumbotron-fluid"  >
                   
                 <div id="pkg-detail" className="card">
-                     <div class="card-body" >TRAVEL WILD LIFE & ECO</div>
+                     <div class="card-body" >BEACH TOUR</div>
                 </div>
                 </div>
              
                
                 <div id="description" class="card">
-                    <div id="desc"class="card-body"><font class="font-weight-bold">TRAVEL </font>WILD LIFE & ECO <br/>
+                    <div id="desc"class="card-body"><font class="font-weight-bold">TOUR </font>TO AMAZING BEACH<br/>
                          <p>Sri Lanka is a small Island in Indian ocean hold’s word’s important treasures and this is home to many endemic species with over 7 national parks and forests, mountain rages across the country, here you can get the chance to see our natural riches, endemic wildlife – the most famous being the Udawalawa national park. Sanki Leisure 
                                will make you an unforgettable experience with Sri Lanka wild life & eco tour.</p>
                     </div> 

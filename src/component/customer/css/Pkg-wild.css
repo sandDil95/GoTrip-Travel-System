@@ -5,8 +5,8 @@ main{
     
 }
 
-.jumbotron {
-  background-image: url("../../../assets/wild.jpg");
+#jumb_a {
+background-image:url("../../../assets/wild.jpg") ; 
   height:400px;
 }
 
@@ -27,14 +27,24 @@ main{
    
 }
 
+#description{
+    margin-left: 200px;
+    margin-right: 200px;
+    border: 0ch;
+}
+
+#desc{
+    color:black;
+    align-self: auto;
+    justify-content: left;
+    font-size:28px;
+    
+}
+
 
 
 h1{
     font-size:40px;
 }
 
-.card-left{
-    background-color: aquamarine;
-    width:400px;
-    justify-content: center;
-}
+

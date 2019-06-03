@@ -17,6 +17,8 @@ class Login extends Component {
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.onHandle = this.onHandle.bind(this);
+        this.onwild = this.onwild.bind(this);
+        this.onbeach = this.onbeach.bind(this);
     }
     onChange(e){
         this.setState({[e.target.name]:e.target.value})
@@ -67,6 +69,21 @@ class Login extends Component {
             state: {vehicleId:this.state.vehicleId}
         })
     }
+
+    onwild(e){
+        e.preventDefault();
+        this.props.history.push("/WildLife")
+    }
+
+    onbeach(e){
+        e.preventDefault();
+        
+     
+        this.props.history.push("/beach")
+    }
+
+
+
     render(){
         return(
             <div id="contentbodyy">

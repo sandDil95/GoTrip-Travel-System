@@ -2,35 +2,39 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import './css/Package.css';
-import whale from '../../assets/whale.jpg';
+
 import yala from '../../assets/yala.jpg';
-import sigiriya from '../../assets/sigiriya.jpg';
+import beach from '../../assets/beach.jpg';
 import kandy from '../../assets/kandy.jpg';
 import galle from '../../assets/galle.jpg';
 import colombo from '../../assets/colombo.jpg';
+import {BrowserRouter as Router,Routes,Link} from "react-router-dom";
+
+
+
 class Package extends Component {
     render(){
         return(
             <div>
                 <Header/>
                 <main className="inner cover lead" role="main">
-<<<<<<< HEAD
               
                  <div class="card-deck">
                     <div class="card-pkg ">
                         <div class="card-body " id="package">
-                            <img class="card-img-top" src={whale}  alt="Card image" ></img><br/>
-                            <h4 class="card-title">Mirissa whale watching</h4>
-                            <p class="card-text">Blue whales are the biggest animal live on the earth and Mirissa is the one of most suitable spot to watch blue whales and other whales too.</p>
-                            <a href="#" class="btn btn-primary">Book now>></a>
+                            <img class="card-img-top" src={yala}  alt="Card image" ></img><br/><br/>
+                            <h4 class="card-title"><font class="font-weight-bold">TRAVEL </font> WILD LIFE & ECO</h4>
+                            <button type="submit" onClick={this.onwild} class="btn btn-primary">
+                            <Link to="/WildLife" class="btn btn-primary" >INQUIER</Link></button>
                         </div>
                     </div>
                     <div class="card-pkg ">
                         <div class="card-body ">
-                            <img class="card-img-top" src={sigiriya} alt="Card image"></img><br/>
-                            <h4 class="card-title">Sigiriya</h4>
-                            <p class="card-text">sigiriya popular as eighth wonder of the world among the tourists and it was the one of Asia's oldest landscaped garden.</p>
-                            <a href="#" class="btn btn-primary">Book now>></a>
+                            <img class="card-img-top" src={beach} alt="Card image"></img><br/><br/>
+                            <h4 class="card-title"><font class="font-weight-bold">TOUR  </font>  TO AMAZING BEACH</h4>
+                            <p class="card-text"></p>
+                            <button type="submit" onClick={this.beach} class="btn btn-primary">
+                            <Link to="/beach" class="btn btn-primary" >INQUIER</Link></button>
                         </div>
                     </div>
                     <div class="card-pkg ">
@@ -70,8 +74,7 @@ class Package extends Component {
          <br/><br/><br/>
                     
                   
-=======
-                    hjbjbbbnhbbhjkkb bjbkbj
+                  
                     <br/><br/><br/><br/><br/><br/>
                     
                     <br/><br/><br/>
@@ -91,7 +94,6 @@ class Package extends Component {
                     <br/><br/><br/>
                     <br/><br/>
                     <br/><br/><br/>
->>>>>>> 8efb609d743774a15badfc2a6dab33a1cf35b1fc
                 </main>
                 <Footer/>
             </div>
