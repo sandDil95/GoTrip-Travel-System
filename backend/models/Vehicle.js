@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 let Vehicle = new Schema({
     // _id:mongoose.Schema.Types.ObjectId,
-    id:{
+    sId:{
         type:String,
     },
     vehicleNo:{

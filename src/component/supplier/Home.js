@@ -23,6 +23,7 @@ class Home extends Component{
                             <div className="container">
                                 <div className="carousel-caption">
                                   <h1 className="item animated pulse">Welcome Supplier to help</h1>
+                                  {/* <p>ID: {this.props.params.email}</p> */}
                                 </div>
                             </div>
                         </div>

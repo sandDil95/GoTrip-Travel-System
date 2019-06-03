@@ -5,6 +5,7 @@ var ObjectId = require('mongodb').ObjectID;
 const mailer = require('../routes/mailer');
 const Vehicle = require('../models/Vehicle');
 const Customer = require('../models/Customer');
+const Supplier = require('../models/User');
 const BookedVehicles = require('../models/bookedVehicles');
 
 var name;
@@ -34,63 +35,77 @@ const upload = multer({
 
 vehicleSearchRoutes.post('/add',upload.single('vehicleImage'),(req,res)=>{
     console.log(req.file);
-    if(req.body.onlyVehicle === "driver"){
-        const vehicleDetails = new Vehicle({
-            vehicleOwner :'',
-            vehicleNo : req.body.vehicleNo,
-            contactNo : req.body.contactNo,
-            beginingDate : req.body.beginingDate,
-            endingDate : req.body.endingDate,
-            seatsNo : req.body.seatsNo,
-            onlyVehicle : false,
-            ppkm : req.body.ppkm,
-            vehicleModel : req.body.vehicleModel,
-            locations : req.body.locations,
-            vehicleImage : '',
-            booking : false
-        })
-        vehicleDetails.save()
-        .then(result=>{
-            console.log(result);
-            res.status(201).json({
-                message : 'vehicle added'
-            })
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json({
-                error: err
-            })
-        })
-    }else{
-        const vehicleDetails = new Vehicle({
-            vehicleOwner :'',
-            vehicleNo : req.body.vehicleNo,
-            contactNo : req.body.contactNo,
-            beginingDate : req.body.beginingDate,
-            endingDate : req.body.endingDate,
-            seatsNo : req.body.seatsNo,
-            onlyVehicle : true,
-            ppkm : req.body.ppkm,
-            vehicleModel : req.body.vehicleModel,
-            locations : req.body.locations,
-            vehicleImage : name,
-            booking : false
-        })
-        vehicleDetails.save()
-        .then(result=>{
-            console.log(result);
-            res.status(201).json({
-                message : 'vehicle added'
-            })
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json({
-                error: err
-            })
-        })
-    }
+    console.log(req.body.email);
+    Supplier.find({email:req.body.email},function(err,result){ 
+        console.log(result); 
+        console.log(result[0]._id); 
+        if(result.length>=1){
+            if(req.body.onlyVehicle === "driver"){
+                const vehicleDetails = new Vehicle({
+                    sId: result[0]._id,
+                    // vehicleOwner :'',
+                    vehicleNo : req.body.vehicleNo,
+                    contactNo : req.body.contactNo,
+                    beginingDate : req.body.beginingDate,
+                    endingDate : req.body.endingDate,
+                    locations : req.body.locations,
+                    seatsNo : req.body.seatsNo,
+                    onlyVehicle : false,
+                    ppkm : req.body.ppkm,
+                    vehicleModel : req.body.vehicleModel,
+                    // vehicleImage : '',
+                    vehicleImage : name,
+                    booking : false
+                })
+                vehicleDetails.save()
+                .then(result=>{
+                    console.log(result);
+                    res.status(201).json({
+                        message : 'vehicle added'
+                    })
+                })
+                .catch(err => {
+                    console.log(err);
+                    res.status(500).json({
+                        error: err
+                    })
+                })
+            }else{
+                const vehicleDetails = new Vehicle({
+                    sId: result[0]._id,
+                    vehicleOwner :'',
+                    vehicleNo : req.body.vehicleNo,
+                    contactNo : req.body.contactNo,
+                    beginingDate : req.body.beginingDate,
+                    endingDate : req.body.endingDate,
+                    seatsNo : req.body.seatsNo,
+                    onlyVehicle : true,
+                    ppkm : req.body.ppkm,
+                    vehicleModel : req.body.vehicleModel,
+                    locations : req.body.locations,
+                    // vehicleImage : '',
+                    vehicleImage : name,
+                    booking : false
+                })
+                vehicleDetails.save()
+                .then(result=>{
+                    console.log(result);
+                    res.status(201).json({
+                        message : 'vehicle added'
+                    })
+                })
+                .catch(err => {
+                    console.log(err);
+                    res.status(500).json({
+                        error: err
+                    })
+                })
+            }
+        }else{
+            res.status(404).json({status: 'not found'});
+        }
+    })
+    
     
 
     
