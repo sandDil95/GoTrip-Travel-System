@@ -20,6 +20,7 @@ class Register extends Component {
     }
     onHandle(e){
         e.preventDefault();
+        // eslint-disable-next-line
         this.state.vehicleId = this.props.location.state.vehicleId;
         console.log(this.state.vehicleId);
         this.props.history.push({
@@ -29,6 +30,7 @@ class Register extends Component {
     }
     onSubmit(e){
         e.preventDefault();
+        // eslint-disable-next-line
         this.state.vehicleId = this.props.location.state.vehicleId;
         console.log(this.state.vehicleId);
 
