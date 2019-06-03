@@ -11,6 +11,8 @@ import Login from './Login';
 import SupRegister from '../supplier/Register';
 import SupLogin from '../supplier/Login';
 import Supplier from '../supplier/Supplier';
+import WildLife from './WildLife';
+import beach from './beach';
 
 class Customer extends Component {
     render(){
@@ -30,6 +32,8 @@ class Customer extends Component {
                         <Route path="/supplier-login" exact component={SupLogin}/>
                         <Route path="/supplier-register" exact component={SupRegister}/>
                         <Route path="/supplier" exact component={Supplier}/>
+                        <Route path="/WildLife" exact component={WildLife}/>
+                        <Route path="/beach" exact component={beach}/>
                         {/* <Route path="/customer/login" exact component={Login}/>
                         <Route path="/customer/register" exact component={Register}/> */}
                     </section>
