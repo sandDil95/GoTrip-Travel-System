@@ -15,7 +15,7 @@ class VehicleReg extends Component{
             vehicleModel : '',
             locations : '',
             vehicleImage : '',
-
+            // email : props.location.state.email,
         }
         this.onChange = this.onChange.bind(this)
         // this.onSubmit = this.onSubmit.bind(this)
@@ -51,6 +51,7 @@ class VehicleReg extends Component{
    vehiRegister(e){
     e.preventDefault();
     const obj = {
+        email: this.props.email,
         vehicleNo : this.state.vehicleNo,
         contactNo  :this.state.contactNo,
         beginingDate : this.state.beginingDate,
@@ -72,33 +73,22 @@ class VehicleReg extends Component{
                 }
             })
    }
-//    logintosupplier(e){
-//      this.props.history.push('/supplier-login')
-//    }
-//    state={
-//        selectedFile:null
-//    }
-//    fileSelectedHandler = event =>{
-//        this.setState({
-//            selectedFile:event.target.files[0]
-//        })
-//    }
-//    fileUploadedHandler = () =>{
-//         axios.post('http://');
-//    }
+   componentDidMount(){
+       console.log(this.props.email);
+   }
 
     render(){
+        // const {something} = this.props;
         return(
             <div className ="bg-img">
                 {/* <div className ="container"> */}
                 <div className ="row">
                     <div className ="col-md-6 mt-5 mx-auto">
                         <form className = "form-container" noValidate onSubmit ={this.onSubmit}> 
-                            
-                            <h1 className ="h3 mb-3 font-weight-normal">Please sign in</h1>
+                            <h1 className ="h3 mb-3 font-weight-normal">Register your vehicle</h1><br/>
+                            {/* {this.props.email}<br/> */}
                             <div className="row">
                                 <div className="col-lg-6">
-                                <label htmlFor = "vehicleNo">Vehicle Number</label>
                                     <input type ="text"
                                         className="form-control"
                                         name = "vehicleNo"
@@ -110,20 +100,23 @@ class VehicleReg extends Component{
                                 </div>
                             
                                 <div className="col-lg-6">
-                                <label htmlFor = "contactNo">Contact Number </label>
                                     <input type ="text"
                                         className="form-control"
                                         name = "contactNo"
                                         placeholder ="Enter Contact Number"
                                         value ={this.state.contactNo}
                                         onChange ={this.onChange}
-                                
                                     />
                                 </div>
-                            </div>
+                            </div><br/>
+                            <div className="row">
+                                <div className="col-lg-12">
+                                    Enter Available Time Period
+                                </div>
+                            </div>  <hr/>          
                             <div className="row">
                                         <div className="col-lg-6">
-                                            <label htmlFor = "begingdate">Begining Date of Availability</label>
+                                            <label htmlFor = "begingdate"><small>Start From</small></label>
                                             <input type="date"
                                                    //placeholder="Begining Date of Availability" 
                                                    className="form-control" 
@@ -133,7 +126,7 @@ class VehicleReg extends Component{
                                             />  
                                         </div> 
                                         <div className="col-lg-6">
-                                            <label htmlFor = "endingate">Ending Date of Availability</label>
+                                            <label htmlFor = "endingate"><small>To End</small></label>
                                             <input type="date"
                                                    //placeholder="Ending Date of Availability" 
                                                    className="form-control" 

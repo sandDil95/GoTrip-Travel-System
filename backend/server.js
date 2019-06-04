@@ -14,7 +14,22 @@ app.use(bodyParser.urlencoded({ extended:false }))
 //app.use('/uploads',express.static('uploads'));
 
 
-const mongoURI = 'mongodb://localhost:27017/goTrip'
+// const MongoClient = require(‘mongodb’).MongoClient;
+// const uri = "mongodb+srv://sanduni:<password>@cluster0-rygt6.mongodb.net/test?retryWrites=true";
+// const client = new MongoClient(uri, { useNewUrlParser: true });
+// client.connect(err => {
+//   const collection = client.db("test").collection("devices");
+//   // perform actions on the collection object
+//   client.close();
+// });
+
+// mongoose.connect('mongodb+srv://sanduni:sand1234@cluster0-rygt6.mongodb.net/test?retryWrites=true',{ useCreateIndex: true, useNewUrlParser: true, useFindAndModify: false })
+// const conn = mongoose.connection;
+// conn.on('connected',()=>{
+//     console.log('connected to mongodb');
+// })
+
+const mongoURI = 'mongodb+srv://sanduni:sand1234@cluster0-rygt6.mongodb.net/test?retryWrites=true'
 
 mongoose
     .connect(mongoURI , {useNewUrlParser:true})

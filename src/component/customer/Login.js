@@ -7,11 +7,18 @@ class Login extends Component {
         this.state={
             email:'',
             passwrd:'',
-            vehicleId:props.location.state.vehicleId
+            vehicleId:props.location.state.vehicleId,
+            picklocation: props.location.state.picklocation,
+            droplocation: props.location.state.droplocation,
+            size: props.location.state.size,
+            start: props.location.state.start,
+            end: props.location.state.end,
         }
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.onHandle = this.onHandle.bind(this);
+        this.onwild = this.onwild.bind(this);
+        this.onbeach = this.onbeach.bind(this);
     }
     onChange(e){
         this.setState({[e.target.name]:e.target.value})
@@ -32,7 +39,11 @@ class Login extends Component {
                 pathname: '/Vehicle/vehiclebooking',
                 state: {
                     vehicleId:this.state.vehicleId,
-                    email:this.state.email
+                    picklocation:this.state.picklocation,
+                    droplocation:this.state.droplocation,
+                    email:this.state.email,
+                    start:this.state.start,
+                    end: this.state.end,
                 }
             })
         },error=>{
@@ -58,6 +69,21 @@ class Login extends Component {
             state: {vehicleId:this.state.vehicleId}
         })
     }
+
+    onwild(e){
+        e.preventDefault();
+        this.props.history.push("/WildLife")
+    }
+
+    onbeach(e){
+        e.preventDefault();
+        
+     
+        this.props.history.push("/beach")
+    }
+
+
+
     render(){
         return(
             <div id="contentbodyy">

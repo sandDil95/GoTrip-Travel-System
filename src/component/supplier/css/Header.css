@@ -7,8 +7,8 @@ header{
     width: 20%;
 }
 .navbar{
-    color: black;
-    background-color: white;
+    color:white;
+    background-color: rgb(14, 69, 199);
     border: 0;
     border-radius: 0;
     width: 100%;
@@ -73,8 +73,8 @@ header{
     margin-left:auto;
 }
 .btn-secondary{
-    background-color: transparent;
-    color:white;
+    background-color: black;
+    color:rgb(245, 241, 241);
     letter-spacing: 1px;
     line-height: 20px;
     border-radius: 40px;

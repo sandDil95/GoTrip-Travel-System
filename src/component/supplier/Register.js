@@ -61,21 +61,18 @@ class Register extends Component{
                     <div className ="col-md-6 mt-5 mx-auto">
                         <form className = "form-container" noValidate onSubmit ={this.onSubmit}> 
                             
-                            <h1 className ="h3 mb-3 font-weight-normal">Please sign in</h1>
+                            <h1 className ="h3 mb-3 font-weight-normal">SignUp Form</h1>
                             <div className ="form-group">
-                                <label htmlFor = "first_name">First Name</label>
                                 <input type ="text"
                                         className="form-control"
                                         name = "first_name"
                                         placeholder ="Enter First Name"
                                         value ={this.state.first_name}
                                         onChange ={this.onChange}
-                                
                                 />
                             </div>
                             
                             <div className ="form-group">
-                                <label htmlFor = "last_name">Last Name </label>
                                 <input type ="text"
                                         className="form-control"
                                         name = "last_name"
@@ -97,18 +94,16 @@ class Register extends Component{
                                 />
                             </div> */}
                             <div className ="form-group">
-                                <label htmlFor = "email">Email Address</label>
                                 <input type ="email"
                                         className="form-control"
                                         name = "email"
-                                        placeholder ="Enter Email"
+                                        placeholder ="Enter Email Address"
                                         value ={this.state.email}
                                         onChange ={this.onChange}
                                 
                                 />
                             </div>
                             <div className ="form-group">
-                                <label htmlFor = "password">Password</label>
                                 <input type ="password"
                                         className="form-control"
                                         name = "password"

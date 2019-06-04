@@ -11,6 +11,7 @@ import Login from './Login';
 import Notify from './NotifyEndTrip';
 
 import VehicleReg from './VehicleReg';
+import HotelReg from './HotelReg';
 
 import Register from './Register';
 
@@ -18,6 +19,15 @@ import Profile from './Profile'
 
 
 class Supplier extends Component {
+  constructor(props){
+      super(props);
+      this.state = {
+          email : props.location.state.email
+      }
+  }
+  componentDidMount(){
+      console.log(this.state.email+"            sandxxxxx");
+  }
   render() {
     return (
         <Router>
@@ -25,14 +35,13 @@ class Supplier extends Component {
               <Header/>
               <section>
                 <Route path="/supplier" exact component={Home}/>
-                <Route path="/supplier/vehiclereg" exact component={VehicleReg}/>
-                <Route path="/supplier/About-Us" exact component={About}/>
-                <Route path = "/supplier/hotel-registration" exact component={HotelRegister}/>
-                <Route path = "/supplier/vehicle-registration" exact component={VehicleRegister}/>
-                <Route path ="/supplier/login" exact component ={Login}/>
-                <Route path = "/supplier/send-email" exact component = {Notify} />
-                <Route path="/supplier/profile" exact component={Profile}/>
-
+                <Route path="/supplier/vehiclereg" exact render={(props) => <VehicleReg email={this.state.email} {...props} />} />
+                {/* <Route path="/supplier/vehiclereg" exact component={() => <VehicleReg something={this.state.email}/>} /> */}
+                {/* <Route path="/supplier/vehiclereg" exact component={VehicleReg} something={this.state.email}/> */}
+                <Route path="/supplier/hotelreg" exact render={(props) => <HotelReg email={this.state.email} {...props} />}/>
+                <Route path="/supplier/About-Us" exact render={(props) => <About email={this.state.email} {...props} />}/>
+                <Route path="/supplier/Register" exact render={(props) => <Register email={this.state.email} {...props} />} />
+                <Route path="/profile" exact render={(props) => <Profile email={this.state.email} {...props} />} />
               </section>
               <Footer/>
             </div>

@@ -54,7 +54,8 @@
   
   .sup-inner{
   /* The image used */
-  background-image: url("../../../assets/waterfall.jpg");
+  background-image: url("../../../assets/carrr.jpg");
+/*   background-image: url("../../../assets/ccc.jpg"); */
 
   min-height: 768px;
 
@@ -83,7 +84,8 @@
   margin: 20px;
   max-width: 800px;
   padding: 16px;
-  background-color: rgb(219, 227, 240);
+  background-color: rgb(250, 246, 43);
+  opacity: 0.8;
 }
 
 

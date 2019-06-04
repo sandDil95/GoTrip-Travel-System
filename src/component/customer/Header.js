@@ -29,6 +29,7 @@ class Header extends Component{
                     </button> */}
                     <nav id="navbarCollapse" className="nav nav-masthead ">
                         <ul className="navbar-nav mr-auto">
+                        
                             
                             <li className="nav-item active">
                                 <Link to="/" className="nav-link">Accomadations</Link>
@@ -41,6 +42,9 @@ class Header extends Component{
                             </li>
                             <li className="nav-item active">
                                 <Link to="/Tailor-Made-Tour" className="nav-link">Tailor-Made Tour</Link>
+                            </li>
+                            <li className="nav-item active">
+                                <Link to="/Aboutus" className="nav-link">About Us</Link>
                             </li>
                             
                         </ul>

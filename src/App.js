@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router , Route } from 'react-router-dom';
 import Customer from './component/customer/Customer';
+import Supplier from './component/supplier/Supplier';
+import WildLife from './component/customer/WildLife';
+import Register_c from './component/customer/Register_c';
+import beach from './component/customer/beach';
+import WildLife from './component/customer/WildLife';
+import Register_c from './component/customer/Register_c';
 // import Vehicle from './component/customer/Vehicle';
-
-
 // import Login from './component/supplier/Login';
 // import Register from './component/supplier/Register';
 // import VehicleBooking from './component/customer/VehicleBooking';
@@ -32,6 +36,9 @@ class App extends Component {
             
 
             <Route path="/" exact component={Customer}/>
+            <Route path="/WildLife" exact component={WildLife}/>
+            <Route path="/Register_c" exact component={Register_c}/>
+            <Route path="/beach" exact component={beach}/>
             {/* <Route path="/customer" exact component={Customer}/> */}
             {/* <Route path="/supplier" exact component={Supplier}/> */}
             {/* <Route path="/vehicle" exact component={Vehicle}/>

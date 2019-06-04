@@ -3,15 +3,14 @@ import './css/Login.css';
 
 import {loginVehicle} from './UserFunctions';
 import {loginHotel} from './UserFunctions';
-
-
 import {login} from './UserFunctions';
+//import {login} from './UserFunctions';
 const axios = require('axios');
 
 
 class Login extends Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state ={
             email:'',
             password:'',
@@ -32,7 +31,11 @@ class Login extends Component{
       axios.post('http://localhost:4000/user/login/',obj)
           .then(res => {
                    if(res){
-                       this.props.history.push('/supplier')
+                    this.props.history.push({
+                        pathname: '/supplier',
+                        state: { email:this.state.email }
+                    })
+                    //    this.props.history.push('/supplier');
                    }
                })
       
@@ -85,20 +88,17 @@ class Login extends Component{
                         <div className ="col-md-6 mt-5 mx-auto">
                             <form className = "form-container" noValidate onSubmit ={this.onSubmit}> 
                                 
-                                <h1 className ="h3 mb-3 font-weight-normal">Please sign in</h1>
+                                <h1 className ="h3 mb-3 font-weight-normal">SignIn Form</h1>
                                 <div className ="form-group">
-                                    <label htmlFor = "email">Email Address</label>
                                     <input type ="email"
                                             className="form-control"
                                             name = "email"
-                                            placeholder ="Enter Email"
+                                            placeholder ="Enter Email Address"
                                             value ={this.state.email}
                                             onChange ={this.onChange}
-                                    
                                     />
                                 </div>
                                 <div className ="form-group">
-                                    <label htmlFor = "password">Password</label>
                                     <input type ="password"
                                             className="form-control"
                                             name = "password"
