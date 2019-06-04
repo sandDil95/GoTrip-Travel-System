@@ -1,5 +1,58 @@
 
 .bg-img {
+
+    /* The image used */
+    background-image: url("../../../assets/waterfall.jpg");
+  
+    min-height: 768px;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .form-container{
+    border: 1px solid rgb(245, 242, 242);
+    padding: 30px 40px;
+    margin-top: 20vh;
+    -webkit-box-shadow: 1px 7px 21px 0px rgba(163,155,163,1);
+    -moz-box-shadow: 1px 7px 21px 0px rgba(163,155,163,1);
+    box-shadow: 1px 7px 21px 0px rgba(163,155,163,1);
+  }
+  
+  /* Add styles to the form container */
+  .container {
+    position: absolute;
+    right: 0;
+    margin: 20px;
+    max-width: 800px;
+    padding: 16px;
+    background-color: rgb(219, 227, 240);
+  }
+  
+  
+  
+  input[type=text]:focus, input[type=password]:focus {
+    outline: none;
+  }
+  
+  /* Set a style for the submit button */
+  .btn-lg {
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  .btn:hover {
+    opacity: 0.8;
+  }
+  
+  .sup-inner{
   /* The image used */
   background-image: url("../../../assets/carrr.jpg");
 /*   background-image: url("../../../assets/ccc.jpg"); */
@@ -11,8 +64,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-
-}
+  }
 #regsup{
     display: inline-block;
 }
@@ -55,3 +107,4 @@ input[type=text]:focus, input[type=password]:focus {
 .btn:hover {
   opacity: 1;
 }
+

@@ -11,7 +11,8 @@ app.use(bodyParser.json())
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended:false }))
 
-app.use('/uploads',express.static('uploads'));
+//app.use('/uploads',express.static('uploads'));
+
 
 // const MongoClient = require(‘mongodb’).MongoClient;
 // const uri = "mongodb+srv://sanduni:<password>@cluster0-rygt6.mongodb.net/test?retryWrites=true";
@@ -35,14 +36,47 @@ mongoose
     .then(() => console.log("MongoDB Connected"))
     .catch(err => console.log(err))
 
+//Init gfs
 
-var Users = require('../backend/routes/Users.js')
+// let gfs;
+// conn.once('open' , ()=>{
+//     //Init stream
+//     gfs = Grid(conn.db , mongoose.mongo);
+//     gfs.collection('uploads');
+// })
 
+//Create storage engine
+
+// const storage = new GridFsStorage({
+//     url:mongoURI,
+//     file:(req , file)=>{
+//         return new Promise((resolve , reject)=>{
+//             crypto.randomBytes(16 ,(err ,buf)=>{
+//                 if(err){
+//                     return reject(err);
+//                 }
+//                 const filename = buf.toString('hex') + path.extname(file.originalname);
+//                 const fileInfo ={
+//                     filename:filename ,
+//                     bucketName:'uploads'
+//                 };
+//                 resolve(fileInfo);
+//             });
+//         })
+//     }
+// });
+
+// const upload =multer({storage});
+//var Vehicle = require('./routes/Vehicle.js');
+
+var Vehicle = require('./routes/Vehicle');
+var Hotel = require('./routes/Hotel');
 var Users = require('../backend/routes/Users');
 var Customer = require('../backend/routes/Customer');
 var IndividualBookingRoutes = require('./routes/IndividualBooking');
 var hotelSearch = require('../backend/routes/HotelSearch');
 var vehicleSearch = require('../backend/routes/VehicleSearch');
+var NotifyEndTrip = require('../backend/routes/NotifyEndTrip');
 
 // Initialize CORS middleware
 app.use(function(req, res, next) {
@@ -51,29 +85,22 @@ app.use(function(req, res, next) {
     next();
 })
 
+app.use('/vehicleReg' , Vehicle);
+app.use('/hotelReg' ,Hotel);
+//app.use('/imageUp' ,Vehicle);
+app.use('/vehicleLog' ,Vehicle);
+//app.use('/hotelLog' ,Hotel);
 app.use('/user' , Users);
 app.use('/customer',Customer);
 app.use('/individual-booking',IndividualBookingRoutes);
 app.use('/hotel',hotelSearch);
 app.use('/vehicle',vehicleSearch);
+//app.use('/sendNotify' ,NotifyEndTrip);
 
-// app.use((req,res,next) =>{
-//     const error = new Error('Not Found');
-//     error.status(404);
-//     next(error);
-// })
-// app.use((error,req,res,next)=>{
-//     res.status(err.status||500);
-//     res.json({
-//         error:{
-//             message: error.message
-//         }
-//     })
-// })
 app.get('/',function(req,res){
     res.send('Hello from Server');
 })
-app.use('/user' , Users)
+
 
 app.listen(port , () =>{
     console.log("Server is running on port :" +port)
