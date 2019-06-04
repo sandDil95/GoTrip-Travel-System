@@ -1,0 +1,10 @@
+#content-body{
+    position: relative;
+    text-align: center;
+    opacity: 0.9;
+    background:url('../../../assets/SRILANKA.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-size: 100% 750px;
+}

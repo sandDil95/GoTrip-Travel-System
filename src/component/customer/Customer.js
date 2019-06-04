@@ -27,7 +27,7 @@ class Customer extends Component {
                         <Route path="/Travel-Packages" exact component={Package}/>
                         <Route path="/Tailor-Made-Tour" exact component={Tailor}/>
                         <Route path="/Vehicle/vehiclebooking" exact component={VehicleBooking}/>
-                        <Route path="/aboutus" exact component={Aboutus}/>
+                        <Route path="/Aboutus" exact component={Aboutus}/>
                         <Route path="/login" exact component={Login}/>
                         <Route path="/register" exact component={Register}/>
                         <Route path="/supplier-login" exact component={SupLogin}/>

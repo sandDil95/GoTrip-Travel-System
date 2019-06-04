@@ -5,6 +5,7 @@ import {BrowserRouter as Router,Routes,Link} from "react-router-dom";
 import imglogo from '../../assets/logo.png';
 
 class Header extends Component{
+    
     render(){
         return(
             // <header className="masthead mb-auto">
@@ -28,7 +29,7 @@ class Header extends Component{
                     </button> */}
                     <nav id="navbarCollapse" className="nav nav-masthead ">
                         <ul className="navbar-nav mr-auto">
-                        <li className="nav-item active">
+                            <li className="nav-item active">
                                 <Link to="/" className="nav-link">Accomadations</Link>
                             </li>
                             <li className="nav-item active">
@@ -41,7 +42,8 @@ class Header extends Component{
                                 <Link to="/Tailor-Made-Tour" className="nav-link">Tailor-Made Tour</Link>
                             </li>
                             <li className="nav-item active">
-                                <Link to="/aboutus" className="nav-link">About us</Link>
+                                {/* <Link to="/aboutus" className="nav-link">About us</Link> */}
+                                <Link to="/Aboutus" className="nav-link">About Us</Link>
                             </li>
                             
                         </ul>

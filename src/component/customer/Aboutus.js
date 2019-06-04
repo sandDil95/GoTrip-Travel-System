@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import './css/Aboutus.css';
+
 
 class Aboutus extends Component {
     render(){
