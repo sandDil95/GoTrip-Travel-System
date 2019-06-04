@@ -5,6 +5,11 @@ import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 import imglogo from '../../assets/logo.png';
 
 class Header extends Component{
+    logOut(e){
+        e.preventDefault()
+        //localStorage.removeItem('usertoken')
+        this.props.history.push('/')
+    }
     render(){
         return(
             
@@ -40,6 +45,11 @@ class Header extends Component{
 
                                 <Link to="/profile" className="nav-link">Profile</Link>
 
+                            </li>
+                            <li className = "nav-item">
+                                <a href="" onClick = {this.logOut.bind(this)} className ="nav-link">
+                                    Logout
+                                </a>
                             </li>
                             
                         </ul>

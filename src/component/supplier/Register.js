@@ -1,7 +1,7 @@
 import React , {Component} from 'react';
 import './css/Login.css';
 import {register} from './UserFunctions';
-import validator from 'validator' 
+//import validator from 'validator' 
 // import axios from 'axios';
 const emailRegex = RegExp(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
 //const telNum = RegExp(/^[0-9]*$/);

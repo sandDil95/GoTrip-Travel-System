@@ -8,7 +8,7 @@ import VehicleReg from './VehicleReg';
 import HotelReg from './HotelReg';
 import NotifyEndTrip from './NotifyEndTrip';
 import Register from './Register';
-
+import CHome from '../customer/Home';
 import Profile from './Profile'
 
 
@@ -19,6 +19,7 @@ class Supplier extends Component {
             <div className=" d-flex h-100 flex-column">
               <Header/>
               <section>
+                <Route path="/" exact component={CHome}/>
                 <Route path="/supplier" exact component={Home}/>
                 <Route path="/supplier/vehiclereg" exact component={VehicleReg}/>
                 <Route path="/supplier/hotelreg" exact component={HotelReg}/>
