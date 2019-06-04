@@ -1,5 +1,4 @@
-.container-img {
-    /* The image used */
+#contentbodyyyyyyyy{
     background-image: url("../../../assets/traveller.jpg");
   
     min-height: 768px;
@@ -9,9 +8,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-  }
+}
 
-.form{
+#loginc{
    
     padding: 30px 40px;
     margin-left: 20vh;
@@ -27,7 +26,3 @@
   
     
 }
-
-
-
-    

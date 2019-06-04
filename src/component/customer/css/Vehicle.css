@@ -10,6 +10,12 @@
 }
 #contentbodyy{
   background-color: rgb(150, 172, 175);
+  color: black;
+}
+#detailsvehi{
+  color:black;
+  text-align: left;
+  font-size: 20px
 }
 #van{
   background-color: rgb(220, 228, 228);

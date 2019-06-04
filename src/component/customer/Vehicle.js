@@ -121,12 +121,12 @@ class Vehicle extends Component {
                     <div key={vehicle._id}>
                         <div className="card d-block" id="vehiclecard">
                             <img className="card-img-top" src={'http://localhost:4000/uploads/'+vehicle.vehicleImage} alt="Vehicle Avatar: "/><br/>
-                            <div className="card-body">
+                            <div className="card-body" id="detailsvehi">
                                 <span> Vehicle Owner: <span>{vehicle.vehicleOwner}</span></span><br/>
                                 <span> Vehicle Model: <span>{vehicle.vehicleModel}</span></span><br/>
                                 <span> Location: <span>{vehicle.locations}</span></span><br/>
                                 {/* <Link to="/customer/vehiclebooking"><button>Book Now</button></Link> */}
-                                <button type ="submit" className="btn btn-primary" onClick={(e) => {this.bookVehicle(e, this.state.vehicleId)}}>Book Now</button>
+                                <button type ="submit" className="btn btn-primary" onClick={(e) => {this.bookVehicle(e, vehicle.vehicleId)}}>Book Now</button>
                                 
                                 {/* <p class="card-text"></p> */}
                             </div>

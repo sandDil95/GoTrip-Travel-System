@@ -4,11 +4,8 @@ import './css/Footer.css';
 class Footer extends Component{
     render(){
         return(
-            <footer>
-<<<<<<< HEAD
-=======
+            <footer id="footcustm">
                 <div className="inner">
->>>>>>> b09c69dd051466d6a0f18851315ecd57b4bd960f
                 
                 <div className="row">
                 <div class="col-sm-3">

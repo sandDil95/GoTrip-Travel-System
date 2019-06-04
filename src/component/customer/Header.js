@@ -29,11 +29,7 @@ class Header extends Component{
                     <nav id="navbarCollapse" className="nav nav-masthead ">
                         <ul className="navbar-nav mr-auto">
                         <li className="nav-item active">
-                                <Link to="/" className="nav-link">Home</Link>
-                            </li>
-                            
-                            <li className="nav-item active">
-                                <Link to="/accomadations" className="nav-link">Accomadations</Link>
+                                <Link to="/" className="nav-link">Accomadations</Link>
                             </li>
                             <li className="nav-item active">
                                 <Link to="/vehicle" className="nav-link">Vehicles</Link>
@@ -43,6 +39,9 @@ class Header extends Component{
                             </li>
                             <li className="nav-item active">
                                 <Link to="/Tailor-Made-Tour" className="nav-link">Tailor-Made Tour</Link>
+                            </li>
+                            <li className="nav-item active">
+                                <Link to="/aboutus" className="nav-link">About us</Link>
                             </li>
                             
                         </ul>

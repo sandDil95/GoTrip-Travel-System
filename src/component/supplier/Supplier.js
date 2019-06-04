@@ -17,6 +17,7 @@ class Supplier extends Component {
       super(props);
       this.state = {
           email : props.location.state.email
+          // email : 'sanduni93193@gmail.com'
       }
   }
   componentDidMount(){

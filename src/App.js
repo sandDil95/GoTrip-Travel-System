@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router , Route } from 'react-router-dom';
 import Customer from './component/customer/Customer';
-<<<<<<< HEAD
-import Supplier from './component/supplier/Supplier';
+import Sup from './component/supplier/Supplier';
+
 import WildLife from './component/customer/WildLife';
 import Register_c from './component/customer/Register_c';
 import beach from './component/customer/beach';
-=======
+import Supplier from './component/supplier/Supplier';
+
 // import Supplier from './component/supplier/Supplier';
-import WildLife from './component/customer/WildLife';
-import Register_c from './component/customer/Register_c';
->>>>>>> b09c69dd051466d6a0f18851315ecd57b4bd960f
 // import Vehicle from './component/customer/Vehicle';
 //import Supplier from './component/supplier/Supplier';
 // import Login from './component/supplier/Login';
@@ -31,6 +29,7 @@ class App extends Component {
             <div className="cover-container d-flex h-100  mx-auto flex-column">
             
             <Route path="/" exact component={Customer}/>
+            {/* <Route path="/sup" exact component={Sup}/> */}
             <Route path="/WildLife" exact component={WildLife}/>
             <Route path="/Register_c" exact component={Register_c}/>
             <Route path="/beach" exact component={beach}/>

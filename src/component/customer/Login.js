@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './css/login.css';
 
 class Login extends Component {
     constructor(props){
@@ -86,11 +87,11 @@ class Login extends Component {
 
     render(){
         return(
-            <div id="contentbodyy">
-                <div className="row">
-                    <div className="col-sm-2"></div>
-                    <div className="col-sm-8">
-                        <form className = "form-container" onSubmit={this.onSubmit}>
+            <div id="contentbodyyyyyyyy" >
+                <div className="row" >
+                    <div clasName="col-md-4 col-sm-4 col-xs-12"></div>
+                    <div clasName="col-md-4 col-sm-4 col-xs-12" id="loginc">
+                        <form className = "form-container"  onSubmit={this.onSubmit}>
                             <h2>Login Form</h2><br/>
 
                             <label>Email:</label>

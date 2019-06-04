@@ -6,7 +6,8 @@ import Vehicle from './Vehicle';
 import Package from './Package';
 import Tailor from './Tailor';
 import VehicleBooking from './VehicleBooking';
-import Register from './Register';
+// import Register from './Register';
+import Register from '../customer/Register_c';
 import Login from './Login';
 import SupRegister from '../supplier/Register';
 import SupLogin from '../supplier/Login';
@@ -21,12 +22,12 @@ class Customer extends Component {
                 <div className=" d-flex h-100 flex-column">
                     {/* <Header/> */}
                     <section>
-                        <Route path="/" exact component={Aboutus}/>
-                        <Route path="/accomadations" exact component={Home}/>
+                        <Route path="/" exact component={Home}/>
                         <Route path="/Vehicle" exact component={Vehicle}/>
                         <Route path="/Travel-Packages" exact component={Package}/>
                         <Route path="/Tailor-Made-Tour" exact component={Tailor}/>
                         <Route path="/Vehicle/vehiclebooking" exact component={VehicleBooking}/>
+                        <Route path="/aboutus" exact component={Aboutus}/>
                         <Route path="/login" exact component={Login}/>
                         <Route path="/register" exact component={Register}/>
                         <Route path="/supplier-login" exact component={SupLogin}/>

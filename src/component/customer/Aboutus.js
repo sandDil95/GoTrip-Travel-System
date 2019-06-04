@@ -8,7 +8,7 @@ class Aboutus extends Component {
             <div>
                 <Header/>
                 <main className="inner cover lead" role="main">
-                    hjbjbbbnhbbhjkkb bjbkbj
+                    We are GoTrip Team
                     <br/><br/><br/><br/><br/><br/>
                     
                     <br/><br/><br/>
