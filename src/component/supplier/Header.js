@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
 import './css/Header.css';
 
-
-import {BrowserRouter as  Router, Route,Link ,withRouter} from "react-router-dom";
-
 // eslint-disable-next-line
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+import { withRouter } from "react-router";
 
 import imglogo from '../../assets/logo.png';
 // import axios from 'axios';
@@ -142,21 +140,11 @@ class Header extends Component{
                             
                         </ul>
                         {localStorage.usertoken ?  userLink:loginRegLink}
-                       
-
-                            
-                
-
                     </nav>
                    
                 </nav>
 
            </div>
-
-            
-
-            
-
         )
     }
 }

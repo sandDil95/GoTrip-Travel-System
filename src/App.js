@@ -5,9 +5,7 @@ import Customer from './component/customer/Customer';
 import Supplier from './component/supplier/Supplier';
 import WildLife from './component/customer/WildLife';
 import Register_c from './component/customer/Register_c';
-import beach from './component/customer/beach';
-import WildLife from './component/customer/WildLife';
-import Register_c from './component/customer/Register_c';
+import Beach from './component/customer/beach';
 
 // import Vehicle from './component/customer/Vehicle';
 // import Login from './component/supplier/Login';
@@ -30,18 +28,18 @@ class App extends Component {
             <div className="cover-container d-flex h-100  mx-auto flex-column">
             
 
-            <Route path="/" exact component={Main}/>
+            {/* <Route path="/" exact component={Customer}/>
             <Route path="/customer" exact component={Customer}/>
             <Route path="/supplier" exact component={Supplier}/>
             <Route path="/vehicle" exact component={Vehicle}/>
-            
+             */}
             
 
             <Route path="/" exact component={Customer}/>
             {/* <Route path="/sup" exact component={Sup}/> */}
             <Route path="/WildLife" exact component={WildLife}/>
             <Route path="/Register_c" exact component={Register_c}/>
-            <Route path="/beach" exact component={beach}/>
+            <Route path="/beach" exact component={Beach}/>
             {/* <Route path="/customer" exact component={Customer}/> */}
             {/* <Route path="/supplier" exact component={Supplier}/> */}
             {/* <Route path="/vehicle" exact component={Vehicle}/>

@@ -1,6 +1,7 @@
 import React , {Component} from 'react';
 import jwt_decode from 'jwt-decode';
 import {imageupload} from './UserFunctions';
+import axios from 'axios';
 
 class Profile extends Component{
     constructor(){
@@ -115,38 +116,7 @@ class Profile extends Component{
                     </div>
                 </div>
                 </div>
-                
-           
-
-                {/* <div className ="row">
-                    <div className="col-lg-12">
-                        <label htmlFor = "vehicle_photo" >Vehicale Photo</label>
-                        <input type ="file"
-                                className="form-control"
-                                name = "vehicale_photo"
-                                placeholder ="Select your Vehicle Photo"
-                                value ={this.state.vehicale_photo}
-                                onChange ={this.onChange}
-                        
-                        />
-                    </div>
-                    <div className="col-lg-12">
-                        <label htmlFor = "profile_image" >Your Photo</label>
-                        <input type ="file"
-                                className="form-control"
-                                name = "profile_image"
-                                placeholder ="Select your Photo"
-                                value ={this.state.profile_image}
-                                onChange ={this.onChange}
-                        
-                        />
-                    </div>
-
-                </div> */}
         )
     }
 }
-
-
-
 export default Profile;
