@@ -5,10 +5,7 @@ class Footer extends Component{
     render(){
         return(
             <footer>
-<<<<<<< HEAD
-=======
-                <div className="inner">
->>>>>>> b09c69dd051466d6a0f18851315ecd57b4bd960f
+
                 
                 <div className="row">
                 <div class="col-sm-3">
@@ -58,10 +55,11 @@ class Footer extends Component{
                 Nadeesha Shihani
                 </div>
                     
-                </div>
+                <div>
                 <br></br>
                 <br></br>
                 <h6 class="text-center"> © 2019 All Rights Reserved by GoTrip Team.</h6>
+                </div>
                 </div>
             </footer>
         )

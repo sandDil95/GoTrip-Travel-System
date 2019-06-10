@@ -1,7 +1,8 @@
 
 .bg-img {
   /* The image used */
-  background-image: url("../../../assets/carrr.jpg");
+  background-image: url("../../../assets/cq.jpeg");
+  opacity: 0.9;
 /*   background-image: url("../../../assets/ccc.jpg"); */
 
   min-height: 768px;

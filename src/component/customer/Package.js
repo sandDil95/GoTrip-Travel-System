@@ -18,7 +18,7 @@ class Package extends Component {
             <div>
                 <Header/>
                 <main className="inner cover lead" role="main">
-<<<<<<< HEAD
+
               
                  <div class="card-deck">
                     <div class="card-pkg ">
@@ -36,23 +36,8 @@ class Package extends Component {
                             <p class="card-text"></p>
                             <button type="submit" onClick={this.beach} class="btn btn-primary">
                             <Link to="/beach" class="btn btn-primary" >INQUIER</Link></button>
-=======
-                 <div className="card-deck">
-                    <div className="card-pkg ">
-                        <div className="card-body " id="package">
-                            <img className="card-img-top" src={whale}  alt="" /><br/>
-                            <h4 className="card-title">Mirissa whale watching</h4>
-                            <p className="card-text">Blue whales are the biggest animal live on the earth and Mirissa is the one of most suitable spot to watch blue whales and other whales too.</p>
-                            <button className="btn btn-primary">Book now>></button>
-                        </div>
-                    </div>
-                    <div className="card-pkg ">
-                        <div className="card-body ">
-                            <img className="card-img-top" src={sigiriya} alt=""/><br/>
-                            <h4 className="card-title">Sigiriya</h4>
-                            <p className="card-text">sigiriya popular as eighth wonder of the world among the tourists and it was the one of Asia's oldest landscaped garden.</p>
-                            <button className="btn btn-primary">Book now>></button>
->>>>>>> b09c69dd051466d6a0f18851315ecd57b4bd960f
+
+
                         </div>
                     </div>
                     <div className="card-pkg ">
@@ -88,13 +73,13 @@ class Package extends Component {
                         </div>
                     </div>
                  </div>
-<<<<<<< HEAD
+
   
          <br/><br/><br/>
                     
                   
                   
-                    <br/><br/><br/><br/><br/><br/>
+                    {/* <br/><br/><br/><br/><br/><br/>
                     
                     <br/><br/><br/>
                     <br/><br/><br/>
@@ -104,18 +89,18 @@ class Package extends Component {
                     <br/><br/><br/><br/>
                     <br/><br/><br/><br/>
                     <br/><br/><br/>
-                    <br/><br/><br/>
-                    <br/><br/><br/>
+                    <br/><br/><br/> */}
+                    {/* <br/><br/><br/>
                     <br/><br/><br/>
                     <br/><br/><br/>
                     <br/><br/><br/>
                     <br/><br/><br/>
                     <br/><br/><br/>
                     <br/><br/>
-                    <br/><br/><br/>
-=======
+                    <br/><br/><br/> */}
 
->>>>>>> b09c69dd051466d6a0f18851315ecd57b4bd960f
+
+
                 </main>
                 <Footer/>
             </div>

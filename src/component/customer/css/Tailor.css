@@ -1,3 +1,16 @@
 #tailorbody{
     background:url('../../../assets/img5.jpg');
 }
+#content-bod{
+    position: relative;
+    text-align: center;
+    opacity: 0.9;
+    background:url('../../../assets/bb.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-size: 100% 750px;
+}
+#contentbody{
+  background-color: rgb(195, 218, 235);
+}
