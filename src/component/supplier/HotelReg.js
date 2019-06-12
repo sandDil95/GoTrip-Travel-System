@@ -254,7 +254,8 @@ this.setState({number ,[name]:value} ,()=>console.log(this.state));
                                         <span className="errorMessage">{number.contactNo}</span>
                                     )}
                                 </div>
-                            </div>
+                            </div><br/>
+                            <div className="row">
                             <div className="col-lg-12">
                                     <label htmlFor = "place">Hotel Address</label>
                                         <input type="text"
@@ -270,6 +271,8 @@ this.setState({number ,[name]:value} ,()=>console.log(this.state));
                                         <span className="errorMessage">{formErrors.address}</span>
                                     )}  
                             </div> 
+                            </div><br/>
+                            
                             <div className="row">
                                         <div className="col-lg-6">
                                             <label htmlFor = "place">Hotel Place</label>
