@@ -1,4 +1,4 @@
-#content-body{
+/* #content-bo{
     position: relative;
     text-align: center;
     opacity: 0.9;
@@ -8,3 +8,22 @@
     position: relative;
     background-size: 100% 750px;
 }
+#content-body{
+    background-color: rgb(195, 218, 235);
+  } */
+
+  .bg-imgg {
+    /* The image used */
+    background-image: url("../../../assets/yala.jpg");
+    opacity: 1;
+  /*   background-image: url("../../../assets/ccc.jpg"); */
+  
+    min-height: 768px;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  
+  }

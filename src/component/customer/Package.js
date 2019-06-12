@@ -17,7 +17,6 @@ class Package extends Component {
             <div>
                 <Header/>
                 <main className="inner cover lead" role="main">
-
                  <div className="card-deck">
                     <div className="card-pkg ">
                         <div className="card-body " id="package">
@@ -68,7 +67,6 @@ class Package extends Component {
                         </div>
                     </div>
                  </div>
-
                 </main>
                 <Footer/>
             </div>
