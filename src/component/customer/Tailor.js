@@ -5,123 +5,109 @@ import './css/Tailor.css';
 // import img5 from '../../assets/img5.jpg';
 
 class Tailor extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            startplace : '',
+            tripplace : '',
+            startdate: new Date(),
+            enddate: new Date(),
+            day: '',
+            month: '',
+            year: '',
+            current: '',
+            currentplus: '',
+            roomsnum : '',
+            travellersnum : '',
+            currentdate: new Date().toLocaleString()
+        }
+        // this.onChange = this.onChange.bind(this);
+        // this.onSubmit = this.onSubmit.bind(this);
+    }
     render(){
         return(
             <div>
                 <Header/>
-                <div id="tailorbody">
-                    
-                    <div className="container">
-                        <div className="span12">
-                            <h1>Plan Your Own Trip</h1><br/>
-                            <p> Whether you want to modify a tour package on our website or have an itinerary built from scratch, the local travel consultants at Ceylon Island Travel can create your ideal trip. In addition to the benefits of all our tours - booking handpicked hotels, transportation, excursions and more - customized tours offer a personalized experience. You decide where to visit, how long to spend and what type of accommodation suits you best. Let us know what we can do for you by completing the form below. Please provide as many details as possible, even estimates are helpful.</p>
-                            <form>
-                                <div className="form-group">
-                                    <label htmlFor="inputName">Full Name</label>
-                                    <input type="text" className="form-control" id="inputName" placeholder=""/>
+                <div id="contentbody">
+                    <div id="content-bod" className="card">
+                            <div className="row">
+                                <div className="col-sm-1"></div>
+                                <div className="col-lg-6">
+                                    <form id="tai" className = "form-container" onSubmit={this.onSubmit}> 
+                                        <h2><strong>Plan Your Own Trip</strong></h2><br/>
+                                        <div className="row">
+                                        <div className="col-lg-6">
+                                                <label htmlFor="start"><small>Pick-up Date</small></label>
+                                                <input type="date" className="form-control" name="startdate" onChange={this.onChange} value={this.state.startdate} min={this.state.current}/>
+                                            </div> 
+                                            <div className="col-lg-6">
+                                                <label htmlFor="start"><small>Drop-off Date</small></label>
+                                                <input type="date" className="form-control" name="enddate" onChange={this.onChange} value={this.state.enddate} min={this.state.currentplus}/>
+                                            </div>
+                                        </div>
+                                        <br></br>
+                                        <div className="row">
+                                        <div className="col-lg-6">
+                                                <label htmlFor="picplace"><small>Pick-up Place</small></label>
+                                                <input type="text" className="form-control" name="startplace" onChange={this.onChange} value={this.state.startplace} min={this.state.current}/>
+                                            </div> 
+                                            <div className="col-lg-6">
+                                                <label htmlFor="start"><small>Interesting Place to visit</small></label>
+                                                <input type="text" className="form-control" name="tripplace" onChange={this.onChange} value={this.state.tripplace} min={this.state.currentplus}/>
+                                            </div>
+                                        </div>
+                                        <br></br>
+                                        <div className="row">
+                                            <div className="col-lg-4">
+                                                <input type="number" className="form-control" placeholder="Rooms" name="roomsnum" onChange={this.onChange} value={this.state.roomsnum}/>
+                                            </div>
+                                            <div className="col-lg-4">
+                                                <input type="number " className="form-control" placeholder="Travellers" name="travellersnum" onChange={this.onChange} value={this.state.travellersnum}/>
+                                            </div>
+                                            <div className="col-lg-4">
+                                                <button type ="submit" className="btn btn-primary">Submit</button>
+                                            </div>
+                                        </div><br/>
+                                        
+                                    </form>
                                 </div>
-                                <div className="form-group">
-                                    <label htmlFor="InputEmail">Email Address</label>
-                                    <input type="email" className="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Please Enter Valid email"></input>
-                                    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="inputNum">Phone Number</label>
-                                    <input type="text" className="form-control" id="inputNum" placeholder=""></input>
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="inputarival">Arrival Date</label>
-                                    <input type="text" className="form-control" id="inputarival" placeholder="dd/mm/yyyy"></input>
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="inputPickup">Pickup Place</label>
-                                    <input type="text" className="form-control" id="inputPickup" placeholder=""></input>
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="place">Interesting Place To Visit</label>
-                                    <select className="form-control" id="place">
-                                        <option>Anuradhapura</option>
-                                        <option>Galle</option>
-                                        <option>Jappna</option>
-                                        <option>Nuwaraeliya</option>
-                                        <option>Hambantota</option>
-                                    </select>
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="duration">Tour Duration (Days)</label>
-                                    <select className="form-control" id="duration">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>7</option>
-                                        <option>8</option>
-                                        <option>9</option>
-                                        <option>10</option>
-                                        <option>11</option>
-                                        <option>12</option>
-                                        <option>13</option>
-                                        <option>14</option>
-                                        <option>15</option>
-                                    </select>
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="people">No of People</label>
-                                    <select className="form-control" id="people">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>7</option>
-                                        <option>8</option>
-                                        <option>9</option>
-                                        <option>10</option>
-                                        <option>11</option>
-                                        <option>12</option>
-                                        <option>13</option>
-                                        <option>14</option>
-                                        <option>15</option>
-                                    </select>
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="room">Preferred  Accommodation</label>
-                                        <select className="form-control" id="room">
-                                            <option>AC</option>
-                                            <option>Non AC</option>
-                                        </select>
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="additional">Any Additional Information</label>
-                                    <textarea className="form-control" id="additional" rows="3"></textarea>
-                                </div>
-                                <button type="submit" className="btn btn-primary">Send</button>
-                            </form>
-                        </div>
+                                {/* <div className="col-lg-4">
+                                    <br/><br/><br/><br/><br/>
+                                    {this.state.hotels}
+                                </div> */}
+                            </div>
+                           
+                            <div><br/><br/><br/><br/><br/><br/><br/><br/></div>
                     </div>
-                    
-                    <br/><br/><br/><br/><br/><br/>
-                    <br/><br/><br/>
-                    <br/><br/><br/>
-                    <br/>
-                    <br/><br/>
-                    <br/><br/><br/>
-                    <br/><br/><br/><br/>
-                    <br/><br/><br/><br/>
-                    <br/><br/><br/>
-                    <br/><br/><br/>
-                    <br/><br/><br/>
-                    <br/><br/><br/>
-                    <br/><br/><br/>
-                    <br/><br/><br/>
-                    <br/><br/><br/>
-                    <br/><br/><br/>
-                    <br/><br/>
-                    <br/><br/><br/>
                 </div>
+                <br></br>
+                <h1 class="text-center">How Plan Your Own Trip</h1>
+                <br></br>
+                <p class="text-center">Whether you want to modify a tour package on our website or have an itinerary built from scratch, the local travel consultants at GoTrip can create your ideal trip. In addition to the benefits of all our tours - booking handpicked hotels, transportation, excursions and more - customized tours offer a personalized experience. You decide where to visit, how long to spend and what type of accommodation suits you best. Let us know what we can do for you by completing the form below. Please provide as many details as possible, even estimates are helpful.
+</p>
+<br></br>
+                {/* <div className="row">
+                                            <div className="col-lg-4">
+                                                <h4 className="text-center"><strong>Hotel Lavina</strong></h4>
+                                            
+                                            <h5 class="text-center">"The hotel was simple amazing and I couldn't thank GoTrip more for helping out. I've been a customer for awhile and I have to say it's probably my favourite app!"</h5>
+                                            <p className="text-center">Mr.Aravinda Yasas</p>
+                                            </div>
+                                            <div className="col-lg-4">
+                                            <h4 className="text-center"><strong>Tango Ressort</strong></h4>
+                                            
+                                                <h5 class="text-center">"We got a great last minute rate with GoTrip and this room was spacious with a comfortable and warm bed."</h5>
+                                               <br></br> 
+                                               <br></br><p className="text-center">Mrs.Nayomi Silva</p>
+                                            </div>
+                                            <div className="col-lg-4">
+                                            <h4 className="text-center"><strong>Hotel Sweet Place</strong></h4>
+                                            
+                                            <h5 class="text-center">"We booked Hotel Eucalyptus through GoTrip after reading a handful of reviews, and it was easily the best decision we made for our trip to Santorini."</h5>
+                                            <br></br><p className="text-center">Mr.Kelum Narayana</p>
+
+                                            </div>
+                                        </div><br/> */}
                 <Footer/>
             </div>
         )
