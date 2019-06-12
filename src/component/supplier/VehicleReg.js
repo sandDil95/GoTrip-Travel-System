@@ -158,7 +158,7 @@ class VehicleReg extends Component{
                     <div className ="col-md-6 mt-5 mx-auto">
                         <form className = "form-container" noValidate onSubmit ={this.vehiRegister}> 
                             
-                            <h1 className ="h3 mb-3 font-weight-normal">Please sign up</h1>
+                            <h1 className ="h3 mb-3 font-weight-normal">Vehicle Register</h1>
                             <div className="row">
                                 <div className="col-lg-6">
                                 <label htmlFor = "vehicleNo">Vehicle Number</label>

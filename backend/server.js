@@ -13,7 +13,8 @@ app.use(bodyParser.urlencoded({ extended:false }))
 
 app.use('/uploads',express.static('uploads'));
 
-const mongoURI = 'mongodb://localhost:27017/goTrip'
+//const mongoURI = 'mongodb://localhost:27017/goTrip'
+const mongoURI = 'mongodb+srv://sanduni:sand1234@cluster0-rygt6.mongodb.net/test?retryWrites=true'
 
 mongoose
     .connect(mongoURI , {useNewUrlParser:true})

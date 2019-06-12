@@ -3,7 +3,7 @@ const hotelSearchRoutes = express.Router();
 const vehicleSearchRoutes = express.Router();
 
 const Hotel = require('../models/Hotel');
-const Vehicle = require('../models/Hotel');
+//const Vehicle = require('../models/Hotel');
 const Supplier = require('../models/User');
 // var city = "";
 
