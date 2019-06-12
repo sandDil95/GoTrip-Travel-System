@@ -1,10 +1,13 @@
 const express = require('express');
 const hotelSearchRoutes = express.Router();
 const vehicleSearchRoutes = express.Router();
+var ObjectId = require('mongodb').ObjectID;
 
 const Hotel = require('../models/Hotel');
 const Vehicle = require('../models/Hotel');
 const Supplier = require('../models/User');
+const Customer = require('../models/Customer');
+
 // var city = "";
 
 var name;
@@ -89,6 +92,28 @@ hotelSearchRoutes.get('/search/:city',function(req,res,next){
         }else{
             res.status(404).json({status: 'not found'});
         }
+    })
+})
+
+hotelSearchRoutes.get('/hotelbooking/:id/:email',(req,res)=>{
+    var id = req.params.id;
+    var email = req.params.email;
+    console.log("ID: "+id);
+    console.log("Email: "+email);
+    Hotel.find({"_id":new ObjectId(id)},function(err,vehi){ //get selected vehicle details for booking
+        Customer.find({email:email},function(err,custmr){
+            var result = vehi.concat(custmr);
+            if(err){
+                console.log(err);
+                res.status(500).json({status:'failure'});
+            }
+            if(result.length>=1){
+                console.log(result);
+                res.status(202).json(result);
+            }else{
+                res.status(404).json({status:'Not Found'})
+            }
+        })
     })
 })
 

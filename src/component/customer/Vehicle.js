@@ -83,23 +83,19 @@ class Vehicle extends Component {
     }
 
     bookVehicle(e){ //click booking vehicle
-        e.preventDefault()
-        console.log(this.state.vehicleId+" bookvehicle inside");
-        // this.props.history.push({
-        //     pathname: '/Vehicle/vehiclebooking',
-        //     state: {vehicleId:this.state.vehicleId}
-        // })
+        const val = e.target.value;
+        console.log(val);
         if(this.state.picklocation !== this.state.droplocation){
             console.log("if")
             this.props.history.push({
                 pathname: '/login',
-                state: { vehicleId:this.state.vehicleId, picklocation:this.state.picklocation, droplocation:this.state.picklocation, size:this.state.size, start:this.state.start, end:this.state.end }
+                state: { vehicleId:val, picklocation:this.state.picklocation, droplocation:this.state.picklocation, size:this.state.size, start:this.state.start, end:this.state.end }
             })
         }else{
             console.log("else")
             this.props.history.push({
                 pathname: '/login',
-                state: { vehicleId:this.state.vehicleId, picklocation:this.state.picklocation, droplocation:this.state.droplocation, start:this.state.start, end:this.state.end }
+                state: { vehicleId:val, picklocation:this.state.picklocation, droplocation:this.state.droplocation, start:this.state.start, end:this.state.end }
             })
         }           
     }
@@ -115,8 +111,8 @@ class Vehicle extends Component {
         .then(response => {
             console.log("didmount")
             let vehicles = response.data.map((vehicle) => {
-                this.setState({vehicleId : vehicle._id}) //get selected vehicle id to send vehicle booking page
-                console.log(this.state.vehicleId+"response");
+                // this.setState({vehicleId : vehicle._id}) //get selected vehicle id to send vehicle booking page
+                // console.log(this.state.vehicleId+"response");
                 return (
                     <div key={vehicle._id}>
                         <div className="card d-block" id="vehiclecard">
@@ -126,8 +122,8 @@ class Vehicle extends Component {
                                 <span> Vehicle Model: <span>{vehicle.vehicleModel}</span></span><br/>
                                 <span> Location: <span>{vehicle.locations}</span></span><br/>
                                 {/* <Link to="/customer/vehiclebooking"><button>Book Now</button></Link> */}
-                                <button type ="submit" className="btn btn-primary" onClick={(e) => {this.bookVehicle(e, vehicle.vehicleId)}}>Book Now</button>
-                                
+                                {/* <button type ="submit" className="btn btn-primary" onClick={(e) => {this.bookVehicle(e, vehicle._id)}}>Book Now</button> */}
+                                <button className="btn btn-primary" value={vehicle._id} onClick={(e) => {this.bookVehicle(e)}}>Book Now</button>
                                 {/* <p class="card-text"></p> */}
                             </div>
                         </div><br/>

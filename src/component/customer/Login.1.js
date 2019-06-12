@@ -8,18 +8,18 @@ class Login extends Component {
         this.state={
             email:'',
             passwrd:'',
-            vehicleId:props.location.state.vehicleId,
-            picklocation: props.location.state.picklocation,
-            droplocation: props.location.state.droplocation,
-            size: props.location.state.size,
+            hotelId:props.location.state.hotelId,
+            rooms: props.location.state.rooms,
+            travellers: props.location.state.travellers,
+            city: props.location.state.city,
             start: props.location.state.start,
             end: props.location.state.end,
         }
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.onHandle = this.onHandle.bind(this);
-        this.onwild = this.onwild.bind(this);
-        this.onbeach = this.onbeach.bind(this);
+        // this.onwild = this.onwild.bind(this);
+        // this.onbeach = this.onbeach.bind(this);
     }
     onChange(e){
         this.setState({[e.target.name]:e.target.value})
@@ -28,7 +28,7 @@ class Login extends Component {
     onSubmit(e){
         e.preventDefault();
         // this.state.vehicleId = this.props.location.state.vehicleId;
-        console.log(this.state.vehicleId);
+        console.log(this.state.hotelId);
         const customer = {
             email:this.state.email,
             password:this.state.passwrd
@@ -37,11 +37,12 @@ class Login extends Component {
         .then(response=>{
             alert("Successfully logged")
             this.props.history.push({
-                pathname: '/Vehicle/vehiclebooking',
+                pathname: '/Hotel/Hotelbooking',
                 state: {
-                    vehicleId:this.state.vehicleId,
-                    picklocation:this.state.picklocation,
-                    droplocation:this.state.droplocation,
+                    hotelId:this.state.hotelId,
+                    city:this.state.city,
+                    rooms:this.state.rooms,
+                    travellers:this.state.travellers,
                     email:this.state.email,
                     start:this.state.start,
                     end: this.state.end,
@@ -71,17 +72,17 @@ class Login extends Component {
         })
     }
 
-    onwild(e){
-        e.preventDefault();
-        this.props.history.push("/WildLife")
-    }
+    // onwild(e){
+    //     e.preventDefault();
+    //     this.props.history.push("/WildLife")
+    // }
 
-    onbeach(e){
-        e.preventDefault();
+    // onbeach(e){
+    //     e.preventDefault();
         
      
-        this.props.history.push("/beach")
-    }
+    //     this.props.history.push("/beach")
+    // }
 
 
 

@@ -8,7 +8,7 @@ class Footer extends Component{
                 <div className="inner">
                 
                 <div className="row">
-                <div class="col-sm-3">
+                <div className="col-sm-3">
                     <h5>What Can Do</h5>
                     <br></br>
                     Book Tour Package
@@ -20,7 +20,7 @@ class Footer extends Component{
                Create Your Tour
                 </div>
                 
-                <div class="col-sm-3">
+                <div className="col-sm-3">
                     <h5>Contact Us</h5>
                     <br></br>
                     Mobile: +112367874
@@ -31,7 +31,7 @@ class Footer extends Component{
                 <br></br>
                 Insta: GoTrip34
                 </div>
-                <div class="col-sm-3">
+                <div className="col-sm-3">
                     <h5>Where We In</h5>
                     <br></br>
                     116, Script Complex,
@@ -43,7 +43,7 @@ class Footer extends Component{
                 Sri Lanka
                 </div>
 
-                <div class="col-sm-3">
+                <div className="col-sm-3">
                     <h5>Our Team</h5>
                     <br></br>
                     Sanduni Dilhara
@@ -58,7 +58,7 @@ class Footer extends Component{
                 </div>
                 <br></br>
                 <br></br>
-                <h6 class="text-center"> © 2019 All Rights Reserved by GoTrip Team.</h6>
+                <h6 className="text-center"> © 2019 All Rights Reserved by GoTrip Team.</h6>
                 </div>
             </footer>
         )
