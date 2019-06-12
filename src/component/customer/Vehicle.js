@@ -157,7 +157,7 @@ class Vehicle extends Component {
                                 <div className="col-sm-1"></div>
                                 <div className="col-lg-6">
                                     <form id="van" className = "form-container" onSubmit={this.onSubmit}> 
-                                        <h2>Find your ideal Vehicle to travel</h2><br/>
+                                        <h2><strong>Find your ideal Vehicle to travel</strong></h2><br/>
                                         <div className ="form-group">
                                             <input placeholder="Pick-up Location" className="form-control" name="picklocation" onChange={this.onChange} type="text" value={this.state.picklocation}/>
                                         </div>
@@ -215,6 +215,29 @@ class Vehicle extends Component {
                         </div><br/><br/><br/><br/>
                     </div>     
                 </div>
+                {/* <h1 class="text-center">Overheard from Customers</h1> */}
+                <br></br>
+                <br></br>
+                <div className="row">
+                                            <div className="col-lg-4">
+                                                <h3 className="text-center"><strong>ONLINE PAYMENTS</strong></h3>
+                                                 <br></br>
+                                            <h5 class="text-center">You can take online payments or pre-payments, we offer more than 70 payment gateways.</h5>
+                                            
+                                            </div>
+                                            <div className="col-lg-4">
+                                            <h3 className="text-center"><strong>MULTIPLE LOCATIONS</strong></h3>
+                                                <br></br>
+                                                <h5 class="text-center">You can set up pick-up/drop-off locations and GoTrip will even find the nearest offer.</h5>
+                                               
+                                            </div>
+                                            <div className="col-lg-4">
+                                            <h3 className="text-center"><strong>FLEXIBLE PRICING</strong></h3>
+                                            <br></br>
+                                            <h5 class="text-center">GoTrip will be able to reflect your pricing model however complex it may be.</h5>
+                                            <br></br>
+                                            </div>
+                                        </div><br/>
                 <Footer/>
             </div>
         );
