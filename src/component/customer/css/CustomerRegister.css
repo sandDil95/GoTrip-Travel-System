@@ -1,0 +1,33 @@
+.container-img {
+    /* The image used */
+    background-image: url("../../../assets/traveller.jpg");
+  
+    min-height: 768px;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+.form{
+   
+    padding: 30px 40px;
+    margin-left: 20vh;
+    -webkit-box-shadow: 1px 7px 21px 0px rgba(163,155,163,1);
+    -moz-box-shadow: 1px 7px 21px 0px rgba(163,155,163,1);
+    box-shadow: 1px 7px 21px 0px rgba(163,155,163,1);
+    width:35%;
+    height: 50%;
+    
+    background: rgb(0, 0, 0); 
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  
+    
+}
+
+
+
+    

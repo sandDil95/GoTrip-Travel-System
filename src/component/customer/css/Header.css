@@ -1,10 +1,10 @@
 .imglogo{
-    height:20%;
-    width: 20%;
+    height:5%;
+    width: 5%;
 }
 .navbar{
-    background-color: white;
-    color:black;
+    background-color: rgb(59, 90, 163);
+    color:white;
     border: 0;
     border-radius: 0;
     width: 100%;
@@ -16,7 +16,7 @@
     float: right;
 }
 .nav-link{
-    color: black;
+    color:white;
 }
 .justify-content-center {
     -webkit-box-pack: center !important;
@@ -67,9 +67,12 @@
 .dropdown{
     margin-left:auto;
 }
+.dropdown-menu{
+    background-color:blue;
+}
 .btn-secondary{
-    background-color: transparent;
-    color:white;
+    background-color:black;
+    color:rgb(10, 9, 9);
     letter-spacing: 1px;
     line-height: 20px;
     border-radius: 40px;

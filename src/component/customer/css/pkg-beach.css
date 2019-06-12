@@ -1,0 +1,50 @@
+main{
+    background-color:white;
+    justify-content: center;
+    
+    
+}
+
+#jumb_b {
+background-image:url("../../../assets/beach.jpg") ; 
+  height:400px;
+}
+
+#pkg-detail{
+    margin-right:200px;
+    margin-left: 200px;
+    background:transparent;
+    margin-top:70px;
+    border-color: white;
+    height:100px;
+   
+}
+.card-body{
+    font-size:48px;
+    color:white;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+   
+}
+
+#description{
+    margin-left: 200px;
+    margin-right: 200px;
+    border: 0ch;
+}
+
+#desc{
+    color:black;
+    align-self: auto;
+    justify-content: left;
+    font-size:28px;
+    
+}
+
+
+
+h1{
+    font-size:40px;
+}
+
+

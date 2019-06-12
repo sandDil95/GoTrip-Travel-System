@@ -1,8 +1,8 @@
 #content-bodyyy{
     position: relative;
     text-align: center;
-    opacity: 0.8;
-    background:url('../../../assets/van.jpg');
+    opacity: 1.0;
+    background:url('../../../assets/carrr.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -10,6 +10,12 @@
 }
 #contentbodyy{
   background-color: rgb(150, 172, 175);
+  color: black;
+}
+#detailsvehi{
+  color:black;
+  text-align: left;
+  font-size: 20px
 }
 #van{
   background-color: rgb(220, 228, 228);

@@ -1,11 +1,13 @@
 footer{
-    background-color: white;
-    color: black;
-    padding: 40px;
+    background-color:black;
+    padding: 10px;
     bottom:0;
     width:100%;
     position: relative;
     /* bottom: 0;
     left: 0;
     right: 0; */
+}
+#footcustm{
+    color:white;
 }

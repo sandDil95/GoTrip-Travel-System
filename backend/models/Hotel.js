@@ -3,11 +3,19 @@ const Schema = mongoose.Schema;
 
 let Hotel = new Schema({
     // id: mongoose.Schema.Types.ObjectId,
+    sId:{
+        type:String,
+        required: true,
+    },
     hotelName:{
         type:String,
         required: true,
     },
     contactNo:{
+        type:String,
+        required:true
+    },
+    address:{
         type:String,
         required:true
     },
@@ -21,11 +29,27 @@ let Hotel = new Schema({
     },
     single_room_num:{
         type:Number,
-        required:true
+    },
+    single_room_payment:{
+        type:Number,
     },
     double_room_num:{
         type:Number,
-        required:true
+    },
+    double_room_payment:{
+        type:Number,
+    },
+    triple_room_num:{
+        type:Number,
+    },
+    triple_room_payment:{
+        type:Number,
+    },
+    quad_room_num: {
+        type:Number,
+    },
+    quad_room_payment: {
+        type:Number,
     },
     hotelImage:{
         type:String,

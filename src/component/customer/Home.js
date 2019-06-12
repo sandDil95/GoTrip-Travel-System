@@ -15,10 +15,11 @@ class Home extends Component{
             start : '',
             end : '',
             rooms : '',
-            travellers : ''
+            travellers : '',
         }
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
+        this.bookHotel = this.bookHotel.bind(this);
     }
     onChange(e){
         this.setState({[e.target.name]:e.target.value})
@@ -45,6 +46,14 @@ class Home extends Component{
         //     })
         //     .catch(err => { console.log(err) })
     }
+    bookHotel(e){ //click booking vehicle
+        const val = e.target.value;
+        console.log(val);
+        this.props.history.push({
+            pathname: '/h-login',
+            state: { hotelId:val, rooms:this.state.rooms, travellers:this.state.travellers, city:this.state.city, start:this.state.start, end:this.state.end }
+        })     
+    }
     componentDidMount(){
         if(this.state.city===''){
             //if there are no details added
@@ -59,11 +68,12 @@ class Home extends Component{
                             <div key={hotel.hotelName}>
                                 <div className="card d-block" id="hotelcard">
                                     <img className="card-img-top" src={'http://localhost:4000/uploads/'+hotel.hotelImage} alt="Hotel Avatar: "/><br/>
-                                    <div className="card-body">
+                                    <div className="card-body" id="detailshome">
                                         <span> Hotel Name: <span>{hotel.hotelName}</span></span><br/>
-                                        <span> Location: <span>{hotel.place}</span></span><br/>
-                                        <button type ="submit" className="btn btn-primary">Book Now</button>
-                                        <button type ="submit" className="btn btn-dark">Details</button>
+                                        <span> Location: <span>{hotel.place}</span></span><br/>{hotel._id}
+                                        {/* <button className="btn btn-primary" value={hotel._id} onClick={(e) => {this.bookHotel(e)}}>Book Now</button>
+                                        <button type ="submit" className="btn btn-dark">Details</button> */}
+                                        <button className="btn btn-primary" value={hotel._id} onClick={(e) => {this.bookHotel(e)}}>Book Now</button>
                                         {/* <p class="card-text"></p> */}
                                     </div>
                                 </div><br/> 
@@ -103,7 +113,7 @@ class Home extends Component{
                                 <div className="col-sm-1"></div>
                                 <div className="col-lg-6">
                                     <form id="accomadtn" className = "form-container" onSubmit={this.onSubmit}> 
-                                        <h2>Find the perfect place to stay</h2><br/>
+                                        <h2><strong>Find the perfect place to stay</strong></h2><br/>
                                         <div className ="form-group">
                                             <input placeholder="City" className="form-control" name="city" onChange={this.onChange} type="text" value={this.state.city}/><br/>
                                         </div>
@@ -132,6 +142,7 @@ class Home extends Component{
                                                 <button type ="submit" className="btn btn-primary">Search</button>
                                             </div>
                                         </div><br/>
+                                        
                                     </form>
                                 </div>
                                 <div className="col-lg-4">
@@ -151,6 +162,32 @@ class Home extends Component{
                         {/* </div> */}
                     </div>
                 </div>
+                <br></br>
+                <h1 className="text-center">Overheard from Customers</h1>
+                <br></br>
+                <div className="row">
+                                            <div className="col-lg-4">
+                                                <h4 className="text-center"><strong>Hotel Lavina</strong></h4>
+                                            
+                                            <h5 className="text-center">"The hotel was simple amazing and I couldn't thank GoTrip more for helping out. I've been a customer for awhile and I have to say it's probably my favourite app!"</h5>
+                                            <p className="text-center">Mr.Aravinda Yasas</p>
+                                            </div>
+                                            <div className="col-lg-4">
+                                            <h4 className="text-center"><strong>Tango Ressort</strong></h4>
+                                            
+                                                <h5 className="text-center">"We got a great last minute rate with GoTrip and this room was spacious with a comfortable and warm bed."</h5>
+                                               <br></br> 
+                                               <br></br><p className="text-center">Mrs.Nayomi Silva</p>
+                                            </div>
+                                            <div className="col-lg-4">
+                                            <h4 className="text-center"><strong>Hotel Sweet Place</strong></h4>
+                                            
+                                            <h5 className="text-center">"We booked Hotel Eucalyptus through GoTrip after reading a handful of reviews, and it was easily the best decision we made for our trip to Santorini."</h5>
+                                            <br></br><p className="text-center">Mr.Kelum Narayana</p>
+
+                                            </div>
+                                        </div><br/>
+               
                 <Footer/>
             </div>
         )
