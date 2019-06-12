@@ -59,7 +59,7 @@ class Home extends Component{
                             <div key={hotel.hotelName}>
                                 <div className="card d-block" id="hotelcard">
                                     <img className="card-img-top" src={'http://localhost:4000/uploads/'+hotel.hotelImage} alt="Hotel Avatar: "/><br/>
-                                    <div className="card-body">
+                                    <div className="card-body" id="detailshome">
                                         <span> Hotel Name: <span>{hotel.hotelName}</span></span><br/>
                                         <span> Location: <span>{hotel.place}</span></span><br/>
                                         <button type ="submit" className="btn btn-primary">Book Now</button>

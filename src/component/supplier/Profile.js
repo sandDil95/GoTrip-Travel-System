@@ -1,6 +1,7 @@
 import React , {Component} from 'react';
-import axios from 'axios';
 import jwt_decode from 'jwt-decode';
+import {imageupload} from './UserFunctions';
+import axios from 'axios';
 
 class Profile extends Component{
     constructor(){
@@ -8,10 +9,50 @@ class Profile extends Component{
         this.state ={
             first_name:'',
             last_name:'',
-            email:''
+            email:'',
+            address:'',
+            // vehicle_photo:'',
+            // profile_image:'',
+            // file:'',
             
         }
+        this.onChange = this.onChange.bind(this)
+        this.onSubmit = this.onSubmit.bind(this)
     }
+    // onChange(e){
+    //     this.setState({[e.target.name]:e.target.value})
+    // }
+    // onSubmit(e){
+    //     e.preventDefault()
+    //     console.log("Succesfuly"); 
+    //     const ImageUpload ={
+           
+    //         vehicale_photo:this.state.vehicale_photo,
+    //         profile_image:this.state.profile_image
+            
+            
+        
+    //     }
+    //     imageupload(ImageUpload).then(res => {
+    //              if(ImageUpload){
+    //                  this.props.history.push('/profile')
+    //              }
+                
+            
+    //     })
+    // }
+    componentDidMount(){
+        axios.get('http://localhost:4000/supplier')
+        const token = localStorage.usertoken
+        const decoded = jwt_decode(token)
+        this.setState({
+            first_name:decoded.first_name,
+            last_name:decoded.last_name,
+            email:decoded.email,
+            address:decoded.address
+        })
+    }    
+            // file:decoded.file,
     // componentDidMount(){
     //     axios.get('http://localhost:4000/supplier')
     //     const token = localStorage.usertoken
@@ -35,6 +76,7 @@ class Profile extends Component{
     // }
     render(){
         return(
+
             <div>
                 <div className ="container">
                     <div className="jumbotron mt-5"> 
@@ -46,6 +88,7 @@ class Profile extends Component{
                                  <tr>
                                      <th>First Name</th>
                                      <th>{this.state.first_name}</th>
+
                                     
                                  </tr>
                                  <tr>
@@ -57,22 +100,23 @@ class Profile extends Component{
                                      <th>Email</th>
                                      <th>{this.props.email}</th>
                                     
-                                 </tr>
-                                
-                             </tbody>
-                         </table>
-                     </div>
+                                </tr>
+                                <tr>
+                                    <th>Address</th>
+                                    <th>{this.state.address}</th>
+                                    
+                                </tr>
+                                {/* <tr>
+                                    <th>Profile</th>
+                                    <th>{this.state.file}</th>
+                                    
+                                </tr> */}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <br/><br/><br/><br/><br/><br/><br/><br/>
-                <br/><br/><br/><br/><br/><br/><br/><br/>
-                <br/><br/><br/><br/><br/><br/><br/><br/>
-                <br/><br/><br/><br/><br/><br/><br/><br/>
-                <br/><br/><br/><br/><br/><br/><br/><br/>
-                <br/><br/><br/><br/><br/><br/><br/><br/>
-                <br/><br/><br/><br/><br/><br/><br/><br/>
-            </div>
+                </div>
         )
     }
 }
-
 export default Profile;

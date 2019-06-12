@@ -38,7 +38,7 @@ class WildLife extends Component {
                     <div id="desc"class="card-body">
                      <div class="row">
                          <div class="col-sm-4" align="left">
-                            <img class="card-img-top" src={pinnawala}  alt="Card image" ></img>
+                            <img class="card-img-top" src={pinnawala}  alt="" />
                          </div>
                          <div id="desc" class="col-sm-8"align="left">
                             <span class="badge badge-secondary"> DAY 01</span><br/><br/>
@@ -57,7 +57,7 @@ class WildLife extends Component {
                     <div id="desc"class="card-body">
                      <div class="row">
                          <div class="col-sm-4" align="left">
-                            <img class="card-img-top" src={sigiriya}  alt="Card image" ></img>
+                            <img class="card-img-top" src={sigiriya}  alt="" />
                          </div>
                          <div id="desc" class="col-sm-8"align="left">
                             <span class="badge badge-secondary"> DAY 02</span><br/><br/>  
@@ -75,7 +75,7 @@ class WildLife extends Component {
                     <div id="desc"class="card-body">
                      <div class="row">
                          <div class="col-sm-4" align="left">
-                            <img class="card-img-top" src={dambulla}  alt="Card image" ></img>
+                            <img class="card-img-top" src={dambulla}  alt="" />
                          </div>
                          <div id="desc" class="col-sm-8"align="left">
                             <span class="badge badge-secondary"> DAY 03</span><br/> <br/> 
@@ -93,7 +93,7 @@ class WildLife extends Component {
                     <div id="desc"class="card-body">
                      <div class="row">
                          <div class="col-sm-4" align="left">
-                            <img class="card-img-top" src={nuwaraeli}  alt="Card image" ></img>
+                            <img class="card-img-top" src={nuwaraeli}  alt="" />
                          </div>
                          <div id="desc" class="col-sm-8"align="left">
                             <span class="badge badge-secondary"> DAY 04</span><br/><br/>
@@ -111,7 +111,7 @@ class WildLife extends Component {
                     <div id="desc"class="card-body">
                      <div class="row">
                          <div class="col-sm-4" align="left">
-                            <img class="card-img-top" src={udawalawa}  alt="Card image" ></img>
+                            <img class="card-img-top" src={udawalawa}  alt=""/>
                          </div>
                          <div id="desc" class="col-sm-8"align="left">
                             <span class="badge badge-secondary"> DAY 05</span><br/><br/>

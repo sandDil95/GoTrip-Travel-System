@@ -4,7 +4,7 @@ import './css/Footer.css';
 class Footer extends Component{
     render(){
         return(
-            <footer>
+            <footer id="footsup">
                 <div className="row">
                 <div class="col-sm-3">
                     <h5>What Can Do</h5>
