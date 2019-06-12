@@ -61,8 +61,7 @@ class Register extends Component{
                     <div className ="col-md-6 mt-5 mx-auto">
                         <form className = "form-container" noValidate onSubmit ={this.onSubmit}> 
                             
-                            <h1 className ="text-center">SignUp Form</h1>
-                            <br></br>
+                            <h1 className ="h3 mb-3 font-weight-normal">SignUp Form</h1>
                             <div className ="form-group">
                                 <input type ="text"
                                         className="form-control"
@@ -148,4 +147,3 @@ class Register extends Component{
 
 
 export default Register;
-

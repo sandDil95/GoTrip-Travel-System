@@ -327,4 +327,3 @@ class HotelReg extends Component{
 
 
 export default HotelReg;
-

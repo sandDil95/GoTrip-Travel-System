@@ -257,4 +257,3 @@ class VehicleReg extends Component{
 
 
 export default VehicleReg;
-

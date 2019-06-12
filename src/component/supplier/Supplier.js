@@ -4,12 +4,6 @@ import Header from './Header';
 import Home from './Home';
 import Footer from './Footer';
 import About from './About';
-
-import HotelRegister from './HotelRegister';
-import VehicleRegister from './VehicleRegister';
-import Login from './Login';
-import Notify from './NotifyEndTrip';
-
 import VehicleReg from './VehicleReg';
 import HotelReg from './HotelReg';
 
@@ -23,7 +17,6 @@ class Supplier extends Component {
       super(props);
       this.state = {
           email : props.location.state.email
-          // email : 'sanduni93193@gmail.com'
       }
   }
   componentDidMount(){

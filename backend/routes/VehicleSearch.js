@@ -105,10 +105,6 @@ vehicleSearchRoutes.post('/add',upload.single('vehicleImage'),(req,res)=>{
             res.status(404).json({status: 'not found'});
         }
     })
-    
-    
-
-    
 })
 
 vehicleSearchRoutes.get('/search/:vehicleStatus/:pickupLocation',(req,res)=>{
