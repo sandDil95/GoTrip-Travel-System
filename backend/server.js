@@ -69,8 +69,8 @@ mongoose
 // const upload =multer({storage});
 //var Vehicle = require('./routes/Vehicle.js');
 
-var Vehicle = require('./routes/Vehicle');
-var Hotel = require('./routes/Hotel');
+//var Vehicle = require('./routes/Vehicle');
+//var Hotel = require('./routes/Hotel');
 var Users = require('../backend/routes/Users');
 var Customer = require('../backend/routes/Customer');
 var IndividualBookingRoutes = require('./routes/IndividualBooking');
@@ -85,10 +85,10 @@ app.use(function(req, res, next) {
     next();
 })
 
-app.use('/vehicleReg' , Vehicle);
-app.use('/hotelReg' ,Hotel);
+//app.use('/vehicleReg' , Vehicle);
+//app.use('/hotelReg' ,Hotel);
 //app.use('/imageUp' ,Vehicle);
-app.use('/vehicleLog' ,Vehicle);
+//app.use('/vehicleLog' ,Vehicle);
 //app.use('/hotelLog' ,Hotel);
 app.use('/user' , Users);
 app.use('/customer',Customer);
