@@ -1,6 +1,13 @@
 import React , {Component} from 'react';
+
 import axios from 'axios';
 import validator from 'validator';
+
+import './css/Notification.css';
+import {sendEmail} from './UserFunctions';
+// import validator from 'validator';
+
+
 
 // const validatePhoneNumber = number => {
 //     const isValidPhoneNumber = validator.isMobilePhone(number)
@@ -8,6 +15,7 @@ import validator from 'validator';
 // }
 // const emailRegex = RegExp(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
 // //const telNum = RegExp(/^[0-9]*$/);
+
 const formValid = formErrors =>{
     let valid = true;
 
@@ -21,6 +29,21 @@ const formValid = formErrors =>{
 class NotifyEndTrip extends Component{
     constructor(props){
         super(props)
+
+// const formValid = formErrors =>{
+//     let valid = true;
+
+//     Object.values(formErrors).forEach(val => {
+//         val.length > 0 && (valid = false);
+//     });
+//     return valid;
+    
+// }
+
+class Notify extends Component{
+    constructor(){
+        super()
+
         this.state ={
             first_name:'',
             last_name:'',
@@ -36,6 +59,7 @@ class NotifyEndTrip extends Component{
             entry_ticket:'',
             highway_ticket:'',
             other_fee:'',
+
             formErrors:{
                 first_name:"",
                 last_name:"",
@@ -163,6 +187,78 @@ class NotifyEndTrip extends Component{
         console.error('Form Invalid - Display Error Masage');
     }
     const obj = {
+
+            //total_ammount:'',
+
+            
+            
+            
+        }
+        this.onChange = this.onChange.bind(this)
+        this.onSubmit = this.onSubmit.bind(this)
+    
+    }
+
+   onChange(e){
+       this.setState({[e.target.name]:e.target.value});
+    //    const {name , value} = e.target;
+    //    let formErrors = this.state.formErrors;
+    //    let number = this.state.number;
+
+    //    console.log("Name :" , name);
+    //    console.log("value :" ,value);
+    //    switch(name){
+    //             case'first_name':
+    //                 formErrors.first_name = 
+    //                     value.length < 3 
+    //                         ? "minimum 3 characaters required"
+    //                         :"";
+    //                 break;
+                
+    //             case'email':
+    //             formErrors.email = 
+    //                 emailRegex.test(value)
+    //                     ? ''
+    //                     :"Invalid Email Address";
+    //             break;
+    //             // case'contactNo':
+    //             // telNum.contactNo = 
+    //             //     value
+    //             //     ? "Invalid Phone Number"
+    //             //     :"";
+    //             // break;
+    //             case'contactNo':
+    //             number.contactNo = 
+    //                 value.length <10 || value.length >10
+    //                 ? "Invalid Phone Number"
+    //                 :"";
+    //             break;
+                
+    //         default:
+    //         break;
+    //    }
+    //    this.setState({formErrors ,[name]:value},()=>console.log(this.state));
+    //    this.setState({number ,[name]:value} ,()=>console.log(this.state));
+   }
+   onSubmit(e){
+       e.preventDefault()
+       console.log("Succesfuly"); 
+    //    if(formValid(this.state.formErrors)|| validatePhoneNumber(this.state.number)){
+    //        console.log(`
+    //             --SUBMITING--
+    //             first_name:${this.state.first_name},
+                
+    //             email:${this.state.email},
+    //             contactNo:${this.state.contactNo}
+                
+    //        `)
+    //    }
+       
+    //    else{
+    //        console.error('Form Invalid - Display Error Masage');
+    //    }
+       const SendNotification ={
+
            first_name:this.state.first_name,
            last_name:this.state.last_name,
            supplier_name:this.state.supplier_name,
@@ -177,6 +273,7 @@ class NotifyEndTrip extends Component{
            entry_ticket:this.state.entry_ticket,
            highway_ticket:this.state.highway_ticket,
            other_fee:this.state.other_fee
+
         
         // vehicleImage : '',
    };
@@ -189,11 +286,27 @@ class NotifyEndTrip extends Component{
                     alert("failed")
                 }
             })
+
+           
+           
+           
+       
+       }
+       console.log("Succesfuly"); 
+       sendEmail(SendNotification).then(res => {
+                if(SendNotification){
+                    this.props.history.push('/supplier/send-email')
+                }
+               
+           
+       })
+
    }
 
 
     render(){
         const {formErrors} = this.state;
+
         return(
             <div className ="bg-img">
                 {/* <div className ="container"> */}
@@ -202,6 +315,19 @@ class NotifyEndTrip extends Component{
                         <form className = "form-container" noValidate onSubmit ={this.onSubmit}> 
                             
                             <h1 className ="h3 mb-3 font-weight-normal">Please sign Up</h1>
+
+        const {number} = this.state;
+        return(
+            <div className ="bg-img">
+             
+                <div className ="row">
+                
+                    <div className ="col-md-6 mt-5 mx-auto">
+                    
+                        <form  className = "form-container" noValidate onSubmit ={this.onSubmit} > 
+                            
+                            <h1 className ="h3 mb-3 font-weight-normal">Send Notify About End Trip</h1>
+
                             <div className="row">
                                 <div className ="col-lg-6">
                                     {/* <label htmlFor = "first_name">First Name</label> */}
@@ -236,7 +362,10 @@ class NotifyEndTrip extends Component{
                                     )}
                                 </div>
                         
+
                             </div><br/>
+                            </div>
+
                             
                             <div className="row">
                                 <div className ="col-lg-6">
@@ -251,9 +380,15 @@ class NotifyEndTrip extends Component{
                                             noValidate
                                     
                                     />
+
                                     {formErrors.supplier_name.length>0 && (
                                         <span className="errorMessage">{formErrors.supplier_name}</span>
                                     )}
+
+                                    {/* {formErrors.email.length>0 && (
+                                        <span className="errorMessage">{formErrors.email}</span>
+                                    )} */}
+
                                 </div>
                                 <div className ="col-lg-6">
                                     {/* <label htmlFor = "contactNo">Contact Number </label> */}
@@ -267,9 +402,15 @@ class NotifyEndTrip extends Component{
                                             noValidate
                                     
                                     />
+
                                     {formErrors.vehicle_no.length>0 && (
                                         <span className="errorMessage">{formErrors.vehicle_no}</span>
                                     )}
+
+                                    {/* {number.contactNo.length>0 && (
+                                        <span className="errorMessage">{number.contactNo}</span>
+                                    )} */}
+
                                 </div>
                             </div><br/>
                             <div className="row">
@@ -308,9 +449,15 @@ class NotifyEndTrip extends Component{
                                             noValidate
                                     
                                     />
+
                                     {formErrors.travled_place.length>0 && (
                                         <span className="errorMessage">{formErrors.travled_place}</span>
                                     )}
+
+                                    {/* {formErrors.address.length>0 && (
+                                        <span className="errorMessage">{formErrors.address}</span>
+                                    )} */}
+
                                 </div>
                             </div><br/>
                            
@@ -327,9 +474,14 @@ class NotifyEndTrip extends Component{
                                             noValidate
                                     
                                     />
+
                                     {formErrors.guide_fee.length>0 && (
                                         <span className="errorMessage">{formErrors.guide_fee}</span>
                                     )}
+                                    {/* {formErrors.email.length>0 && (
+                                        <span className="errorMessage">{formErrors.email}</span>
+                                    )} */}
+
                                 </div>
                                 <div className ="col-lg-6">
                                     {/* <label htmlFor = "contactNo">Contact Number </label> */}
@@ -343,9 +495,15 @@ class NotifyEndTrip extends Component{
                                             noValidate
                                     
                                     />
+
                                     {formErrors.parcking_fee.length>0 && (
                                         <span className="errorMessage">{formErrors.parcking_fee}</span>
                                     )}
+
+                                    {/* {number.contactNo.length>0 && (
+                                        <span className="errorMessage">{number.contactNo}</span>
+                                    )} */}
+
                                 </div>
                             </div><br/>
                             <div className="row">
@@ -361,9 +519,15 @@ class NotifyEndTrip extends Component{
                                             noValidate
                                     
                                     />
+
                                     {formErrors.entry_ticket.length>0 && (
                                         <span className="errorMessage">{formErrors.entry_ticket}</span>
                                     )}
+
+                                    {/* {formErrors.email.length>0 && (
+                                        <span className="errorMessage">{formErrors.email}</span>
+                                    )} */}
+
                                 </div>
                                 <div className ="col-lg-6">
                                     {/* <label htmlFor = "contactNo">Contact Number </label> */}
@@ -377,9 +541,15 @@ class NotifyEndTrip extends Component{
                                             noValidate
                                     
                                     />
+
                                     {formErrors.highway_ticket.length>0 && (
                                         <span className="errorMessage">{formErrors.highway_ticket}</span>
                                     )}
+
+                                    {/* {number.contactNo.length>0 && (
+                                        <span className="errorMessage">{number.contactNo}</span>
+                                    )} */}
+
                                 </div>
                             </div><br/>
                             
@@ -396,9 +566,15 @@ class NotifyEndTrip extends Component{
                                             noValidate
                                     
                                     />
+
                                     {formErrors.total_distanse.length>0 && (
                                         <span className="errorMessage">{formErrors.total_distanse}</span>
                                     )}
+
+                                    {/* {formErrors.email.length>0 && (
+                                        <span className="errorMessage">{formErrors.email}</span>
+                                    )} */}
+
                                 </div>
                                 <div className ="col-lg-6">
                                     {/* <label htmlFor = "contactNo">Contact Number </label> */}
@@ -431,6 +607,32 @@ class NotifyEndTrip extends Component{
                     </div>
                 </div>
            {/* </div> */}
+                                    {/* {number.contactNo.length>0 && (
+                                        <span className="errorMessage">{number.contactNo}</span>
+                                    )} */}
+                                </div>
+                            </div><br/>
+                            
+                            
+                            
+                            <div className ="row">
+                                <div className="col-lg-12">
+                                        <button  type ="submit" className ="btn btn-lg btn-primary btn--block">
+                                            Send
+                                        </button>
+                                        
+                                </div>
+                            </div>
+                            
+                           
+
+                            
+                            
+                        </form>
+                    </div>
+                </div>
+            
+
             </div>
 
 
@@ -440,5 +642,9 @@ class NotifyEndTrip extends Component{
 
 
 
+
 export default NotifyEndTrip;
+
+export default Notify;
+
 

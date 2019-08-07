@@ -3,9 +3,15 @@ const Schema = mongoose.Schema;
 
 let Vehicle = new Schema({
     // _id:mongoose.Schema.Types.ObjectId,
+
     // vehicleOwner:{
     //     type:String,
     // },
+
+
+    sId:{
+        type:String    },
+
     vehicleNo:{
         type:String,
         required:true

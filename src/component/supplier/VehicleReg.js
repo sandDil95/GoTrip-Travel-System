@@ -30,6 +30,7 @@ class VehicleReg extends Component{
             vehicleModel : '',
             locations : '',
             vehicleImage : '',
+
             formErrors:{
                 vehicleNo:"",
                 // beginingDate:"",
@@ -46,6 +47,9 @@ class VehicleReg extends Component{
             number:{
                 contactNo:""
             }
+
+
+            // email : props.location.state.email,
 
         }
         this.onChange = this.onChange.bind(this);
@@ -124,6 +128,7 @@ class VehicleReg extends Component{
         console.error('Form Invalid - Display Error Masage');
     }
     const obj = {
+        email: this.props.email,
         vehicleNo : this.state.vehicleNo,
         contactNo  :this.state.contactNo,
         beginingDate : this.state.beginingDate,
@@ -147,21 +152,35 @@ class VehicleReg extends Component{
    }
 
 
+
     render(){
         const {formErrors} = this.state;
         const {number} = this.state;
         console.log("Succesfuly"); 
+
+   componentDidMount(){
+       console.log(this.props.email);
+   }
+
+    render(){
+        // const {something} = this.props;
+
         return(
             <div className ="bg-img">
                 {/* <div className ="container"> */}
                 <div className ="row">
                     <div className ="col-md-6 mt-5 mx-auto">
+
                         <form className = "form-container" noValidate onSubmit ={this.vehiRegister}> 
                             
                             <h1 className ="h3 mb-3 font-weight-normal">Vehicle Register</h1>
+
+                        <form className = "form-container" noValidate onSubmit ={this.onSubmit}> 
+                            <h1 className ="h3 mb-3 font-weight-normal">Register your vehicle</h1><br/>
+                            {/* {this.props.email}<br/> */}
+
                             <div className="row">
                                 <div className="col-lg-6">
-                                <label htmlFor = "vehicleNo">Vehicle Number</label>
                                     <input type ="text"
                                         className="form-control"
                                         name = "vehicleNo"
@@ -177,24 +196,30 @@ class VehicleReg extends Component{
                                 </div>
 
                                 <div className="col-lg-6">
-                                <label htmlFor = "contactNo">Contact Number </label>
                                     <input type ="text"
                                         className="form-control"
                                         name = "contactNo"
                                         placeholder ="Enter Contact Number"
                                         value ={this.state.contactNo}
                                         onChange ={this.onChange}
+
                                         noValidate
                                 
+
                                     />
                                     {number.contactNo.length>0 && (
                                         <span className="errorMessage">{number.contactNo}</span>
                                     )}
                                 </div>
-                            </div>
+                            </div><br/>
+                            <div className="row">
+                                <div className="col-lg-12">
+                                    Enter Available Time Period
+                                </div>
+                            </div>  <hr/>          
                             <div className="row">
                                         <div className="col-lg-6">
-                                            <label htmlFor = "begingdate">Begining Date of Availability</label>
+                                            <label htmlFor = "begingdate"><small>Start From</small></label>
                                             <input type="date"
                                                    //placeholder="Begining Date of Availability" 
                                                    className="form-control" 
@@ -206,7 +231,7 @@ class VehicleReg extends Component{
                                             
                                         </div> 
                                         <div className="col-lg-6">
-                                            <label htmlFor = "endingate">Ending Date of Availability</label>
+                                            <label htmlFor = "endingate"><small>To End</small></label>
                                             <input type="date"
                                                    //placeholder="Ending Date of Availability" 
                                                    className="form-control" 
@@ -337,4 +362,3 @@ class VehicleReg extends Component{
 
 
 export default VehicleReg;
-

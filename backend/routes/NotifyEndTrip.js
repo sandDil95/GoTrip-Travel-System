@@ -11,6 +11,8 @@ const EndTripDetails = require("../models/EndTripDetails");
 
 
 endtrip.post('/add' , (req , res)=>{
+
+endtrip.post('/sendemail' , (req , res)=>{
     //const today = new Date()
     const endTripDetails = new EndTripDetails({
             first_name:req.body.first_name,
@@ -41,6 +43,9 @@ endtrip.post('/add' , (req , res)=>{
             error:err
         })
     });
+
 })
 
 module.exports = endtrip;
+
+})
